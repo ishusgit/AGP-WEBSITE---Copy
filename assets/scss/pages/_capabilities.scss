@@ -1,0 +1,331 @@
+@use "../abstract/variable" as var;
+@use "../abstract/functions" as func;
+
+/* Capabilities Section */
+.capabilities {
+    padding: 0px 0px!important;
+    background: linear-gradient(135deg ,#1e1e24 10%,#d72638 90%);
+    position: relative;
+    // clip-path: polygon(0 0, 100% 5%, 100% 95%, 0 100%);
+    clip-path: polygon(0% 10%, 100% 0%, 100% 90%, 0% 100%);
+    overflow:hidden;
+}
+
+/* Content Section */
+.capabilities__content {
+    padding:80px 50px;
+    color: func.theme-colors('white');
+    display: flex;
+    flex-direction: column;
+    justify-content: center!important;
+    align-items:center!important;
+}
+
+
+/* Heading */
+.capabilities__heading {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 40px 0px 30px;
+    font-family:var.$font-open!important;
+    text-align:center;
+}
+
+/* Description */
+.capabilities__description {
+    font-size: 0.95rem;
+    font-family:var.$font-open;
+    font-weight:400;
+    line-height:1.8;
+    color:func.theme-colors('light-bg')!important;
+    padding:0 25px;
+    text-align:center;
+    span{
+        color:pink;
+        font-size: 0.88rem;
+        font-family:var.$font-open;
+        font-weight:400;
+        text-transform:uppercase;
+        letter-spacing:0.7px;
+    }
+}
+
+//* Capabilities Cards */
+.capabilities__cards {
+    display: flex;
+    justify-content: flex-start!important;
+    gap: 15px;
+    position: relative;
+    margin:60px 0px 55px;
+    flex-wrap:nowrap;
+    // transform: translateX(150px);
+}
+
+/* Glassmorphism Card */
+.capabilities__card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    box-shadow:0 4px 8px rgba(0,0,0,0.4);
+    padding: 15px 15px;
+    width:30%;
+    height:180px;
+    max-width:auto!important;
+    text-align: center;
+    color: white;
+    transition: transform 0.3s ease-in-out ,box-shadow 0.3s ease-in-out;
+    flex:1!important;
+    transform-origin: center center!important;
+    perspective: 800px; /* Enables 3D effect */
+    h5{
+        font-size:0.88rem;
+        font-weight:500;
+        font-family:var.$font-open;
+        color:pink!important;
+        text-transform:uppercase!important;
+        letter-spacing:0.7px;
+        text-wrap:nowrap;
+        text-align:center;
+        margin-bottom:10px;
+        line-height:1.6;
+    }
+    p{
+        font-size:0.85rem;
+        font-weight:400;
+        font-family:var.$font-open;
+        color:func.theme-colors('light-bg')!important;
+        line-height:1.8;
+    }
+
+}
+
+
+/* Card Overlay on Image */
+.capabilities__card--overlay {
+    position: absolute;
+    right: -32%;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index:5;
+}
+
+/* Icon */
+.capabilities__icon {
+    margin-right: 5px;
+    font-size: 1.2rem;
+    color: func.theme-colors('accent');
+}
+
+/* Image Section */
+.capabilities__image-container {
+    position: absolute;
+    right: 0!important;
+    top: 0!important;
+    height: 100vh; /* Full height of the section */
+    overflow: hidden!important;
+    z-index:-1;
+    text-align:start!important;
+    padding: 0;
+    margin: 0;
+}
+
+.capabilities__image {
+    width: 100%!important;
+    height: 100%!important;
+    object-fit: cover;
+    display:block;
+    filter: brightness(60%);
+    text-align:start!important;
+}
+
+/* Overlay Above Image */
+.capabilities__image-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3); /* Dark overlay for better contrast */
+    z-index: 1; /* Places it above the image but behind text */
+}
+
+/* Responsive Design */
+@media (max-width: 991.98px) {
+    .capabilities {
+        clip-path: none;
+        border: none;
+        height: auto;
+    }
+
+    .capabilities__content {
+        text-align: center;
+        padding-left: 0;
+    }
+
+    .capabilities__cards {
+        flex-direction: column;
+        align-items: center;
+        position: static;
+    }
+
+    .capabilities__card {
+        width: 90%;
+    }
+
+    .capabilities__card--overlay {
+        position: static;
+        right: auto;
+        top: auto;
+        transform: none;
+    }
+
+    .capabilities__image-container {
+        height: 400px;
+    }
+}
+
+/*media queries*/
+/*xs device*/
+@media screen and (max-width:575.98px){
+    .capabilities .capabilities__content{
+        padding:40px 5px!important
+    }
+    .capabilities .capabilities__heading{
+        font-size: 1.43rem;
+        font-weight: 650!important;
+        margin: 0px 0px 30px;
+    }
+    .capabilities .capabilities__description{
+        font-size: 0.83rem!important;
+        line-height:1.9!important;
+        padding:0px 25px!important;
+        text-align:center!important;
+        span{
+            font-size: 0.74rem!important;
+            font-weight:350!important;
+            letter-spacing:0.8px!important;
+        }
+    }
+    .capabilities .capabilities__cards{
+        justify-content: center!important;
+        gap: 25px;
+    }
+    .capabilities .capabilities__cards .capabilities__card{
+        width:70%;
+        height:180px;
+        padding: 15px 12px!important;
+        h5{
+            font-size:0.86rem;
+        }
+        p{
+            font-size:0.82rem;
+            text-align:center!important;
+        }
+    }
+}
+/*sm device*/
+@media screen and (min-width:576px) and (max-width:767.98px){
+    .capabilities .capabilities__content{
+        padding:40px 20px!important
+    }
+    .capabilities .capabilities__heading{
+        font-size: 1.6rem;
+        font-weight: 650!important;
+        margin: 0px 0px 30px;
+    }
+    .capabilities .capabilities__description{
+        font-size: 0.9rem!important;
+        line-height:2!important;
+        padding:0px 30px!important;
+        text-align:center!important;
+        span{
+            font-size: 0.84rem!important;
+            font-weight:400!important;
+            letter-spacing:0.8px!important;
+        }
+    }
+    .capabilities .capabilities__cards{
+        justify-content: center!important;
+        gap: 30px;
+        flex-wrap:wrap!important;
+        flex-direction:row!important;
+        padding-left:30px!important;
+        padding-right:30px!important;
+        margin:60px 0 30px!important;
+    }
+    .capabilities .capabilities__cards .capabilities__card{
+        width:37%;
+        height:160px;
+        padding: 15px 12px!important;
+        h5{
+            font-size:0.885rem;
+        }
+        p{
+            font-size:0.83rem;
+            text-align:center!important;
+        }
+    }
+}
+/*md device*/
+@media screen and (min-width:768px) and (max-width:991.98px){
+    .capabilities .capabilities__content{
+        padding:40px 50px!important
+    }
+    .capabilities .capabilities__heading{
+        font-size: 1.7rem;
+        font-weight: 650!important;
+        margin: 0px 0px 30px;
+    }
+    .capabilities .capabilities__description{
+        font-size: 0.92rem!important;
+        line-height:2!important;
+        padding:0px 30px!important;
+        text-align:center!important;
+        span{
+            font-size: 0.84rem!important;
+            font-weight:400!important;
+            letter-spacing:0.8px!important;
+        }
+    }
+    .capabilities .capabilities__cards{
+        justify-content: center!important;
+        gap: 30px;
+        flex-wrap:wrap!important;
+        flex-direction:row!important;
+        padding-left:10px!important;
+        padding-right:10px!important;
+        margin:60px 0 30px!important;
+    }
+    .capabilities .capabilities__cards .capabilities__card{
+        width:31%;
+        height:168px;
+        padding: 15px 15px!important;
+        h5{
+            font-size:0.8rem;
+        }
+        p{
+            font-size:0.8rem!important;
+            text-align:start!important;
+        }
+    }
+}
+/*lg device*/
+@media screen and (min-width:992px) and (max-width:1199.98px){
+    .capabilities .capabilities__cards .capabilities__card{
+        width:30%;
+        height:180px;
+        padding: 15px 15px!important;
+        h5{
+            font-size:0.8rem;
+        }
+        p{
+            font-size:0.8rem!important;
+            text-align:center!important;
+        }
+    }
+    .capabilities__image-container {
+        height: 800px;
+    }
+}
+

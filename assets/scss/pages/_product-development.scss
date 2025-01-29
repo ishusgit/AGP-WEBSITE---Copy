@@ -1,0 +1,629 @@
+@use "../abstract/variable" as var;
+@use "../abstract/functions" as func;
+
+/* Main Section */
+.product-development {
+    background: linear-gradient(to bottom, white, rgb(255, 199, 199));
+    // border-bottom-left-radius: 50%;
+    // border-bottom-right-radius: 50%;
+    padding: 100px 0;
+    display:flex;
+    flex-flow:column nowrap;
+}
+
+/* Headings */
+.product-development__heading {
+    font-size: 1.7rem;
+    font-family:var.$font-open;
+    font-weight: 700;
+    line-height: 1.4;
+    color:func.theme-colors('secondary');
+}
+
+.product-development__description {
+    font-size: 0.93rem;
+    line-height:1.8;
+    margin: 20px 0;
+    font-weight:500;
+    font-family:var.$font-open;
+    color:func.theme-colors('dark-text');
+    span{
+        color:func.theme-colors('primary');
+        font-family:var.$font-open;
+        font-weight:600;
+    }
+}
+
+/* Image Section */
+.product-development__image-container {
+    position: relative;
+    text-align: start!important;
+}
+
+.product-development__image {
+    width:290px;
+    height:350px;
+    border-radius: 10px;
+   position:relative;
+    z-index: 3;
+    border:6px solid func.theme-colors('light-bg');
+    box-shadow:8px 8px 10px rgba(0,0,0,0.5);
+}
+
+.product-development__image--background {
+    position: absolute;
+    top: -40px;
+    left: 65%;
+    transform: translateX(-50%);
+    width: 250px;
+    height:350px;
+    z-index: 1;
+    border:6px solid func.theme-colors('light-bg');
+    border-radius:10px;
+    box-shadow:0 8px 10px rgba(0,0,0,0.5);
+}
+
+
+/* Floating Buttons */
+.product-development__feature {
+    position: absolute;
+    padding: 7px 10px;
+    color: func.theme-colors('light-bg');
+    font-size: 0.8rem;
+    font-weight:450;
+    font-family:var.$font-open;
+    border-radius: 8px;
+    // transform: rotate(-5deg);
+    z-index:3;
+    white-space:nowrap;
+    text-align:center;
+    box-shadow:0 4px 5px rgba(0,0,0,0.6);
+}
+
+.product-development__feature--one {
+    top: 50px;
+    left: -40px;
+    background:func.theme-colors('primary-hover');
+    position:absolute;
+}
+.product-development__feature--one h6{
+    font-weight:550;
+    font-family:var.$font-open;
+    font-size:0.6rem;
+    margin-top:5px;
+    text-transform:uppercase;
+    letter-spacing:0.3px;
+}
+.product-development__feature--two {
+    top: 140px;
+    left: 380px;
+    background:func.theme-colors('accent');
+}
+.product-development__feature--two h6{
+    font-weight:550;
+    font-family:var.$font-open;
+    font-size:0.6rem;
+    margin-top:5px;
+    text-transform:uppercase;
+    letter-spacing:0.3px;
+}
+.product-development__feature--three {
+    top: 250px;
+    left: -30px;
+    background:func.theme-colors('orange');
+}
+.product-development__feature--three h6{
+    font-weight:550;
+    font-family:var.$font-open;
+    font-size:0.6rem;
+    margin-top:5px;
+    text-transform:uppercase;
+    letter-spacing:0.3px;
+}
+
+/* Downward-facing triangles for each button */
+.product-development__feature--one::after {
+    content: "";
+    position: absolute;
+    bottom: -8px; /* Places triangle below the button */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 8px solid func.theme-colors('primary-hover'); /* Matches button color */
+}
+
+.product-development__feature--two::after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 8px solid func.theme-colors('accent'); /* Matches button color */
+}
+
+.product-development__feature--three::after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 8px solid func.theme-colors('orange'); /* Matches button color */
+}
+
+.product-development__subheading{
+        text-align:center;
+        font-weight:700;
+        font-family:var.$font-open;
+        font-size:1.3rem;
+        line-height:1.7;
+        color:func.theme-colors('secondary');
+}
+
+/* Cards */
+.product-development__card {
+    text-align: left;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+.product-development__card h5{
+    font-weight:650;
+    font-family:var.$font-open;
+    font-size:1rem;
+    color:func.theme-colors('secondary');
+    letter-spacing:0.7px;
+    text-transform:uppercase;
+    margin-bottom:15px;
+}
+.product-development__icon {
+    font-size: 1.05rem;
+    padding: 8px 13px;
+    border-radius: 50%;
+    text-align:center;
+    margin-bottom: 35px;
+}
+
+.card-1 .product-development__icon {
+    background-color: func.theme-colors('green') !important; /* Red */
+}
+
+.card-2 .product-development__icon {
+    background-color: func.theme-colors('pink')!important; /* Green */
+}
+
+.card-3 .product-development__icon {
+    background-color: func.theme-colors('blue')!important; /* Blue */
+}
+
+.product-development__text {
+    font-size: 0.88rem;
+    font-weight:500;
+    line-height:1.8;
+    font-family:var.$font-open;
+    color:func.theme-colors('secondary')!important;
+}
+
+/* devlopment-Section Styling */
+/* Full-width Section */
+.development-section-heading{
+    font-size:1.8rem;
+    font-family:var.$font-open;
+    font-weight:600!important;
+    text-align:center;
+    margin-bottom:70px;
+    text-transform:uppercase;
+    letter-spacing:0.7px;
+}
+
+.development-section {
+    width: 100%;
+    padding: 50px 0 0px;
+}
+   
+/* Column Styling */
+.development-column {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+/* Image Styling */
+.development-image {
+    width: 99%;
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.5s ease-out;
+}
+
+/* Content Box Styling */
+.development-content {
+    width: 100%;
+    padding: 40px 30px;
+    color: white;
+    transition: background-color 0.5s ease-in-out;
+    min-height:100%;
+}
+
+/* Background Colors for Hover */
+.development-content--green {
+    background: transparent;
+}
+
+.development-content--pink {
+    background: transparent;
+}
+
+.development-content--blue {
+    background: transparent;
+}
+
+/* Heading Styling */
+.development-heading {
+    font-size: 1.15rem;
+    font-weight:500;
+    font-family:var.$font-open;
+    margin-bottom: 30px;
+    transition: color 0.5s ease-in-out;
+    text-transform:uppercase;
+    letter-spacing:0.7px;
+}
+
+.development-content p{
+    font-size:0.85rem;
+    line-height:1.8;
+    font-weight:500;
+    font-family:var.$font-open;
+    color:func.theme-colors('dark-text');
+    text-align:center;
+}
+/* Hover Effects */
+.development-column:hover .development-image {
+    transform: scale(1.02);
+    // width:100%;
+}
+
+.development-column:hover .development-content--green {
+    background: func.theme-colors('green') ;/* Green */
+}
+
+.development-column:hover .development-content--pink {
+    background: func.theme-colors('pink'); /* Pink */
+}
+
+.development-column:hover .development-content--blue {
+    background: func.theme-colors('blue'); /* Blue */
+}
+
+.development-column:hover .development-heading {
+    color: func.theme-colors('light-bg')!important;
+}
+.development-column:hover p {
+    color: func.theme-colors('light-bg')!important;
+}
+
+/*media queries*/
+@media screen and (min-width:992px) and (max-width:1199.98px){
+    .product-development__heading{
+        font-size:1.515rem!important;
+        line-height:1.6!important;
+    }
+    .product-development__description{
+        font-size: 0.91rem!important;
+        margin: 15px 0!important;
+    }
+    .development-section-heading{
+        font-size:1.63rem!important;
+        font-weight:650!important;
+        margin-bottom:60px!important;
+    }
+    .development-heading{
+        font-size:1.1rem!important;
+        text-align:start!important;
+        margin-bottom:17px!important;
+    }
+    .development-content p{
+        font-size:0.81rem!important;
+        text-align:start!important;
+    }
+    .development-content{
+        padding:35px 20px!important;
+    }
+}
+
+@media screen and (min-width:768px) and (max-width:991.98px){
+    .product-development__card h5{
+        font-size:0.9rem!important;
+        letter-spacing:0.6px!important;
+        margin-bottom:15px!important;
+        line-height:1.7!important;
+    }
+    .product-development__text {
+        font-size:0.8rem!important;
+        font-weight:500!important;
+        line-height:1.8!important;
+        text-align:start!important;
+    }
+    .development-section-heading{
+        font-size:1.44rem!important;
+        line-height:1.7!important;
+        font-weight:600!important;
+        margin-bottom:40px!important;
+    }
+    .development-heading{
+        font-size:1.15rem!important;
+        font-weight:550!important;
+        margin-bottom:20px!important;
+        letter-spacing:0.6px!important;
+    }
+    .development-content p{
+        font-size:0.91rem!important;
+        font-weight:500!important;
+        text-align:start!important;
+    }
+    .development-content{
+        padding:35px 20px!important;
+        min-height:auto!important;
+    }
+}
+
+@media screen and (min-width:576px) and (max-width:767.98px){
+    .product-development__heading{
+        font-size:1.48rem;
+        font-weight: 600rem;
+        line-height: 1.7!important;
+    }
+    .product-development__description{
+        font-size: 0.9rem!important;
+        margin: 18px 0!important;
+        line-height:1.8!important;
+        span{
+            font-weight:500!important;
+        }
+    }
+    .product-development__image-container{
+        text-align:center!important;
+        position:relative!important;
+    }
+    .product-development__image--background{
+        width:230px!important;
+        height:340px!important;
+        position:absolute!important;
+        transform: translateX(-50%)!important;
+    }
+    .product-development__image{
+        width:240px!important;
+        height:350px!important;
+    }
+    .product-development__subheading{
+        font-size:1.25rem!important;
+        font-weight:600!important;
+        line-height:1.8!important;
+        color:func.theme-colors('secondary')!important;
+    }
+    .product-development__card {
+        padding:15px 18px!important;
+       box-shadow:0px 2px 4px rgba(0,0,0,0.2)!important;
+        align-items:center!important;
+        justify-content:center!important;
+    }
+    .product-development__card h5{
+        font-size:0.9rem!important;
+        letter-spacing:0.6px!important;
+        margin-bottom:15px!important;
+    }
+    .product-development__text {
+        font-size:0.8rem!important;
+        font-weight:500!important;
+        line-height:1.8!important;
+        text-align:center!important;
+    }
+    .product-development__icon{
+        margin-bottom:25px!important;
+    }
+    .development-section-heading{
+        font-size:1.3rem!important;
+        line-height:1.7!important;
+        font-weight:600!important;
+        margin-bottom:40px!important;
+    }
+    .development-heading{
+        font-size:1.1rem!important;
+        font-weight:550!important;
+        margin-bottom:20px!important;
+        letter-spacing:0.6px!important;
+    }
+    .development-content p{
+        font-size:0.88rem!important;
+        font-weight:500!important;
+        text-align:start!important;
+    }
+    .development-content{
+        padding:30px 15px!important;
+        min-height:auto!important;
+    }
+}
+
+
+@media screen and (max-width:575.98px){
+    .product-development{
+        padding:0px 0px!important;
+    }
+    .product-development__heading{
+        font-size:1.28rem;
+        font-weight: 600rem;
+        line-height: 1.7!important;
+    }
+    .product-development__description{
+        font-size: 0.85rem!important;
+        margin: 15px 0!important;
+        span{
+            font-weight:500!important;
+        }
+    }
+    .product-development__image-container{
+        text-align:center!important;
+    }
+    .product-development__image{
+        width:280px!important;
+        height:350px!important;
+        img{
+            width:100%!important;
+            height:100%!important;
+        }
+    }
+    .product-development__subheading{
+        font-size:1.09rem!important;
+        font-weight:650!important;
+        line-height:1.8!important;
+        color:func.theme-colors('blue')!important;
+    }
+    .product-development__card {
+        padding:13px 15px!important;
+       box-shadow:0px 2px 4px rgba(0,0,0,0.2)!important;
+        // align-items:center!important;
+        // justify-content:center!important;
+    }
+    .product-development__card h5{
+        font-size:0.9rem!important;
+        letter-spacing:0.6px!important;
+        margin-bottom:15px!important;
+    }
+    .product-development__text {
+        font-size:0.82rem!important;
+        font-weight:500!important;
+        line-height:1.8!important;
+    }
+    .product-development__icon{
+        margin-bottom:25px!important;
+    }
+    .development-section-heading{
+        font-size:1.15rem!important;
+        line-height:1.7!important;
+        font-weight:600!important;
+        margin-bottom:40px!important;
+    }
+    .development-heading{
+        font-size:0.9rem!important;
+        font-weight:550!important;
+        margin-bottom:20px!important;
+        letter-spacing:0.6px!important;
+    }
+    .development-content p{
+        font-size:0.8rem!important;
+        font-weight:500!important;
+        text-align:start!important;
+    }
+    .development-content{
+        padding:20px 10px 30px!important;
+       min-height:auto!important;
+    }
+    .development-column{
+        align-items: start!important;
+        text-align: start!important;
+    }
+    .development-column:hover .development-image {
+        transform: scale(1.006)!important;
+    }
+    .development-image {
+        width:98%!important;
+        object-fit:cover!important;
+    }
+}
+
+
+
+
+// /* Base Styling for Content and Image */
+// .development-column {
+//     padding: 0;
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     text-align: center;
+//     position: relative; /* Ensure absolute positioning works well */
+// }
+
+// /* Initial States of Images and Content */
+// .development-image {
+//     width: 99%;
+//     height: auto;
+//     object-fit: cover;
+//     transition: transform 0.5s ease-out;
+// }
+
+// .development-content {
+//     width: 100%;
+//     padding: 40px 30px;
+//     color: white;
+//     max-height: 320px;
+//     transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+// }
+
+// /* Background Color States */
+// .development-content--green,
+// .development-content--pink,
+// .development-content--blue {
+//     background: transparent;
+// }
+
+// /* Heading Styling */
+// .development-heading {
+//     font-size: 1.15rem;
+//     font-weight: 500;
+//     font-family: var.$font-open;
+//     margin-bottom: 30px;
+//     transition: color 0.5s ease-in-out;
+//     text-transform: uppercase;
+//     letter-spacing: 0.7px;
+// }
+
+// .development-content p {
+//     font-size: 0.85rem;
+//     line-height: 1.8;
+//     font-weight: 500;
+//     font-family: var.$font-open;
+//     color: func.theme-colors('dark-text');
+//     text-align: center;
+// }
+// /* Applying styles initially (no hover effect) */
+// .development-column {
+//     animation: appear 1s ease-in-out forwards; /* Animation for initial appearance */
+// }
+
+// .development-column:nth-child(1) {
+//     animation-delay: 0.3s; /* Delay for the first column */
+// }
+
+// .development-column:nth-child(2) {
+//     animation-delay: 0.5s; /* Delay for the second column */
+// }
+
+// .development-column:nth-child(3) {
+//     animation-delay: 0.7s; /* Delay for the third column */
+// }
+
+// /* Scaling Images */
+// .development-column .development-image {
+//     transform: scale(1);
+//     transition: transform 0.5s ease-out;
+//     animation: scaleProductImage 1s ease-in-out forwards; /* Animation for image scaling */
+// }
+
+// .development-column .development-content {
+//     background-color: func.theme-colors('light-bg');
+//     animation: ProductfadeIn 1s ease-in-out forwards; /* Background color transition */
+// }
+

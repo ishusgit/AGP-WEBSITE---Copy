@@ -1,0 +1,311 @@
+@use "../abstract/variable" as var;
+@use "../abstract/functions" as func;
+
+/*modal custom styling*/
+.modal-custom {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Modal Header */
+.modal-header {
+    border-bottom: 3px solid func.theme-colors('accent');
+    padding: 18px 20px;
+    background:func.theme-colors('pink')!important;
+}
+
+/* Modal Title */
+.modal-title {
+    font-size: 1.12rem;
+    font-weight:550;
+    font-family:var.$font-open;
+    text-transform:uppercase;
+    letter-spacing:0.4px;
+    color:func.theme-colors('accent')!important;
+}
+
+/* Close Button in Header */
+.btn-close-white {
+    filter: invert(1)!important;
+}
+
+
+/* Table Styling */
+.table .table-custom {
+    border-collapse: separate;
+    border-spacing: 0 10px; /* Adds spacing between rows */
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+/* Table Header */
+.table .table-custom thead tr {
+    font-size:0.9rem;
+    font-weight:500;
+    font-family:var.$font-open;
+    color:func.theme-colors('white')!important;
+    background:func.theme-colors('primary')!important;
+}
+
+/* Table Cells */
+.table .table-custom tbody tr {
+    background: rgb(255, 213, 220)!important;
+    border: 1px solid pink!important; /* Full border for each row */
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+/* Table Row Hover Effect */
+.table .table-custom tbody tr:hover {
+    background: func.theme-colors('pink')!important;
+    color: func.theme-colors('white')!important;
+}
+
+/* Table Cell Padding */
+.table-custom td {
+    // padding: 10px 15px;
+    text-align: center;
+    font-size:0.9rem;
+    font-weight:500;
+    font-family:var.$font-open;
+    color:func.theme-colors('secondary');
+    padding:15px 0px 15px;
+}
+
+.table-custom th{
+    font-size:1rem;
+    font-weight:500;
+    font-family:var.$font-open;
+    background:func.theme-colors('primary')!important;
+    color:func.theme-colors('white')!important;
+    padding:13px 0px 13px;
+    text-align:center;
+}
+
+/* Modal Footer */
+.modal-footer {
+    padding: 10px 20px;
+    border-top: 2px solid yellow;
+    background:func.theme-colors('pink')!important;
+}
+
+
+/*view machine modal*/
+/* Custom Modal Styling */
+.modal-customs {
+    border-radius: 10px;
+    overflow: hidden;
+    max-height: 95vh; /* Prevents scrolling */
+}
+#machineGalleryModal .modal-header{
+    background:func.theme-colors('accent')!important;
+}
+.btn-close-modal{
+    color:func.theme-colors('secondary')!important;
+    font-size:0.9rem!important;
+    font-weight:550!important;
+}
+/* Small Carousel with Fixed Height */
+#machineCarousel {
+    width: 100%;
+    max-height: 400px; /* Adjusts height */
+    overflow: hidden;
+    display: flex;
+    align-items: center; /* Centers images */
+    justify-content: center;
+    background:func.theme-colors('light-bg')!important;
+}
+
+/* Fix Image Size Without Stretching */
+.machine-img {
+    transform: scale(0.6)!important; /* ✅ Zoom out */
+    object-fit: contain;
+    display: block;
+    margin: auto;
+    transition: transform 0.3s ease-in-out; /* Smooth zoom effect */
+    opacity:1!important;
+}
+/* Machine Name Container */
+.machine-name #machineTitle {
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: func.theme-colors('primary')!important;
+    font-family:var.$font-open!important;
+    letter-spacing:0.5px!important;
+    margin-top: 5px!important;
+}
+.machine-name #machineSize {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: func.theme-colors('green')!important;
+    font-family:var.$font-open!important;
+    letter-spacing:0.5px!important;
+    margin-top: 13px;
+}
+
+/* Custom Carousel Controls */
+.custom-control {
+    width: 50px;
+    height: 50px;
+    background: func.theme-colors('accent')!important;
+    border-radius: 5px; /* Square button */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%; /* Middle alignment */
+    transform: translateY(-50%);
+}
+
+/* Positioning Controls */
+ .carousel-control-prev{
+    left: -10px; /* Moves outside image */
+}
+ .carousel-control-next {
+    right: -10px; /* Moves outside image */
+}
+
+/* Styling Control Icons */
+.custom-control span {
+    width: 25px;
+    height: 25px;
+}
+
+.carousel-inner-modal .carousel-item img{
+    filter:brightness(1)!important;
+}
+
+/* Carousel Indicators */
+.carousel-indicators button {
+    width: 10px!important;
+    height: 10px!important;
+    background-color:func.theme-colors('secondary')!important;
+    border-radius: 50%!important;
+    margin: 0px 10px!important;
+    opacity: 0.8;
+}
+.carousel-indicators .active {
+    background-color:func.theme-colors('primary')!important; /* Highlight active slide */
+    opacity: 1;
+}
+
+
+/* Responsive Design */
+@media screen and (max-width:767.98px){
+    #machineCarousel {
+        width: 100%;
+        max-height: 350px!important; 
+    }
+    .modal-title {
+        font-size: 0.9rem!important;
+    }
+    .modal-header{
+        padding: 18px 10px;
+    }
+    #machineGalleryModal .modal-title{
+        font-size:0.8rem!important;
+        font-size:600!important;
+    } 
+    .btn-close-modal{
+        color:func.theme-colors('secondary')!important;
+        font-size:0.7rem!important;
+        font-weight:600!important;
+    }
+    /* Machine Name Container */
+.machine-name #machineTitle {
+    font-size: 0.92rem!important;
+    font-weight: 600!important;
+    text-transform: uppercase;
+    color: func.theme-colors('primary')!important;
+    font-family:var.$font-open!important;
+    letter-spacing:0.5px!important;
+    margin-top: 5px!important;
+}
+.machine-name #machineSize {
+    font-size: 0.73rem!important;
+    font-weight: 500!important;
+    color: func.theme-colors('green')!important;
+    font-family:var.$font-open!important;
+    letter-spacing:0.5px!important;
+    margin-top: 10px!important;
+}
+.custom-control {
+    width: 38px;
+    height: 38px;
+}
+    .table .table-custom thead tr{
+        font-size:0.8rem!important;
+    }
+    .table-custom td{
+        font-size:0.6rem!important;
+        padding:12px 0px 12px!important;
+    }
+    .table-custom th{
+        font-size:0.7rem!important;
+        padding:10px 5px 10px!important;
+    }
+    .modal-body{
+        padding-left:0.6rem!important;
+        padding-right:0.6rem!important;
+    }
+}
+@media screen and (min-width:768px) and (max-width:991.98px){
+    #machineCarousel {
+        width: 100%;
+        max-height: 380px!important; 
+    }
+    #machineGalleryModal .modal-title{
+        font-size:0.87rem!important;
+        font-size:600!important;
+    } 
+    .btn-close-modal{
+        color:func.theme-colors('secondary')!important;
+        font-size:0.8rem!important;
+        font-weight:600!important;
+    }
+    /* Machine Name Container */
+.machine-name #machineTitle {
+    font-size: 0.96rem!important;
+    font-weight: 600!important;
+    text-transform: uppercase;
+    color: func.theme-colors('primary')!important;
+    font-family:var.$font-open!important;
+    letter-spacing:0.5px!important;
+    margin-top: 5px!important;
+}
+.machine-name #machineSize {
+    font-size: 0.78rem!important;
+    font-weight: 500!important;
+    color: func.theme-colors('green')!important;
+    font-family:var.$font-open!important;
+    letter-spacing:0.5px!important;
+    margin-top: 10px!important;
+}
+.custom-control {
+    width: 42px;
+    height: 42px;
+}
+    .modal-title {
+        font-size: 0.98rem!important;
+    }
+    .modal-header{
+        padding: 18px 12px;
+    }
+    .table .table-custom thead tr{
+        font-size:0.86rem!important;
+    }
+    .table-custom td{
+        font-size:0.68rem!important;
+        padding:12px 0px 12px!important;
+    }
+    .table-custom th{
+        font-size:0.8rem!important;
+        padding:10px 5px 10px!important;
+    }
+    .modal-body{
+        padding-left:0.8rem!important;
+        padding-right:0.8rem!important;
+    }
+}

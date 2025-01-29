@@ -1,0 +1,308 @@
+@use "../abstract/variable" as var;
+@use "../abstract/functions" as func;
+
+.btn{
+    font-size:14px;
+    font-weight:600px;
+    padding:8px 15px!important;
+    border-radius:6px;
+    text-transform:uppercase;
+    border:none;
+    display:inline-block;
+    background:func.theme-colors('accent');
+    color:func.theme-colors('secondary')!important;
+    &:hover{
+        background:func.theme-colors('primary-hover')!important;
+        color:func.theme-colors('light-bg')!important;
+    }
+}
+
+.btn-primary{
+    @extend .btn;
+    font-size:15px;
+    font-weight:400px;
+    text-transform:capitalize;
+    background:func.theme-colors('primary');
+    color:func.theme-colors('white')!important;
+    &:hover{
+        background:func.theme-colors('orange')!important;
+    }
+}
+.btn-secondary{
+    @extend .btn;
+    @extend .btn-primary;
+    background:func.theme-colors('accent');
+    color:func.theme-colors('dark')!important;
+    &:hover{
+        background:func.theme-colors('primary')!important;
+    }
+}
+.btn-danger{
+    @extend .btn;
+    @extend .btn-primary;
+    background:func.theme-colors('orange');
+    color:func.theme-colors('light-bg');
+    &:hover{
+        background:func.theme-colors('primary')!important;
+    }
+}
+//who-we-are-about-us
+/* Overlay Button Container */
+.overlay-button {
+    position: absolute;
+    font-weight: 600;
+    font-size: 0.87rem;
+    font-family: var.$font-open;
+    padding: 8px 13px;
+    border-radius: 8px;
+    border: none;
+    color:func.theme-colors('secondary');
+    box-shadow: 0 4px 8px rgba(0,0,0,0.7);
+    cursor: pointer;
+    opacity: 0; /* Initially hidden */
+    transform: translateY(20px); /* Move slightly below */
+    transition: all 0.6s ease-out;
+}
+
+@media screen and (min-width:768px) and (max-width:991px){
+    .overlay-button {
+        font-size: 0.78rem!important;
+        padding: 7px 8px!important;
+    }
+    .button-desc{
+        font-size: 0.6rem!important;
+        letter-spacing:0.35px!important;
+    }
+}
+@media screen and (min-width:992px) and (max-width:1199px){
+    /* Button Positions */
+.button-1 { top: 15%; right: -35%; background-color: #fd5e5e; }
+.button-2 { bottom: 15%; left: -25%!important; background-color: #6bc4ff; }
+.button-3 { top: 35%; right: -30%; background-color: #f9a826; }
+.button-4 { bottom: 35%; left: -20%!important; background-color: #8bc34a; }
+}
+/* Button Descriptions */
+.button-desc {
+    display: block;
+    font-size: 0.7rem;
+    text-transform:uppercase;
+    letter-spacing:0.4px;
+    margin-top: 6px;
+    font-weight: 550;
+    font-family:var.$font-open;
+    color:func.theme-colors('white');
+}
+
+/* Active State for Animation */
+.animate .overlay-button {
+    opacity: 1;
+    transform: translateY(0);
+    transition: hover 0.5s ease-out;
+}
+
+.overlay-button:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+/* Button Positions */
+.button-1 { top: 15%; right: -35%; background-color: #fd5e5e; }
+.button-2 { bottom: 15%; left: -38%; background-color: #6bc4ff; }
+.button-3 { top: 35%; right: -30%; background-color: #f9a826; }
+.button-4 { bottom: 35%; left: -30%; background-color: #8bc34a; }
+
+/* Small Triangle Below Each Button */
+// .overlay-button::before,
+// .overlay-button::after {
+//     content: "";
+//     position: absolute;
+//     bottom: -10px;
+//     left: 50%;
+//     transform: translateX(-50%);
+//     border-style: solid;
+//     border-width: 8px 8px 0 8px; /* Small triangle shape */
+// }
+/* ⬇️ Down-Facing Triangles (Button 1 & Button 3) */
+.button-1::before,
+.button-3::before {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 70%;
+    transform: translateX(-50%);
+    border-style: solid;
+    border-width: 8px 8px 0 8px;
+}
+
+/* ◀️ Left-Facing Triangles (Button 2 & Button 4) */
+.button-2::before,
+.button-4::before {
+    content: "";
+    position: absolute;
+    left: -8px;
+    top: 70%;
+    transform: translateY(-50%);
+    border-style: solid;
+    border-width: 9px 0px 9px 9px;
+}
+
+.button-1::before { border-color: #ff6b6b transparent transparent transparent; }
+.button-2::before { border-color: #65c1ff transparent transparent transparent; }
+.button-3::before { border-color: #f9a826 transparent transparent transparent; }
+.button-4::before { border-color: #88c544 transparent transparent transparent; }
+
+//
+// .overlay-button {
+//     position: absolute;
+//     font-weight:400;
+//     font-size:14px;
+//     letter-spacing:1px;
+//     font-family:var.$font-open;
+//     padding:7px 10px;
+//     background-color: func.theme-colors('secondary-light');
+//     color: func.theme-colors('light-bg');
+//     border-radius: 5px;
+//     border:none;
+//     cursor: pointer;
+//     opacity: 0; /* Initially hidden */
+//       transform: translateY(20px); /* Move slightly below */
+//       transition: all 0.6s ease-out; /* Smooth transition */
+//   }
+
+//   /* Active State for Animation */
+//   .animate .overlay-button {
+//     opacity: 1;
+//     transform: translateY(0); /* Reset to original position */
+//     transition: hover 0.5s ease-out;
+//     &:hover {
+//         transform: scale(1.05);
+//         opacity: 0.9;
+//       }
+//   }
+
+//   /* Button Positions */
+//   .button-1 { top: 15%; right: -10%; transition-delay: 0.3s; }
+//   .button-2 { bottom: 15%; left: -20%; transition-delay: 0.6s; }
+//   .button-3 { top: 30%; right: -10%; transition-delay: 0.9s;}
+//   .button-4 { bottom: 30%; left: -20%; transition-delay: 1.2s;}
+
+
+  //services-card-button
+  .services-card__button{
+    font-size:0.85rem;
+    font-weight:500;
+    font-family:var.$font-open;
+    border-style: solid!important;
+    border-color: func.theme-colors('light-bg')!important;
+    border-width: 2px!important;
+    border-radius:5px;
+    padding:7px 15px;
+    color:func.theme-colors('light-bg')!important;
+    margin-top:5px;
+    transition: all 0.5s ease-out;
+    background:none!important;
+    &:hover{
+        background:func.theme-colors('primary-hover')!important;
+        color:func.theme-colors('light-bg')!important;
+        border-style:none!important;
+        border-width:none!important;
+        border-color:none!important;
+    }
+  }
+
+/* product development -Buttons */
+.product-development__buttons .btn {
+    padding: 10px 15px;
+    font-size: 0.83rem;
+    font-weight:550!important;
+    font-family:var.$font-open;
+    border-radius: 5px!important;
+    margin-right: 15px;
+    letter-spacing:0.7px;
+    margin-top:10px;
+    text-align:center;
+}
+.btn-product {
+    background:linear-gradient(135deg, #d72638 10%, #1e1e24 90%)!important;
+    color:func.theme-colors('light-bg')!important;
+    border: none;
+}
+
+.btn-product-outline-gradient {
+    border: 3px solid;
+    border-image: linear-gradient(135deg, #d72638 10%, #1e1e24 90%) 1!important;
+    color: func.theme-colors('primary');
+    background: transparent;
+    border-radius:5px!important;
+}
+.btn-product-outline-gradient:hover{
+    border-image: none!important;
+    background:func.theme-colors('pink')!important;
+    color:func.theme-colors('light-bg');
+    border:none;
+}
+
+.pde-btn{
+    background:linear-gradient(135deg, #d72638 10%, #1e1e24 90%)!important;
+    color:func.theme-colors('light-bg') ;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 0.95rem!important;
+    font-weight:500;
+    font-family:var.$font-open;
+    margin-top:25px;
+}
+
+//capabilities button-for tool room modal
+.capabilities__button{
+  @extend .pde-btn;
+  background:func.theme-colors('orange')!important;
+  text-transform:capitalize!important;
+  margin-top:15px!important;
+  color:func.theme-colors('light-bg')!important;
+  letter-spacing:0.2px!important;
+  font-weight:400!important;
+  &:hover{
+    background:func.theme-colors('green')!important;
+  }
+}
+
+.btn-secondary{
+    background:func.theme-colors('accent')!important;
+    font-size:0.88rem;
+    font-weight:500;
+    text-transform:uppercase;
+    font-family:var.$font-open;
+    letter-spacing:0.5px;
+    &:hover{
+        background:func.theme-colors('accent')!important;
+        color:func.theme-colors('white')!important;
+    }
+}
+
+  /*footer*/
+  .footer__column .footer__button{
+    font-size: 0.9rem;
+    font-weight: 500;
+    font-family: var.$font-open;
+    background: func.theme-colors('light-bg');
+    color: func.theme-colors('secondary');
+    padding: 0.5rem 1rem; /* Uniform padding */
+    border-radius: 5px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%; /* Ensures both buttons have the same width */
+    max-width: 250px; /* Set a max-width for better responsiveness */
+    margin: 1rem 0; /* Adds equal spacing between buttons */
+    border: none;
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.3);
+    white-space: nowrap; /* Prevents breaking into multiple lines */
+  }
+  .footer__button i {
+    font-size: 1.4rem; /* Ensures uniform icon size */
+    margin-right: 0.6rem; /* Consistent spacing for all icons */
+    display: flex;
+    align-items: center;
+}

@@ -1,0 +1,10 @@
+@use "../abstract/variable" as var;
+@use "../abstract/functions" as func;
+
+.who-we-are{
+     padding-top:50px;
+    // margin-bottom:0px!important;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}

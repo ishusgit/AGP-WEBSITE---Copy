@@ -1,0 +1,134 @@
+@use "../abstract/variable" as var;
+@use "../abstract/functions" as func;
+
+/* Section Styling */
+.services-process {
+    padding: 0px 0 70px!important;
+    background-color: func.theme-colors('white')!important;
+    box-shadow:0 8px 8px rgba(0,0,0,0.3);
+    // border:1px solid red;
+    /* Section Heading */
+   &__heading {
+    text-align: center;
+    font-size: 1.9rem;
+    font-weight: 600;
+    margin-bottom: 0px;
+    font-family:var.$font-open;
+    text-transform:uppercase;
+    letter-spacing:0.7px;
+}
+  /* Card Container */
+  &-card-container {
+    transition: all 0.6s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    /*default size**/
+    // flex: 1 1 30%; /* Initially, each card takes approx 30% width */
+    /* Expanded Card on Hover */
+    // &:hover {
+    //     flex: 1 1 40%; /* Expands to take 40% width */
+    // }
+    &:hover{
+        display:flex;
+        flex-flow:row nowrap!important;
+        width:500px!important;
+        height:250px!important;
+    }
+}
+ /* Services Card */
+&-card {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s ease-out;
+    cursor: pointer;
+    width: 100%;
+    height: auto;
+
+
+    /* Key Features Section (Initially Hidden) */
+    &__keyfeatures {
+    display: none;
+    width: 60%;
+    background: rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    }
+
+    /* Image Section */
+    &__image {
+    width: 100%;
+    overflow: hidden;
+    & img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+    }
+    /* Content Section */
+&__content {
+    padding: 20px 20px;
+    transition: opacity 0.3s ease-in-out;
+    background: linear-gradient(to bottom, #ffa806, #d79a01); /* Fenugreek */;
+    h3{
+        font-size:1.1rem;
+        font-weight:550;
+        text-transform:uppercase;
+        font-family:var.$font-open;
+        color:func.theme-colors('light-bg')!important;
+        margin-bottom:15px;
+    }
+    h5{
+        font-size:0.9rem;
+        font-weight:600;
+        line-height:1.7;
+        font-family:var.$font-open;
+        color:func.theme-colors('secondary')!important;
+        margin-bottom:5px;
+    }
+    p{
+        font-size:0.8rem;
+        font-weight:500;
+        line-height:1.7;
+        font-family:var.$font-open;
+        color:func.theme-colors('white')!important;
+    }
+}
+}
+}
+
+/* Card Transforms to Horizontal on Hover */
+.services-process-card-container:hover .services-process-card {
+    flex-direction: row;
+}
+
+/* Show Key Features on Hover */
+.services-process-card-container:hover .services-process-card__keyfeatures {
+    display: block;
+}
+
+/* Hide Content on Hover */
+.services-process-card-container:hover .services-process-card__content {
+    display: none;
+}
+
+/* Adjust Image Width in Horizontal Mode */
+.services-process-card-container:hover .services-process-card__image {
+    width: 40%;
+}
+
+/* Responsive Design */
+// @media (max-width: 992px) {
+//     .services-process-card-container {
+//         flex: 1 1 45%;
+//     }
+// }
+
+// @media (max-width: 768px) {
+//     .services-process-card-container {
+//         flex: 1 1 100%;
+//     }
+// }

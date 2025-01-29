@@ -1,0 +1,354 @@
+@use "../abstract/variable" as var;
+@use "../abstract/functions" as func;
+
+.navbar-brand{
+    width:auto!important;
+    height:80px;
+    img{
+        object-fit:cover!important;
+        width:100%;
+        height:100%;
+        text-align:start!important;
+    }
+}
+.bg-body-tertiary{
+    background:linear-gradient(135deg,#1e1e24 10%,#d72638 90%)!important;
+}
+
+/* Navbar toggler button with white background */
+.navbar-toggler {
+    background-color: func.theme-colors('light-bg'); /* White button */
+    border: 1px solid func.theme-colors('white'); /* Optional: White border */
+    padding: 8px; /* Adjust padding */
+}
+
+/* Styling the navbar-toggler-icon */
+.navbar-toggler-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 24px;
+}
+
+/* Creating three gradient bars */
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after,
+.navbar-toggler-icon span {
+    content: "";
+    display: block;
+    height: 3px; /* Thickness of each bar */
+    width: 100%;
+    border-radius:3px;
+    background:linear-gradient(135deg, #d72638 10%, #1e1e24 90%); /* Gradient effect */
+}
+
+/* Adjusting spacing for top and bottom bars */
+.navbar-toggler-icon::before {
+    margin-bottom: 6px;
+}
+
+.navbar-toggler-icon::after {
+    margin-top: 6px;
+}
+.nav-item{
+    margin-right:20px;
+}
+.nav-link{
+    font-size:14px;
+    font-weight:500;
+    text-transform:uppercase;
+    font-family:var.$font-poppins!important;
+    color:func.theme-colors('light-bg');
+    letter-spacing:1.02px;
+    transition:all 0.6s ease-in-out;
+    &.active{
+        color:func.theme-colors('accent')!important;
+    }
+    &:hover{
+        background:func.theme-colors('secondary')!important;
+        color:func.theme-colors('light-bg')!important;
+        border-radius:5px;
+        padding-left:15px !important;
+        padding-right:15px !important;
+        text-align:center;
+    }
+}
+
+/*media queries*/
+
+@media screen and (max-width:575.98px){
+    .nav-item{
+        margin:0px 25px 5px!important;
+    }
+    .nav-link:hover{
+        text-align:start;
+        background:func.theme-colors('secondary')!important;
+        color:func.theme-colors('light-bg')!important;
+        border-radius:5px;
+        padding-left:15px !important;
+        padding-right:15px !important;
+    }
+    .contact-btn{
+        width:75%!important;
+    }
+}
+@media screen and (min-width:576px) and (max-width:767.98px){
+    .nav-item{
+        margin:0px 20px 5px!important;
+    }
+   .nav-link:hover{
+        text-align:start!important;
+        background:func.theme-colors('secondary')!important;
+        color:func.theme-colors('light-bg')!important;
+        border-radius:5px;
+        padding-left:15px !important;
+        padding-right:15px !important;
+    }
+    .contact-btn{
+        width:65%!important;
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 991.98px) {
+    .navbar-nav {
+        width: auto!important; /* Prevent full-width expansion */
+    }
+
+    .navbar-nav .nav-item {
+        width: 68%!important; /* Each nav-item takes only as much space as its content */
+        margin:0 25px 9px!important;
+    }
+
+    .nav-link{
+        display: inline-block!important; /* Ensures background applies properly */
+        padding: 8px 12px; /* Adds padding for better appearance */
+        transition: all 0.3s ease-in-out; /* Smooth transition */
+        border-radius: 5px; /* Optional */
+    }
+
+    .nav-link:hover{
+        text-align:start!important;
+        background:func.theme-colors('secondary')!important;
+        color:func.theme-colors('light-bg')!important;
+        border-radius:5px;
+        padding-left:15px !important;
+        padding-right:15px !important;
+    }
+    .contact-btn{
+        width:55%!important;
+    }
+}
+@media screen and (min-width:992px) and (max-width:1199.98px){
+    .nav-item{
+        margin-right:5px!important;
+    }
+    .nav-link{
+        letter-spacing:1px!important;
+    }
+}
+// /*portrait mode*/
+// @media screen and (max-aspect-ratio: 1/1) {
+//     .navbar-nav {
+//         flex-direction: column !important; /* Stacks items in portrait mode */
+//         text-align: center;
+//     }
+//     .nav-item {
+//         margin: 5px 0 !important; /* Adjust spacing */
+//     }
+//     .nav-link {
+//         padding: 10px 15px !important;
+//         font-size: 14px !important;
+//     }
+//     .contact-btn {
+//         width: 80% !important; /* Adjust contact button width */
+//     }
+// }
+
+
+// @media screen and (max-width:991.98px){
+//     .body-no-scroll {
+//         overflow: hidden!important;
+//         height: 100%!important;
+//     }
+    
+//     /* Set navbar to take full screen height */
+//     .navbar-open {
+//         height: 100vh!important;
+//         position: fixed!important;
+//         top: 0!important;
+//         left: 0!important;
+//         right: 0!important;
+//         z-index: 1050; /* Ensure it stays above all other content */
+//     }
+    
+//     /* Ensure the background is locked and covers the body when navbar is open */
+//     .navbar-open + .body-overlay {
+//         position: fixed!important;
+//         top: 0!important;
+//         left: 0!important;
+//         right: 0!important;
+//         bottom: 0!important;
+//         background-color: rgba(0, 0, 0, 0.5)!important; /* Slight overlay */
+//         z-index: 1040; /* Just below the navbar */
+//     }
+//     /* Initial hidden state for the navbar */
+//     .navbar-collapse {
+//         position: fixed!important;
+//         top: 0!important;
+//         left: -100px; /* Initially hidden off the left side */
+//         width: 280px; /* Adjust the width as needed */
+//         height: 100%;
+//         background:linear-gradient(135deg, #d72638 10%, #1e1e24 90%)!important; /* or whatever background color */
+//         transition: all 0.3s ease; /* Smooth transition */
+//         z-index: 1070!important;
+//     }
+//     /* When the navbar is shown */
+//     .navbar-collapse.show {
+//         left: 0; /* Slide in from the left */
+//     }
+    
+//     /* For the navbar-toggler icon */
+//     .navbar-toggler {
+//         z-index: 1060; /* Ensure the toggler stays above the navbar */
+//     }
+    
+//     /* Adjust navbar-toggler-icon */
+//     .navbar-toggler-icon {
+//         display: flex;
+//         flex-direction: column;
+//         justify-content: space-between;
+//         width: 30px;
+//         height: 24px;
+//     }
+    
+//     .navbar-toggler-icon::before,
+//     .navbar-toggler-icon::after,
+//     .navbar-toggler-icon span {
+//         content: "";
+//         display: block;
+//         height: 3px;
+//         width: 100%;
+//         background: linear-gradient(135deg, #d72638 10%, #1e1e24 90%);
+//     }
+    
+//     .navbar-toggler-icon::before {
+//         margin-bottom: 6px;
+//     }
+    
+//     .navbar-toggler-icon::after {
+//         margin-top: 6px;
+//     }
+//     /* Close icon inside the navbar */
+//     .close-icon {
+//         position: absolute;
+//         top: 10px;
+//         right: 20px;
+//         background: none;
+//         border: none;
+//         color: white;
+//         font-size: 30px;
+//         cursor: pointer;
+//         display: none; /* Initially hidden */
+//     }
+    
+//     /* Show the close icon when the navbar is open */
+//     .navbar-collapse.show .close-icon {
+//         display: block;
+//     }
+    
+//     /* Optional: Change color on hover */
+//     .close-icon:hover {
+//         color: #ccc;
+//     }
+    
+// }
+
+
+/* LG devices (992px and up) */
+// @media (min-width: 992px) {
+//     .close-icon {
+//         display:none!important;
+//     }
+//     .navbar-collapse {
+//         position: static; /* Navbar should be static on larger screens */
+//         width: auto; /* Allow navbar to take natural width */
+//         height: auto; /* Allow navbar content to flow naturally */
+//         background: none!important; /* Remove the background color if unnecessary */
+//     }
+
+//     .navbar-toggler {
+//         display: none; /* Hide the toggler on larger screens */
+//     }
+// }
+
+// //* ✅ Navbar Toggler Icon (Hamburger by default) */
+// .navbar-toggler-icon {
+//     width: 30px;
+//     height: 30px;
+//     position: relative;
+//     background-color: #333; /* Change to your navbar color */
+//     transition: transform 0.3s ease;
+// }
+
+// .navbar-toggler-icon::before, .navbar-toggler-icon::after, .navbar-toggler-icon span {
+//     content: '';
+//     position: absolute;
+//     width: 100%;
+//     height: 4px;
+//     background-color: #333; /* Change to your navbar color */
+//     transition: transform 0.3s ease;
+// }
+
+// .navbar-toggler-icon::before,
+// .navbar-toggler-icon::after,
+// .navbar-toggler-icon span {
+//     content: '';
+//     position: absolute;
+//     width: 100%;
+//     height: 4px;
+//     background-color: #333; /* Customize the color */
+//     transition: transform 0.3s ease;
+// }
+
+// .navbar-toggler-icon::before {
+//     top: 0;
+// }
+
+// .navbar-toggler-icon::after {
+//     bottom: 0;
+// }
+
+// .navbar-toggler-icon span {
+//     top: 50%;
+//     transform: translateY(-50%)!important;
+// }
+
+// /* Hamburger to Cross (Close) Icon */
+// .navbar-toggler-icon.opened {
+//     transform: rotate(45deg)!important; /* Rotates the icon to form part of the cross */
+// }
+
+// .navbar-toggler-icon.opened::before {
+//     top: 50%; /* Move the top bar to the center */
+//     transform: translateY(-50%) rotate(90deg)!important; /* Rotate the top bar to form the top part of the cross */
+// }
+
+// .navbar-toggler-icon.opened::after {
+//     bottom: 50%; /* Move the bottom bar to the center */
+//     transform: translateY(50%) rotate(90deg)!important; /* Rotate the bottom bar to form the bottom part of the cross */
+// }
+
+// .navbar-toggler-icon.opened span {
+//     opacity: 0; /* Hide the middle bar */
+// }
+
+// /* ✅ Hide dropdown menus initially */
+// .dropdown-menu {
+//     display: none;
+// }
+
+// /* ✅ Show dropdown when open */
+// .dropdown-menu.show {
+//     display: block;
+// }
+

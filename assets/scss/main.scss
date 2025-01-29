@@ -1,0 +1,39 @@
+//layout folder
+
+@import "./layouts/header";
+@import "./layouts/home-carousel";
+@import "./layouts/services-carousel";
+@import "./layouts/product-development-carousel";
+@import "./layouts/footer";
+
+// base folder
+@import "./base/reset";
+@import "./base/global";
+
+// utility folder
+@import "./utilities/animations";
+
+// components folder
+@import "./components/buttons";
+@import "./components/navbar";
+@import "./components/dropdown";
+@import "./components/modal";
+@import "./components/breadcrumbs";
+
+//pages folder
+@import "./pages/about-us";
+@import "./pages/services";
+@import "./pages/product-development";
+@import "./pages/who-we-are";
+@import "./pages/business-model";
+@import "./pages/our-strategy";
+@import "./pages/your-business-partner";
+@import "./pages/why-choosen-us";
+@import "./pages/services_process";
+@import "./pages/capabilities";
+
+
+//abstract folder
+@import "./abstract/variable";
+@import "./abstract/functions";
+@import "./abstract/mixins"

@@ -1,0 +1,202 @@
+@use "../abstract/variable" as var;
+@use "../abstract/functions" as func;
+
+/* styles.css */
+
+.carousel-item {
+    height: 600px;
+    position: relative;
+  }
+  
+  .carousel-image-wrapper {
+    position: relative;
+    height: 100%;
+    width: 100%;
+  }
+  
+  .carousel-item img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    filter: brightness(0.5); /* Apply transparency to image */
+  }
+  
+  .carousel-caption {
+    position: absolute;
+    bottom: 40px;
+    left:-100%;
+    color: func.theme-colors('light-bg');
+    text-align: left;
+    z-index: 10;
+    width:600px;
+    max-width:550px;
+    // min-width:290px;
+    height:auto;
+    transition: left 0.5s ease-in-out; /* Smooth transition when moving in */
+
+    h3{
+        font-size:2rem;
+        font-weight:600;
+        font-family:var.$font-primary!important;
+        color:func.theme-colors('light-bg');
+        text-transform:uppercase;
+        letter-spacing:1px;
+        text-wrap:nowrap!important;
+    }
+    p{
+        font-size:0.95rem;
+        font-weight:400;
+        font-family:var.$font-roboto!important;
+        line-height:1.8;
+        letter-spacing:1.0px;
+        color:func.theme-colors('dark-light')!important;
+    }
+  }
+  
+  .carousel-item.active .carousel-caption {
+    left: 80px;
+  }
+
+  .carousel-control-prev, .carousel-control-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+  }
+  
+  .carousel-control-prev-icon, .carousel-control-next-icon {
+    background-color: func.theme-colors('accent'); /*  background for buttons */
+    border-radius: 50%;
+    color:white;
+  }
+  
+  .carousel-control-prev-icon, .carousel-control-next-icon {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .carousel-control-prev-icon {
+    background-image: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2224%22 height=%2224%22 fill=%22none%22 viewBox=%220 0 24 24%22 stroke=%22currentColor%22%3E%3Cpath stroke-linecap=%22round%22 stroke-linejoin=%22round%22 stroke-width=%222%22 d=%22M15 19l-7-7 7-7%22/%3E%3C/svg%3E');
+  }
+  
+  .carousel-control-next-icon {
+    background-image: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2224%22 height=%2224%22 fill=%22none%22 viewBox=%220 0 24 24%22 stroke=%22currentColor%22%3E%3Cpath stroke-linecap=%22round%22 stroke-linejoin=%22round%22 stroke-width=%222%22 d=%22M9 5l7 7-7 7%22/%3E%3C/svg%3E');
+  }
+
+ /*media queries*/
+ /* Responsive Styles */
+@media (max-width: 575.98px) {  /* XS: Phones */
+  .carousel-item {
+      height: 85vh; /* Reduce height */
+  }
+
+  .carousel-caption {
+      width: 87%!important;
+      left: 0px;
+      bottom: 20px;
+      text-align: center;
+      margin-left:auto!important;
+      margin-right:auto!important;
+  }
+  .carousel-item.active .carousel-caption {
+    left: 15px;
+    margin-left:auto!important;
+    margin-right:auto!important;
+    text-align:center!important;
+  }
+  .carousel-caption h3 {
+      font-size: 1rem; /* Smaller text */
+  }
+
+  .carousel-caption p {
+      font-size: 0.8rem;
+      line-height: 1.4;
+      padding-left:5px;
+      padding-right:5px;
+  }
+  .carousel-control-prev {
+    left: 10px!important; /* Adjust as needed */
+  }
+  
+  .carousel-control-next {
+    right: 10px!important; /* Adjust as needed */
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {  /* SM: Small tablets */
+  .carousel-item {
+      height: 80vh; /* Adjust height */
+  }
+
+  .carousel-caption {
+      width: 80%;
+      left: 0px;
+      bottom: 30px;
+  }
+  .carousel-item.active .carousel-caption {
+    left: 15px;
+    margin-left:auto!important;
+    margin-right:auto!important;
+    text-align:center!important;
+  }
+
+  .carousel-caption h3 {
+      font-size: 1.2rem; /* Medium text */
+  }
+
+  .carousel-caption p {
+      font-size: 0.9rem;
+      line-height: 1.6;
+  }
+  .carousel-control-prev {
+    left: 10px!important; /* Adjust as needed */
+  }
+  
+  .carousel-control-next {
+    right: 10px!important; /* Adjust as needed */
+  }
+  
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {  /* MD: Tablets */
+  .carousel-item {
+      height:85vh; 
+  }
+
+  .carousel-caption {
+      width: 70%;
+      left: 50px;
+      bottom:30px!important;
+  }
+  .carousel-item.active .carousel-caption {
+    left: 50px;
+    margin-left:auto!important;
+    margin-right:auto!important;
+    text-align:center!important;
+  }
+  .carousel-caption h3 {
+      font-size: 1.5rem;
+  }
+
+  .carousel-caption p {
+      font-size: 1rem;
+  }
+}
+
+/* Smaller Icons for Small Screens */
+@media (max-width: 767.98px) {  
+  .carousel-control-prev-icon, 
+  .carousel-control-next-icon {
+      width: 25px; /* Reduce size */
+      height: 25px;
+      background-size: contain; /* Ensure proper fitting */
+  }
+
+  .carousel-control-prev, 
+  .carousel-control-next {
+      width: 30px; /* Reduce button size */
+      height: 30px;
+  }
+}
+
+  

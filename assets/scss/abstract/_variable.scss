@@ -1,0 +1,48 @@
+//variables
+
+//font-family
+$font-primary:"Montserrat", serif;
+$font-poppins:"Poppins", sans-serif;
+$font-roboto:"Roboto", sans-serif;
+$font-open: "Open Sans", serif;
+$font-third:"Mukta Malar", sans-serif;
+$font-lobster: "Lobster", sans-serif;
+$font-cursive: "Cedarville Cursive", cursive;
+$font-size:62.5%;
+
+
+//colors
+
+$theme-colors:(
+ 'primary':#d72638,
+ 'primary-light':#d72638b5,
+ 'secondary':#1e1e24,
+ 'primary-hover':rgb(255, 73, 103),
+ 'dark-text':#25282c,
+ 'dark-light':#f5f5f6b5,
+ 'light-bg':#f4f4f4,
+ 'accent':#ffd400,
+ 'dark':black,
+ 'secondary-light':rgba(0,0,0,0.8),
+ 'orange':rgb(255, 60, 0),
+ 'green':rgb(0, 108, 0),
+ 'blue':rgb(0, 0, 109),
+ 'pink':rgb(245, 0, 94),
+ 'white':white,
+);
+
+
+//spacing
+//spacers
+$spacer: 1rem !default;
+$spacers: (
+  0: 0,
+  1: $spacer * .25,
+  2: $spacer * .5,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 3,
+  6: $spacer * 6,
+  7: $spacer * 8,
+  8: $spacer * 12,
+) !default;

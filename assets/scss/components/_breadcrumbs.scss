@@ -1,0 +1,68 @@
+@use "../abstract/variable" as var;
+@use "../abstract/functions" as func;
+
+/*services page breadcrumbs*/
+.services-hero__breadcrumbs {
+    position: relative;
+    z-index: 2;
+    margin-bottom: 20px;
+    font-size: 0.83rem;
+    font-family:var.$font-open!important;
+    // font-weight:300!important;   
+}
+
+/* Change color of the "Services" breadcrumb item */
+.services-hero__breadcrumbs .breadcrumb-item.active {
+    color: func.theme-colors('accent')!important; /* Change to your preferred color */
+    // font-weight: 300!important; /* Optional: Make it bold */
+}
+
+/* Change separator from '/' to '>' */
+.breadcrumb-item + .breadcrumb-item::before {
+    content: " > "; /* Replace default '/' with '>' */
+    color: func.theme-colors('accent'); /* Adjust color if needed */
+    // font-weight: 300!important; /* Optional: Make it bold */
+}
+
+/*product development braedcrumbs*/
+.product-development-hero__breadcrumbs{
+    position: relative;
+    z-index: 2;
+    margin-bottom: 20px;
+    font-size: 0.83rem;
+    font-family:var.$font-open!important;
+    font-weight:500!important;
+}
+
+/* Change color of the "product development" breadcrumb item */
+.breadcrumb-item.active {
+    color: func.theme-colors('accent')!important; /* Change to your preferred color */
+}
+
+/* Change separator from '/' to '>' */
+.breadcrumb-item + .breadcrumb-item::before {
+    content: " > "; /* Replace default '/' with '>' */
+    color: func.theme-colors('accent'); /* Adjust color if needed */
+}
+
+
+/*media queries*/
+@media screen and (max-width:767px){
+    .product-development-hero__breadcrumbs{
+        font-size: 0.7rem!important;
+        font-family:var.$font-open!important;
+        font-weight:500!important;
+        text-wrap:nowrap!important;
+        // border:1px solid red;
+        line-height:1.7!important;
+        margin-bottom: 0px!important;
+    }
+    .services-hero__breadcrumbs{
+        font-size: 0.7rem!important;
+        font-family:var.$font-open!important;
+        font-weight:500!important;
+        text-wrap:nowrap!important;
+        margin-bottom: 0px!important;
+        // border:1px solid red;
+    }
+}

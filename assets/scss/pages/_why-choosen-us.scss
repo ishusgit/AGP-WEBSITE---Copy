@@ -1,0 +1,237 @@
+@use "../abstract/variable" as var;
+@use "../abstract/functions" as func;
+
+.why-choosen-us {
+    background:rgb(255, 243, 243);
+    margin-top:100px!important;
+    padding:80px auto 80px!important;
+    &-section-heading {
+        font-size: 1.8rem;
+        font-weight: 700;
+        font-family:var.$font-open!important;
+        color:func.theme-colors('secondary');
+        margin-bottom:25px;
+        // text-shadow: 1px 1px 2px #d72638!important;
+      }
+      &-description {
+        font-size: 0.9rem!important;
+        font-weight: 500!important;
+        font-family:var.$font-open!important;
+        line-height:1.8!important;
+        color:func.theme-colors('dark-text')!important;
+        margin-top:30px;
+      }  
+    }
+      /* Card Styling */
+.card-box {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  display: flex!important;
+  flex-direction: column!important;
+  justify-content: center!important;
+  align-items: center!important;
+  transition: transform 0.3s ease-in-out;
+}
+
+.card-box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Background color overlay with opacity */
+  z-index: 1;
+  transition: background 0.3s ease-in-out;
+}
+
+.card-box:hover::before {
+  background: rgba(163, 0, 0, 0.877); /* Darker overlay on hover */
+}
+
+/* Card Content */
+.card-content {
+  // position: absolute;
+  z-index: 2;
+  color: white;
+  transform: scale(0.9);
+  transition: transform 0.3s ease-in-out;
+  display:flex;
+  flex-direction:column!important;
+  justify-content:center!important;
+  align-items:center!important;
+  // padding:0rem 30px!important;
+  position: relative;
+  // z-index: 2;
+  text-align: center!important;
+  // color: white;
+  // // opacity: 0!important;
+  // transform: scale(0.8)!important;
+  // transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out!important;
+}
+
+ .card-content h4 {
+  font-size: 1.08rem!important;
+  font-weight: 700!important;
+  margin-bottom: 10px;
+  text-align:center!important;
+  font-family:var.$font-open!important;
+  color:func.theme-colors('light-bg');
+  text-transform:uppercase;
+  letter-spacing:1px;
+  transform: translateY(42px);
+}
+.card-content p {
+    font-size: 0.83rem!important;
+    font-weight:500;
+    line-height:1.8;
+    font-family:var.$font-open!important;
+    color:func.theme-colors('light-bg');
+    // padding:40px 20px!important;
+  opacity: 0!important; /* Initially hidden */
+  border-radius: 5px;
+  transition: opacity 0.4s ease-in-out!important;
+  }
+
+
+
+.card-box:hover .card-content p {
+  font-size: 0.83rem!important;
+  font-weight:500;
+  line-height:1.8;
+  padding:20px 16px;
+  margin:15px!important;
+  font-family:var.$font-open!important;
+  // display: block; /* Show description on hover */
+  color:func.theme-colors('light-bg')!important;
+  background-image: inherit!important; /* Inherits the card's background image */
+  // background-color: rgba(0, 0, 0, 0.7); /* Adds a dark overlay */
+  opacity: 1!important; /* Make visible */
+  transform: scale(0.9)!important; /* Scale animation */
+  border:1px solid white;
+  background-size: cover!important;
+  background-position: center!important;
+  background-repeat: no-repeat!important;
+  background-blend-mode: overlay!important;
+}
+.card-box:hover .card-content h4{
+  display:none!important;
+}
+
+/* Hover Scale Animation for Description */
+.card-box:hover .card-content {
+  transform: scale(1.1); /* Scale up slightly on hover */
+}
+
+/* Border Animation */
+.card-box::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  transform: scaleX(0);
+  // transform-origin: left;
+  transition: transform 0.3s ease-in-out;
+}
+
+.card-box:hover::after {
+  transform: scaleX(1); /* Border animates from bottom to top on hover */
+  height: 100%; /* Covers full card on hover */
+}
+
+/*media queries*/
+/*xs device*/
+@media screen and (max-width:575.98px){
+  .why-choosen-us{
+    margin-top:80px!important;
+  }
+  .why-choosen-us-section-heading{
+      font-size:1.5rem!important;
+      margin-bottom:20px;
+  }
+  .why-choosen-us-description{
+    font-size: 0.82rem!important;
+  }
+  .card-content h4{
+    font-size:1rem!important;
+    letter-spacing:0.4px!important;
+    transform: translateY(42px)!important;
+ }
+}
+/*sm device*/
+@media screen and  (min-width:576px) and (max-width:767.98px){
+  .why-choosen-us{
+    margin-top:80px!important;
+  }
+  .why-choosen-us-section-heading{
+      font-size:1.56rem!important;
+      margin-bottom:20px;
+  }
+  .why-choosen-us-description{
+    font-size: 0.86rem!important;
+    line-height:1.8!important;
+  }
+  .card-content h4{
+    font-size:1.025rem!important;
+    letter-spacing:0.4px!important;
+    transform: translateY(38px)!important;
+ }
+}
+
+/*md device*/
+@media screen and  (min-width:768px) and (max-width:991.98px){
+  .why-choosen-us{
+    margin-top:80px!important;
+  }
+  .why-choosen-us-section-heading{
+      font-size:1.66rem!important;
+      margin-bottom:20px;
+  }
+  .why-choosen-us-description{
+    font-size: 0.88rem!important;
+    line-height:1.8!important;
+  }
+  .card-content h4{
+    font-size:1.05rem!important;
+    letter-spacing:0.4px!important;
+    transform: translateY(40px)!important;
+ }
+}
+/*lg device*/
+@media screen and  (min-width:992px) and (max-width:1199.98px){
+  .why-choosen-us{
+    margin-top:85px!important;
+  }
+  .why-choosen-us-section-heading{
+      font-size:1.7rem!important;
+      margin-bottom:20px;
+  }
+  .why-choosen-us-description{
+    font-size: 0.85rem!important;
+    line-height:1.8!important;
+  }
+  .card-content h4{
+    font-size:1.05rem!important;
+    letter-spacing:0.4px!important;
+    transform: translateY(38px)!important;
+    line-height:1.7!important;
+ }
+ .card-box:hover .card-content p{
+  padding:20px 6px!important;
+ }
+}
+
+
+
+  
+  
+  
