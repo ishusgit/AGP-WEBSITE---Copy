@@ -75,7 +75,25 @@
     }
 }
 
+.navbar-toggler {
+    margin-left: auto!important; /* Pushes to the right */
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center!important; /* Centers logo and toggler */
+    padding: 10px 15px;
+}
+
+
 /*media queries*/
+@media (max-width: 393px) {
+    .navbar-brand img {
+        width: 60px; /* Adjust size */
+        height: auto;
+    }
+}
+
 
 @media screen and (max-width:575.98px){
     .nav-item{
