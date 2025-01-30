@@ -1214,6 +1214,7 @@ li {
   .navbar-brand img {
     width: auto; /* Adjust size */
     height: 80px;
+    max-height: 100%;
   }
 }
 @media screen and (max-width: 575.98px) {
