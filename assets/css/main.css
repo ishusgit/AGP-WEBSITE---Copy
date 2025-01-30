@@ -4059,6 +4059,34 @@ p {
 }
 
 /* Responsive Design */
+@media screen and (max-width: 575.98px) {
+  .services-process__heading {
+    font-size: 1.15rem !important;
+    line-height: 1.7 !important;
+    font-weight: 600 !important;
+    margin-bottom: 40px !important;
+  }
+  .services-process {
+    margin-top: 0px !important;
+    padding-top: 0px !important;
+  }
+}
+@media screen and (min-width: 576px) and (max-width: 767.98px) {
+  .services-process__heading {
+    font-size: 1.3rem !important;
+    line-height: 1.7 !important;
+    font-weight: 600 !important;
+    margin-bottom: 40px !important;
+  }
+}
+@media screen and (min-widthy: 768px) and (max-width: 991.98px) {
+  .services-process__heading {
+    font-size: 1.44rem !important;
+    line-height: 1.7 !important;
+    font-weight: 600 !important;
+    margin-bottom: 40px !important;
+  }
+}
 /* Capabilities Section */
 .capabilities {
   padding: 0px 0px !important;
