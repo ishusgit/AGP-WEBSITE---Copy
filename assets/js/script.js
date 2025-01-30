@@ -458,73 +458,238 @@ document.addEventListener("DOMContentLoaded", function () {
       // });
       
      //business model-carousel with auto carousel moving
-      document.addEventListener("DOMContentLoaded", () => {
-        const carouselInner = document.querySelector(".business-model-section-carousel-container-carousel-inner");
-        const prevBtn = document.querySelector(".prev-btn");
-        const nextBtn = document.querySelector(".next-btn");
+    //   document.addEventListener("DOMContentLoaded", () => {
+    //     const carouselInner = document.querySelector(".business-model-section-carousel-container-carousel-inner");
+    //     const prevBtn = document.querySelector(".prev-btn");
+    //     const nextBtn = document.querySelector(".next-btn");
     
-        const cardWidth = 220; // Fixed width of a card
-        const visibleCards = 3; // Number of visible cards
-        const totalCards = document.querySelectorAll(".card").length;
+    //     const cardWidth = 220; // Fixed width of a card
+    //     const visibleCards = 3; // Number of visible cards
+    //     const totalCards = document.querySelectorAll(".card").length;
     
-        let currentIndex = 0; // Start with the first card
-        let autoSlideInterval;
+    //     let currentIndex = 0; // Start with the first card
+    //     let autoSlideInterval;
     
-        function updateCarousel() {
-            const offset = -(currentIndex * cardWidth);
-            carouselInner.style.transform = `translateX(${offset}px)`;
-        }
+    //     function updateCarousel() {
+    //         const offset = -(currentIndex * cardWidth);
+    //         carouselInner.style.transform = `translateX(${offset}px)`;
+    //     }
     
-        function nextSlide() {
-            if (currentIndex < totalCards - visibleCards) {
-                currentIndex++;
-            } else {
-                currentIndex = 0; // Loop back to the start
-            }
-            updateCarousel();
-        }
+    //     function nextSlide() {
+    //         if (currentIndex < totalCards - visibleCards) {
+    //             currentIndex++;
+    //         } else {
+    //             currentIndex = 0; // Loop back to the start
+    //         }
+    //         updateCarousel();
+    //     }
     
-        function prevSlide() {
-            if (currentIndex > 0) {
-                currentIndex--;
-            } else {
-                currentIndex = totalCards - visibleCards; // Loop to the last set of visible cards
-            }
-            updateCarousel();
-        }
+    //     function prevSlide() {
+    //         if (currentIndex > 0) {
+    //             currentIndex--;
+    //         } else {
+    //             currentIndex = totalCards - visibleCards; // Loop to the last set of visible cards
+    //         }
+    //         updateCarousel();
+    //     }
     
-        // Auto-slide function
-        function startAutoSlide() {
-            autoSlideInterval = setInterval(nextSlide, 3700); // Change slide every 3.7 seconds
-        }
+    //     // Auto-slide function
+    //     function startAutoSlide() {
+    //         autoSlideInterval = setInterval(nextSlide, 3700); // Change slide every 3.7 seconds
+    //     }
     
-        // Stop auto-slide on hover
-        function stopAutoSlide() {
-            clearInterval(autoSlideInterval);
-        }
+    //     // Stop auto-slide on hover
+    //     function stopAutoSlide() {
+    //         clearInterval(autoSlideInterval);
+    //     }
     
-        // Event Listeners for Next/Prev Buttons
-        nextBtn.addEventListener("click", () => {
-            nextSlide();
-            stopAutoSlide(); // Reset auto-slide timer when manually navigating
-            startAutoSlide();
-        });
+    //     // Event Listeners for Next/Prev Buttons
+    //     nextBtn.addEventListener("click", () => {
+    //         nextSlide();
+    //         stopAutoSlide(); // Reset auto-slide timer when manually navigating
+    //         startAutoSlide();
+    //     });
     
-        prevBtn.addEventListener("click", () => {
-            prevSlide();
-            stopAutoSlide();
-            startAutoSlide();
-        });
+    //     prevBtn.addEventListener("click", () => {
+    //         prevSlide();
+    //         stopAutoSlide();
+    //         startAutoSlide();
+    //     });
     
-        // Pause auto-slide when hovering over the carousel
-        carouselInner.addEventListener("mouseenter", stopAutoSlide);
-        carouselInner.addEventListener("mouseleave", startAutoSlide);
+    //     // Pause auto-slide when hovering over the carousel
+    //     carouselInner.addEventListener("mouseenter", stopAutoSlide);
+    //     carouselInner.addEventListener("mouseleave", startAutoSlide);
     
-        // Initialize carousel position & start auto-sliding
-        updateCarousel();
-        startAutoSlide();
-    });
+    //     // Initialize carousel position & start auto-sliding
+    //     updateCarousel();
+    //     startAutoSlide();
+    // });
+   
+    /*dummy bsuiness carousel script**/
+//     document.addEventListener("DOMContentLoaded", () => {
+//         const carouselInner = document.querySelector(".business-model-section-carousel-container-carousel-inner");
+//         const prevBtn = document.querySelector(".prev-btn");
+//         const nextBtn = document.querySelector(".next-btn");
+        
+//         const totalCards = document.querySelectorAll(".card").length;
+// const cards = document.querySelectorAll('.card');
+// let cardWidth = cards[0].offsetWidth + 10; // Card width + margin
+// let totalWidth = cardWidth * cards.length;
 
+// carouselInner.style.width = totalWidth + 'px'; // Set the total width for the carousel inner container
+
+// let index = 0;
+
+// function moveCarousel() {
+//     if (index < cards.length - 1) {
+//         index++;
+//     } else {
+//         index = 0; // Reset to first card
+//     }
+
+//     carouselInner.style.transform = `translateX(-${index * cardWidth}px)`;
+// }
+
+// setInterval(moveCarousel, 3000); // Moves the carousel every 3 seconds
+
+    
+//         let currentIndex = 0; // Start with the first card
+//         let autoSlideInterval;
+        
+//         function getCardWidth() {
+//             // Dynamically adjust card width based on screen size and visible cards
+//             const width = window.innerWidth;
+    
+//             if (width < 576) {
+//                 return 220; // xs
+//             } else if (width < 768) {
+//                 return 220; // sm
+//             } else if (width < 992) {
+//                 return 220; // md
+//             } else if (width < 1200) {
+//                 return 220; // lg
+//             } else {
+//                 return 220; // xl
+//             }
+//         }
+    
+//         function updateCarousel() {
+//             const cardWidth = getCardWidth();
+//             const offset = -(currentIndex * cardWidth);
+//             carouselInner.style.transform = `translateX(${offset}px)`;
+//         }
+    
+//         function nextSlide() {
+//             const totalCards = document.querySelectorAll(".card").length;
+//             const visibleCards = Math.floor(window.innerWidth / getCardWidth());
+//             if (currentIndex < totalCards - visibleCards) {
+//                 currentIndex++;
+//             } else {
+//                 currentIndex = 0; // Loop back to the start
+//             }
+//             updateCarousel();
+//         }
+    
+//         function prevSlide() {
+//             const visibleCards = Math.floor(window.innerWidth / getCardWidth());
+//             if (currentIndex > 0) {
+//                 currentIndex--;
+//             } else {
+//                 currentIndex = totalCards - visibleCards; // Loop to the last set of visible cards
+//             }
+//             updateCarousel();
+//         }
+    
+//         // Auto-slide function
+//         function startAutoSlide() {
+//             autoSlideInterval = setInterval(nextSlide, 3700); // Change slide every 3.7 seconds
+//         }
+    
+//         // Stop auto-slide on hover
+//         function stopAutoSlide() {
+//             clearInterval(autoSlideInterval);
+//         }
+    
+//         // Event Listeners for Next/Prev Buttons
+//         nextBtn.addEventListener("click", () => {
+//             nextSlide();
+//             stopAutoSlide(); // Reset auto-slide timer when manually navigating
+//             startAutoSlide();
+//         });
+    
+//         prevBtn.addEventListener("click", () => {
+//             prevSlide();
+//             stopAutoSlide();
+//             startAutoSlide();
+//         });
+    
+//         // Pause auto-slide when hovering over the carousel
+//         carouselInner.addEventListener("mouseenter", stopAutoSlide);
+//         carouselInner.addEventListener("mouseleave", startAutoSlide);
+    
+//         // Initialize carousel position & start auto-sliding
+//         updateCarousel();
+//         startAutoSlide();
+//     });
+    
+document.addEventListener("DOMContentLoaded", function () {
+    const carouselInner = document.querySelector(".business-model-section-carousel-container-carousel-inner");
+    const prevBtn = document.querySelector(".prev-btn");
+    const nextBtn = document.querySelector(".next-btn");
+  
+    function getCardWidth() {
+      return document.querySelector(".card").offsetWidth + 30; // Include left/right margins
+    }
+  
+    let scrollAmount = 0;
+    let autoPlayInterval;
+  
+    function moveNext() {
+      let cardWidth = getCardWidth();
+      if (scrollAmount < carouselInner.scrollWidth - carouselInner.clientWidth) {
+        scrollAmount += cardWidth;
+      } else {
+        scrollAmount = 0; // Loop back to start
+      }
+      carouselInner.style.transform = `translateX(-${scrollAmount}px)`;
+    }
+  
+    function movePrev() {
+      let cardWidth = getCardWidth();
+      if (scrollAmount > 0) {
+        scrollAmount -= cardWidth;
+      } else {
+        scrollAmount = carouselInner.scrollWidth - carouselInner.clientWidth;
+      }
+      carouselInner.style.transform = `translateX(-${scrollAmount}px)`;
+    }
+  
+    function startAutoPlay() {
+      autoPlayInterval = setInterval(moveNext, 3000);
+    }
+  
+    function stopAutoPlay() {
+      clearInterval(autoPlayInterval);
+    }
+  
+    prevBtn.addEventListener("click", function () {
+      stopAutoPlay();
+      movePrev();
+      startAutoPlay();
+    });
+  
+    nextBtn.addEventListener("click", function () {
+      stopAutoPlay();
+      moveNext();
+      startAutoPlay();
+    });
+  
+    window.addEventListener("resize", () => { scrollAmount = 0; });
+  
+    startAutoPlay();
+  });
+  
+  
 
     /*tool room machines*/
     document.addEventListener("DOMContentLoaded", function () {

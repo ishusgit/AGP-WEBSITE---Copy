@@ -1690,6 +1690,46 @@ li {
     margin-top: 20px !important;
   }
 }
+/* Pagination Styling */
+.pagination {
+  border-radius: 5px;
+  padding-left: 0;
+}
+
+.page-link {
+  color: #1e1e24; /* Default color for page number */
+}
+
+/* Active Page Styling */
+.page-item.active .page-link {
+  background-color: yellow !important;
+  color: #1e1e24 !important;
+  border: none;
+}
+
+/* Next and Previous Button Styling (Arrow buttons) */
+.page-link.next-arrow, .page-link.right-arrow {
+  background: linear-gradient(135deg, #d72638 10%, #1e1e24 90%) !important;
+  color: white;
+  border-radius: 5px !important;
+}
+
+.page-item .page-link:hover {
+  background: #d72638 !important;
+  color: white;
+}
+
+/* Hover Effect on Page Links */
+.page-item .page-link:hover {
+  background: #d72638 !important;
+  color: #1e1e24;
+}
+
+/* Removing Bootstrap default focus outline */
+.page-link:focus {
+  outline: none !important;
+}
+
 .who-we-are__small-heading {
   font-family: "Open Sans", serif;
   font-size: 0.88rem;
@@ -3231,6 +3271,8 @@ p {
     font-size: 0.815rem;
   }
 }
+/*new code*/
+/* Business Model Carousel Styling */
 .our-strategy {
   background: #fbf9f9;
   margin-top: 200px !important;

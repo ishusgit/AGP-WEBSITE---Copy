@@ -1,0 +1,41 @@
+@use "../abstract/variable" as var;
+@use "../abstract/functions" as func;
+
+/* Pagination Styling */
+.pagination {
+    border-radius: 5px;
+    padding-left: 0;
+}
+.page-link {
+    color: func.theme-colors('secondary'); /* Default color for page number */
+}
+
+/* Active Page Styling */
+.page-item.active .page-link {
+    background-color: yellow !important;
+    color: func.theme-colors('secondary') !important;
+    border:none;
+}
+
+/* Next and Previous Button Styling (Arrow buttons) */
+.page-link.next-arrow, .page-link.right-arrow {
+    background: linear-gradient(135deg, #d72638 10%, #1e1e24 90%)!important;
+    color: func.theme-colors('white');
+    border-radius:5px!important;
+}
+
+.page-item .page-link:hover {
+    background:func.theme-colors('primary')!important;
+    color: func.theme-colors('white');
+}
+
+/* Hover Effect on Page Links */
+.page-item .page-link:hover {
+    background:func.theme-colors('primary')!important;
+    color: func.theme-colors('secondary');
+}
+
+/* Removing Bootstrap default focus outline */
+.page-link:focus {
+    outline: none!important;
+}
