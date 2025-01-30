@@ -91,19 +91,18 @@
   }
 
   .carousel-caption {
-      width: 87%!important;
-      left: 0px;
-      bottom: 20px;
-      text-align: center;
-      margin-left:auto!important;
-      margin-right:auto!important;
-  }
-  .carousel-item.active .carousel-caption {
-    left: 15px;
-    margin-left:auto!important;
-    margin-right:auto!important;
-    text-align:center!important;
-  }
+    width: 88%;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%); /* Perfectly centers the caption */
+    text-align: center !important;
+}
+
+.carousel-item.active .carousel-caption {
+    left: 50%;
+    transform: translateX(-50%);
+}
   .carousel-caption h3 {
       font-size: 1rem; /* Smaller text */
   }
@@ -111,8 +110,7 @@
   .carousel-caption p {
       font-size: 0.8rem;
       line-height: 1.4;
-      padding-left:5px;
-      padding-right:5px;
+      text-align:center!important;
   }
   .carousel-control-prev {
     left: 10px!important; /* Adjust as needed */
@@ -129,17 +127,19 @@
   }
 
   .carousel-caption {
-      width: 80%;
-      left: 0px;
-      bottom: 30px;
-  }
-  .carousel-item.active .carousel-caption {
-    left: 15px;
-    margin-left:auto!important;
-    margin-right:auto!important;
-    text-align:center!important;
-  }
+    width: 85%;
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%); /* Perfectly centers the caption */
+    text-align: center !important;
+}
 
+.carousel-item.active .carousel-caption {
+    left: 50%;
+    transform: translateX(-50%);
+}
+ 
   .carousel-caption h3 {
       font-size: 1.2rem; /* Medium text */
   }
@@ -147,6 +147,7 @@
   .carousel-caption p {
       font-size: 0.9rem;
       line-height: 1.6;
+      text-align:center!important;
   }
   .carousel-control-prev {
     left: 10px!important; /* Adjust as needed */
@@ -164,15 +165,12 @@
   }
 
   .carousel-caption {
-      width: 70%;
-      left: 50px;
-      bottom:30px!important;
+      width: 90%;
+      bottom:40px!important;
+      text-align:start!important;
   }
   .carousel-item.active .carousel-caption {
-    left: 50px;
-    margin-left:auto!important;
-    margin-right:auto!important;
-    text-align:center!important;
+    text-align:start!important;
   }
   .carousel-caption h3 {
       font-size: 1.5rem;
