@@ -60,7 +60,7 @@
               Product Development
             </a>
             <ul class="dropdown-menu mt-1 mb-2 mt-lg-0 mb-lg-0">
-              <li><a class="dropdown-item" href="product_development.html#product-development__details">Development Process</a></li>
+              <li><a class="dropdown-item" href="product_development.html">Development Process</a></li>
               <li><a class="dropdown-item" href="product_development.html#product-development__details">Value Engineering</a></li>
               <li><a class="dropdown-item" href="product_development.html#product-development__details">Tooling Solutions</a></li>
             </ul>
@@ -75,8 +75,8 @@
   <!-- ========== Start banner with content ========== -->
  <section id="service-banner-content" class="service-banner-content pt-5">
      <section class="services-hero">
-          <div class="services-hero__overlay">
-              <div class="container py-5 py-md-0">
+          <div class="services-hero__overlay fade-section">
+              <div class="container py-5">
                   <!-- Breadcrumbs inside the overlay -->
                   <nav aria-label="breadcrumb" class="services-hero__breadcrumbs pb-5 mt-lg-0">
                       <ol class="breadcrumb">
@@ -96,7 +96,7 @@
       <section class="services-content px-1 px-sm-2 px-xl-5 mx-3 mx-xl-5 mx-sm-4 mx-md-3">
           <div class="container px-xl-5 px-1 px-sm-2">
               <div class="services-content__row row align-items-center">
-                  <div class="services-content__column col-md-4 offset-md-1">
+                  <div class="services-content__column services-content__column-texts  col-md-4 offset-md-1">
                       <h3 class="services-content__heading text-gradient">
                           <span class="services-content__line"></span>Our Services
                       </h3>
@@ -446,6 +446,122 @@
  <!-- <button type="button" class="btn btn-primary fs-6 mt-3 me-0 ms-sm-2" data-bs-toggle="modal" data-bs-target="#machineGalleryModal">
  View Our Machines
  </button> -->
+
+ <!-- Tool Room Machineries Modal -->
+<div class="modal fade" id="toolMachineryModal" tabindex="-1" aria-labelledby="toolMachineryModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content modal-custom">
+          
+          <!-- Modal Header -->
+          <div class="modal-header  text-white">
+              <h5 class="modal-title" id="toolMachineryModalLabel">🔧 Tool Room Machineries</h5>
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+
+          <!-- Modal Body (Table) -->
+          <div class="modal-body">
+              <div class="table-responsive">
+                  <table class="table table-hover table-custom">
+                      <thead class="table-dark">
+                          <tr>
+                              <th scope="col">Machine Name</th>
+                              <th scope="col">Specification</th>
+                              <th scope="col">Make</th>
+                              <th scope="col">Quantity</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <tr><td>VMC</td><td>XYZ-820X510X510 MM</td><td>MACPOWER</td><td>1</td></tr>
+                          <tr><td>EDM</td><td>550X350 MM</td><td>CHMER</td><td>1</td></tr>
+                          <tr><td>Surface Grinding</td><td>450X150 MM</td><td>SEEDTEC</td><td>1</td></tr>
+                          <tr><td>Surface Grinding</td><td>1000X500 MM</td><td>DAHANUKAR</td><td>1</td></tr>
+                          <tr><td>Screw Compressor</td><td>7.5 HP</td><td>FRANK</td><td>1</td></tr>
+                          <tr><td>Stacker (Heavy)</td><td>2 TON</td><td>HUNTER, CHINA</td><td>1</td></tr>
+                      </tbody>
+                  </table>
+              </div>
+          </div>
+
+          <!-- Modal Footer -->
+          <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+          
+      </div>
+  </div>
+</div>
+
+<!-- View Our Machines Modal -->
+<div class="modal fade" id="machineGalleryModal" tabindex="-1" aria-labelledby="machineGalleryModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content modal-customs">
+          
+          <!-- Modal Header -->
+          <div class="modal-header text-gradient">
+              <h5 class="modal-title" style="background: linear-gradient(to right, red, #1e1e24)!important;
+              -webkit-background-clip: text!important;
+              color: transparent!important;
+              font-size: 1rem;
+              font-weight: 600;" id="machineGalleryModalLabel">Aggressive Polymer-Our Machines</h5>
+              <button type="button" class="btn-close btn-close-modal" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+
+          <!-- Modal Body (Carousel with Fixed Height) -->
+          <div class="modal-body d-flex flex-column align-items-center">
+              <div id="machineCarousel" class="carousel slide" data-bs-ride="carousel">
+                  
+                  <!-- Carousel Indicators -->
+                  <div class="carousel-indicators">
+                      <button type="button" data-bs-target="#machineCarousel" data-bs-slide-to="0" class="active"></button>
+                      <button type="button" data-bs-target="#machineCarousel" data-bs-slide-to="1"></button>
+                      <button type="button" data-bs-target="#machineCarousel" data-bs-slide-to="2"></button>
+                      <button type="button" data-bs-target="#machineCarousel" data-bs-slide-to="3"></button>
+                  </div>
+
+                  <div class="carousel-inner carousel-inner-modal ">
+                      <!-- Image 1 -->
+                      <div class="carousel-item active">
+                          <img src="./assets/images/view-machine-1.jpeg" class="machine-img" alt="Machine 1">
+                      </div>
+                      <!-- Image 2 -->
+                      <div class="carousel-item">
+                          <img src="./assets/images/view-machine-2.jpeg" class="machine-img" alt="Machine 2">
+                      </div>
+                      <!-- Image 3 -->
+                      <div class="carousel-item">
+                          <img src="./assets/images/view-machine-3.jpeg" class="machine-img" alt="Machine 3">
+                      </div>
+                      <!-- Image 4 -->
+                      <div class="carousel-item">
+                          <img src="./assets/images/view-machine-4.jpeg" class="machine-img" alt="Machine 4">
+                      </div>
+                  </div>
+
+                  <!-- Carousel Controls (Middle Left & Right in Square Boxes) -->
+                  <button class="carousel-control-prev carousel-control-prev-modal custom-control" type="button" data-bs-target="#machineCarousel" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon"></span>
+                  </button>
+                  <button class="carousel-control-next carousel-control-next-modal custom-control" type="button" data-bs-target="#machineCarousel" data-bs-slide="next">
+                      <span class="carousel-control-next-icon"></span>
+                  </button>
+              </div>
+
+              <!-- Machine Name Container -->
+              <div class="machine-name text-center mt-2">
+                  <h5 id="machineTitle"> EDM MACHINE- CHMER </h5>
+                    <h6 id="machineSize">                 
+                      BED SIZE— 550X350 MM</h6>
+              </div>
+          </div>
+
+          <!-- Modal Footer -->
+          <!-- <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div> -->
+          
+      </div>
+  </div>
+</div>
    
 <!-- ========== Start contact-us footer ========== -->
 <footer id="footer" class="footer mt-0 fade-section">

@@ -513,6 +513,10 @@ body, html {
   width: 100% !important;
 }
 
+body {
+  padding-top: env(safe-area-inset-top) !important;
+}
+
 /* General class for sections you want to animate */
 .fade-section {
   opacity: 0; /* Initially hidden */
@@ -720,6 +724,54 @@ li {
   animation: autoHoverEffect 6s infinite alternate ease-in-out 9s;
 }
 
+/*sevices page content and paragraph animate from left and right to its oringinal position*/
+/* Initial state */
+.services-content__column-texts, .services-content__paragraph {
+  opacity: 0; /* Elements are hidden initially */
+  transform: translateX(0); /* Position is reset */
+}
+
+/* Animation for text (left to right) */
+@keyframes textSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%); /* Start off-screen from the left */
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0); /* Move to its original position */
+  }
+}
+/* Animation for image (right to left) */
+@keyframes imageSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(100%); /* Start off-screen from the right */
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0); /* Move to its original position */
+  }
+}
+/* Apply animation to elements */
+.services-content__column-texts {
+  animation: textSlideIn 1s ease-out forwards; /* Slide from left */
+}
+
+.services-content__paragraph {
+  animation: imageSlideIn 1s ease-out forwards; /* Slide from right */
+}
+
+/* Optional: Add delay for a staggered effect */
+.services-content__column-texts {
+  animation-delay: 0.2s;
+}
+
+.services-content__paragraph {
+  animation-delay: 0.2s;
+}
+
+/*product development page content and image animate from left and right to its oringinal position*/
 /* Initial state */
 .product-development__text, .product-development__image-container {
   opacity: 0; /* Elements are hidden initially */
@@ -3884,7 +3936,7 @@ p {
   text-align: center;
   font-size: 1.9rem;
   font-weight: 600;
-  margin-bottom: 0px;
+  margin-bottom: 50px;
   font-family: "Open Sans", serif;
   text-transform: uppercase;
   letter-spacing: 0.7px;
