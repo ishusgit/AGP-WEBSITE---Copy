@@ -39,3 +39,12 @@
 .page-link:focus {
     outline: none!important;
 }
+
+@media (max-width: 991.98px) {
+    .pagination {
+        font-size: 0.8rem; /* Smaller text for pagination */
+    }
+    .pagination .page-link {
+        padding: 0.25rem 0.75rem; /* Adjust padding for smaller pagination */
+    }
+}

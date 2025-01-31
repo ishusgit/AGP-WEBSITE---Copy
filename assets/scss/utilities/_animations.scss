@@ -41,83 +41,83 @@
 }
 
 /*product-development cards animation*/
-@keyframes autoHoverEffect {
-  0%, 100% { transform: scale(1); }  
-  50% { transform: scale(1.02); } /* Same Scaling Effect as Hover */
-}
+// @keyframes autoHoverEffect {
+//   0%, 100% { transform: scale(1); }  
+//   50% { transform: scale(1.02); } /* Same Scaling Effect as Hover */
+// }
 
-@keyframes autoBackgroundGreen {
-  0%, 100% { 
-    background: transparent; 
-    color: func.theme-colors('white')!important; /* Text color will remain white even when the background is transparent */
-  } 
-  50% { 
-    background: func.theme-colors('green'); 
-    color: func.theme-colors('white')!important; /* Text color stays white when background is green */
-  }
-}
+// @keyframes autoBackgroundGreen {
+//   0%, 100% { 
+//     background: transparent; 
+//     color: func.theme-colors('white')!important; /* Text color will remain white even when the background is transparent */
+//   } 
+//   50% { 
+//     background: func.theme-colors('green'); 
+//     color: func.theme-colors('white')!important; /* Text color stays white when background is green */
+//   }
+// }
 
-@keyframes autoBackgroundPink {
-  0%, 100% { 
-    background: transparent; 
-    color: func.theme-colors('white')!important; /* Text color remains white */
-  } 
-  50% { 
-    background: func.theme-colors('pink'); 
-    color: func.theme-colors('white')!important; /* Text color stays white when background is pink */
-  }
-}
+// @keyframes autoBackgroundPink {
+//   0%, 100% { 
+//     background: transparent; 
+//     color: func.theme-colors('white')!important; /* Text color remains white */
+//   } 
+//   50% { 
+//     background: func.theme-colors('pink'); 
+//     color: func.theme-colors('white')!important; /* Text color stays white when background is pink */
+//   }
+// }
 
-@keyframes autoBackgroundBlue {
-  0%, 100% { 
-    background: transparent; 
-    color: func.theme-colors('white')!important; /* Text color remains white */
-  } 
-  50% { 
-    background: func.theme-colors('blue'); 
-    color: func.theme-colors('white')!important; /* Text color stays white when background is blue */
-  }
-}
+// @keyframes autoBackgroundBlue {
+//   0%, 100% { 
+//     background: transparent; 
+//     color: func.theme-colors('white')!important; /* Text color remains white */
+//   } 
+//   50% { 
+//     background: func.theme-colors('blue'); 
+//     color: func.theme-colors('white')!important; /* Text color stays white when background is blue */
+//   }
+// }
 
 
-/* Apply Animations to Each Development Card with Delay */
-.development-column:nth-child(1) {
-  animation: autoHoverEffect 6s infinite alternate ease-in-out 3s; /* Delay 1s */
-}
+// /* Apply Animations to Each Development Card with Delay */
+// .development-column:nth-child(1) {
+//   animation: autoHoverEffect 6s infinite alternate ease-in-out 3s; /* Delay 1s */
+// }
 
-.development-column:nth-child(2) {
-  animation: autoHoverEffect 6s infinite alternate ease-in-out 6s; /* Delay 2s */
-}
+// .development-column:nth-child(2) {
+//   animation: autoHoverEffect 6s infinite alternate ease-in-out 6s; /* Delay 2s */
+// }
 
-.development-column:nth-child(3) {
-  animation: autoHoverEffect 6s infinite alternate ease-in-out 9s; /* Delay 3s */
-}
+// .development-column:nth-child(3) {
+//   animation: autoHoverEffect 6s infinite alternate ease-in-out 9s; /* Delay 3s */
+// }
 
-/* Background and Text Color Change */
-.development-column .development-content--green {
-  animation: autoBackgroundGreen 6s infinite alternate ease-in-out 3s;
-}
+// /* Background and Text Color Change */
+// .development-column .development-content--green {
+//   animation: autoBackgroundGreen 6s infinite alternate ease-in-out 3s;
+// }
 
-.development-column .development-content--pink {
-  animation: autoBackgroundPink 6s infinite alternate ease-in-out 6s;
-}
+// .development-column .development-content--pink {
+//   animation: autoBackgroundPink 6s infinite alternate ease-in-out 6s;
+// }
 
-.development-column .development-content--blue {
-  animation: autoBackgroundBlue 6s infinite alternate ease-in-out 9s;
-}
+// .development-column .development-content--blue {
+//   animation: autoBackgroundBlue 6s infinite alternate ease-in-out 9s;
+// }
 
-/* Scale Image Automatically */
-.development-image:nth-child(1) {
-  animation: autoHoverEffect 6s infinite alternate ease-in-out 3s;
-}
+// /* Scale Image Automatically */
+// .development-image:nth-child(1) {
+//   animation: autoHoverEffect 6s infinite alternate ease-in-out 3s;
+// }
 
-.development-image:nth-child(2) {
-  animation: autoHoverEffect 6s infinite alternate ease-in-out 6s;
-}
+// .development-image:nth-child(2) {
+//   animation: autoHoverEffect 6s infinite alternate ease-in-out 6s;
+// }
 
-.development-image:nth-child(3) {
-  animation: autoHoverEffect 6s infinite alternate ease-in-out 9s;
-}
+// .development-image:nth-child(3) {
+//   animation: autoHoverEffect 6s infinite alternate ease-in-out 9s;
+// }
 
 
 

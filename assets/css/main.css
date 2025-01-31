@@ -506,7 +506,7 @@ body, html {
   scroll-behavior: auto !important;
   scroll-padding-top: 90px !important;
   overflow-x: hidden !important;
-  width: 100% !important;
+  width: 100%;
 }
 
 body {
@@ -643,83 +643,6 @@ li {
   }
 }
 /*product-development cards animation*/
-@keyframes autoHoverEffect {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.02);
-  } /* Same Scaling Effect as Hover */
-}
-@keyframes autoBackgroundGreen {
-  0%, 100% {
-    background: transparent;
-    color: white !important; /* Text color will remain white even when the background is transparent */
-  }
-  50% {
-    background: rgb(0, 108, 0);
-    color: white !important; /* Text color stays white when background is green */
-  }
-}
-@keyframes autoBackgroundPink {
-  0%, 100% {
-    background: transparent;
-    color: white !important; /* Text color remains white */
-  }
-  50% {
-    background: rgb(245, 0, 94);
-    color: white !important; /* Text color stays white when background is pink */
-  }
-}
-@keyframes autoBackgroundBlue {
-  0%, 100% {
-    background: transparent;
-    color: white !important; /* Text color remains white */
-  }
-  50% {
-    background: rgb(0, 0, 109);
-    color: white !important; /* Text color stays white when background is blue */
-  }
-}
-/* Apply Animations to Each Development Card with Delay */
-.development-column:nth-child(1) {
-  animation: autoHoverEffect 6s infinite alternate ease-in-out 3s; /* Delay 1s */
-}
-
-.development-column:nth-child(2) {
-  animation: autoHoverEffect 6s infinite alternate ease-in-out 6s; /* Delay 2s */
-}
-
-.development-column:nth-child(3) {
-  animation: autoHoverEffect 6s infinite alternate ease-in-out 9s; /* Delay 3s */
-}
-
-/* Background and Text Color Change */
-.development-column .development-content--green {
-  animation: autoBackgroundGreen 6s infinite alternate ease-in-out 3s;
-}
-
-.development-column .development-content--pink {
-  animation: autoBackgroundPink 6s infinite alternate ease-in-out 6s;
-}
-
-.development-column .development-content--blue {
-  animation: autoBackgroundBlue 6s infinite alternate ease-in-out 9s;
-}
-
-/* Scale Image Automatically */
-.development-image:nth-child(1) {
-  animation: autoHoverEffect 6s infinite alternate ease-in-out 3s;
-}
-
-.development-image:nth-child(2) {
-  animation: autoHoverEffect 6s infinite alternate ease-in-out 6s;
-}
-
-.development-image:nth-child(3) {
-  animation: autoHoverEffect 6s infinite alternate ease-in-out 9s;
-}
-
 /*sevices page content and paragraph animate from left and right to its oringinal position*/
 /* Initial state */
 .services-content__column-texts, .services-content__paragraph {
@@ -1730,6 +1653,14 @@ li {
   outline: none !important;
 }
 
+@media (max-width: 991.98px) {
+  .pagination {
+    font-size: 0.8rem; /* Smaller text for pagination */
+  }
+  .pagination .page-link {
+    padding: 0.25rem 0.75rem; /* Adjust padding for smaller pagination */
+  }
+}
 .who-we-are__small-heading {
   font-family: "Open Sans", serif;
   font-size: 0.88rem;
