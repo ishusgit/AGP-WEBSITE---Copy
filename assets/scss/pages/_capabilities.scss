@@ -178,6 +178,7 @@
         right: auto;
         top: auto;
         transform: none;
+        height:200px!important;
     }
 
     .capabilities__image-container {
@@ -308,6 +309,11 @@
             font-size:0.8rem!important;
             text-align:start!important;
         }
+    }
+}
+@media screen and (min-width:807px) and (max-width:991.98px){
+    .capabilities__card--overlay {
+        height:180px!important;
     }
 }
 /*lg device*/
