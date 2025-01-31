@@ -4452,7 +4452,7 @@ p {
   color: #1e1e24;
 }
 .reverse-engineering-before-text p {
-  font-size: 0.91rem;
+  font-size: 0.89rem;
   font-weight: 600 !important;
   font-family: "Open Sans", serif;
   line-height: 1.8;
@@ -4552,13 +4552,13 @@ p {
     flex-direction: column;
     align-items: center !important;
     justify-content: center !important;
-    gap: 20px !important;
+    gap: 10px !important;
   }
   .reverse-engineering-before-text h3 {
     font-size: 0.88rem !important;
   }
   .reverse-engineering-before-text p {
-    font-size: 0.8rem !important;
+    font-size: 0.79rem !important;
   }
   .reverse-engineering-before-text h6 {
     font-size: 0.92rem !important;
@@ -4567,24 +4567,36 @@ p {
     font-size: 0.88rem !important;
   }
   .reverse-engineering-after-text p {
-    font-size: 0.8rem !important;
+    font-size: 0.79rem !important;
   }
   .reverse-engineering-after-text h6 {
     font-size: 0.92rem !important;
   }
   .reverse-engineering-before-text {
     max-width: 85%;
-    margin-top: 50px;
+    text-align: center !important;
+    border: 1px solid red;
+    padding-bottom: 0 !important;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
   .reverse-engineering-after-content {
     flex-direction: column;
     align-items: center !important;
     justify-content: center !important;
-    gap: 20px !important;
+    gap: 10px !important;
   }
   .reverse-engineering-after-text {
     max-width: 85%;
-    margin-top: 50px;
+    text-align: center !important;
+    border: 1px solid red;
+    padding-bottom: 0 !important;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
   .reverse-engineering-prev {
     left: -30px;
@@ -4598,11 +4610,13 @@ p {
     line-height: 1.8 !important;
   }
   .reverse-engineering-carousel {
-    height: 700px !important;
+    height: auto !important;
+    padding: 30px 0px !important;
   }
   .reverse-engineering-before-image, .reverse-engineering-after-image {
-    max-width: 50% !important;
+    max-width: 45% !important;
     height: auto;
+    margin-top: 30px;
   }
   .reverse-engineering-before-image img, .reverse-engineering-after-image img {
     width: 100%;
@@ -4611,6 +4625,9 @@ p {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     filter: none !important;
     object-fit: contain;
+  }
+  .reverse-engineering-before-image {
+    max-width: 50% !important;
   }
 }
 @media screen and (min-width: 576px) and (max-width: 767.98px) {
@@ -4650,7 +4667,7 @@ p {
     font-size: 0.9rem;
   }
   .reverse-engineering-before-text p {
-    font-size: 0.8rem;
+    font-size: 0.79rem;
   }
   .reverse-engineering-before-text h6 {
     font-size: 1rem;
@@ -4659,7 +4676,7 @@ p {
     font-size: 0.9rem;
   }
   .reverse-engineering-after-text p {
-    font-size: 0.8rem;
+    font-size: 0.79rem;
   }
   .reverse-engineering-after-text h6 {
     font-size: 1rem;

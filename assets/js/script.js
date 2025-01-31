@@ -187,6 +187,16 @@ observer.observe(section);
 });
 
 
+/*reverse engineering - autoplay carousel */
+document.addEventListener("DOMContentLoaded", function() {
+    let carousel = document.querySelector("#reverseEngineeringCarousel");
+    let carouselInstance = new bootstrap.Carousel(carousel, {
+      interval: 6000, // Auto-slide every 5 seconds
+      wrap: true
+    });
+  });
+  
+
 
    
       
