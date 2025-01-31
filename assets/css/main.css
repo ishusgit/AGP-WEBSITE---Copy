@@ -4377,7 +4377,7 @@ p {
 }
 /* Section Styling */
 .reverse-engineering-carousel-section {
-  padding: 50px 0;
+  padding: 20px 0;
   text-align: center;
   align-items: center;
   justify-content: center;
@@ -4406,19 +4406,6 @@ p {
   justify-content: center !important;
 }
 
-/* Align carousel-item content (image and text) both horizontally and vertically center */
-.reverse-engineering-carousel .carousel-item {
-  display: flex !important;
-  align-items: center !important; /* Vertically center the content */
-  justify-content: center !important; /* Horizontally center the content */
-}
-
-#reverseEngineeringCarousel {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-}
-
 /* Slide Content */
 .reverse-engineering-before-content {
   display: flex !important;
@@ -4426,6 +4413,7 @@ p {
   justify-content: center !important;
   gap: 30px;
   text-align: left;
+  height: 100%;
 }
 
 .reverse-engineering-after-content {
@@ -4434,6 +4422,7 @@ p {
   justify-content: center !important;
   gap: 30px;
   text-align: left;
+  height: 100%;
 }
 
 /* Image Styling */
@@ -4455,7 +4444,7 @@ p {
   max-width: 50%;
 }
 .reverse-engineering-before-text h3 {
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 600 !important;
   font-family: "Open Sans", serif;
   text-transform: uppercase;
@@ -4463,7 +4452,7 @@ p {
   color: #1e1e24;
 }
 .reverse-engineering-before-text p {
-  font-size: 0.87rem;
+  font-size: 0.91rem;
   font-weight: 600 !important;
   font-family: "Open Sans", serif;
   line-height: 1.8;
@@ -4471,13 +4460,14 @@ p {
   margin-top: 15px;
 }
 .reverse-engineering-before-text h6 {
-  font-size: 0.93rem;
+  font-size: 1.1rem;
   font-weight: 600 !important;
   font-family: "Open Sans", serif;
   line-height: 1.8;
   text-transform: uppercase;
   letter-spacing: 0.1px;
   color: rgb(0, 108, 0);
+  margin-top: 10px;
 }
 
 .reverse-engineering-after-text {
@@ -4485,7 +4475,7 @@ p {
   max-width: 50%;
 }
 .reverse-engineering-after-text h3 {
-  font-size: 0.9rem !important;
+  font-size: 1rem !important;
   font-weight: 600 !important;
   font-family: "Open Sans", serif;
   text-transform: uppercase;
@@ -4493,7 +4483,7 @@ p {
   color: #1e1e24;
 }
 .reverse-engineering-after-text p {
-  font-size: 0.86rem !important;
+  font-size: 0.91rem !important;
   font-weight: 600 !important;
   font-family: "Open Sans", serif;
   line-height: 1.8;
@@ -4501,13 +4491,14 @@ p {
   margin-top: 15px;
 }
 .reverse-engineering-after-text h6 {
-  font-size: 0.93rem !important;
+  font-size: 1.1rem !important;
   font-weight: 600 !important;
   font-family: "Open Sans", serif;
   line-height: 1.8;
   text-transform: uppercase;
   letter-spacing: 0.1px;
   color: rgb(0, 108, 0);
+  margin-top: 10px;
 }
 
 /* Carousel Navigation Buttons */
@@ -4556,28 +4547,122 @@ p {
 }
 
 /* Responsive Styling */
-@media screen and (max-width: 767.98px) {
+@media screen and (max-width: 575.98px) {
   .reverse-engineering-before-content {
     flex-direction: column;
-    text-align: center;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 20px !important;
   }
-  .reverse-engineering-before-image,
+  .reverse-engineering-before-text h3 {
+    font-size: 0.88rem !important;
+  }
+  .reverse-engineering-before-text p {
+    font-size: 0.8rem !important;
+  }
+  .reverse-engineering-before-text h6 {
+    font-size: 0.92rem !important;
+  }
+  .reverse-engineering-after-text h3 {
+    font-size: 0.88rem !important;
+  }
+  .reverse-engineering-after-text p {
+    font-size: 0.8rem !important;
+  }
+  .reverse-engineering-after-text h6 {
+    font-size: 0.92rem !important;
+  }
   .reverse-engineering-before-text {
-    max-width: 80%;
+    max-width: 85%;
+    margin-top: 50px;
   }
   .reverse-engineering-after-content {
     flex-direction: column;
-    text-align: center;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 20px !important;
   }
-  .reverse-engineering-after-image,
   .reverse-engineering-after-text {
-    max-width: 80%;
+    max-width: 85%;
+    margin-top: 50px;
   }
   .reverse-engineering-prev {
-    left: 10px;
+    left: -30px;
   }
   .reverse-engineering-next {
-    right: 10px;
+    right: -30px;
+  }
+  .reverse-engineering-carousel-title {
+    font-size: 1rem;
+    text-align: center !important;
+    line-height: 1.8 !important;
+  }
+  .reverse-engineering-carousel {
+    height: 700px !important;
+  }
+  .reverse-engineering-before-image, .reverse-engineering-after-image {
+    max-width: 50% !important;
+    height: auto;
+  }
+  .reverse-engineering-before-image img, .reverse-engineering-after-image img {
+    width: 100%;
+    height: auto !important;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    filter: none !important;
+    object-fit: contain;
+  }
+}
+@media screen and (min-width: 576px) and (max-width: 767.98px) {
+  .reverse-engineering-carousel {
+    max-width: 900px !important;
+    height: 450px !important;
+  }
+  .reverse-engineering-before-text {
+    max-width: 50%;
+  }
+  .reverse-engineering-after-text {
+    max-width: 50%;
+  }
+  .reverse-engineering-prev {
+    left: -25px !important;
+  }
+  .reverse-engineering-next {
+    right: -25px !important;
+  }
+  .reverse-engineering-carousel-title {
+    font-size: 1.2rem;
+    text-align: center !important;
+    line-height: 1.8 !important;
+  }
+  .reverse-engineering-before-image, .reverse-engineering-after-image {
+    flex: 1;
+    max-width: 35% !important;
+  }
+  .reverse-engineering-before-image img, .reverse-engineering-after-image img {
+    width: 100%;
+    height: 300px;
+    border-radius: 10px;
+    filter: none !important;
+    object-fit: contain;
+  }
+  .reverse-engineering-before-text h3 {
+    font-size: 0.9rem;
+  }
+  .reverse-engineering-before-text p {
+    font-size: 0.8rem;
+  }
+  .reverse-engineering-before-text h6 {
+    font-size: 1rem;
+  }
+  .reverse-engineering-after-text h3 {
+    font-size: 0.9rem;
+  }
+  .reverse-engineering-after-text p {
+    font-size: 0.8rem;
+  }
+  .reverse-engineering-after-text h6 {
+    font-size: 1rem;
   }
 }
 
