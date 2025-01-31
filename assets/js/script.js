@@ -458,72 +458,72 @@ document.addEventListener("DOMContentLoaded", function () {
       // });
       
      //business model-carousel with auto carousel moving
-    //   document.addEventListener("DOMContentLoaded", () => {
-    //     const carouselInner = document.querySelector(".business-model-section-carousel-container-carousel-inner");
-    //     const prevBtn = document.querySelector(".prev-btn");
-    //     const nextBtn = document.querySelector(".next-btn");
+      document.addEventListener("DOMContentLoaded", () => {
+        const carouselInner = document.querySelector(".business-model-section-carousel-container-carousel-inner");
+        const prevBtn = document.querySelector(".prev-btn");
+        const nextBtn = document.querySelector(".next-btn");
     
-    //     const cardWidth = 220; // Fixed width of a card
-    //     const visibleCards = 3; // Number of visible cards
-    //     const totalCards = document.querySelectorAll(".card").length;
+        const cardWidth = 220; // Fixed width of a card
+        const visibleCards = 3; // Number of visible cards
+        const totalCards = document.querySelectorAll(".card").length;
     
-    //     let currentIndex = 0; // Start with the first card
-    //     let autoSlideInterval;
+        let currentIndex = 0; // Start with the first card
+        // let autoSlideInterval;
     
-    //     function updateCarousel() {
-    //         const offset = -(currentIndex * cardWidth);
-    //         carouselInner.style.transform = `translateX(${offset}px)`;
-    //     }
+        function updateCarousel() {
+            const offset = -(currentIndex * cardWidth);
+            carouselInner.style.transform = `translateX(${offset}px)`;
+        }
     
-    //     function nextSlide() {
-    //         if (currentIndex < totalCards - visibleCards) {
-    //             currentIndex++;
-    //         } else {
-    //             currentIndex = 0; // Loop back to the start
-    //         }
-    //         updateCarousel();
-    //     }
+        function nextSlide() {
+            if (currentIndex < totalCards - visibleCards) {
+                currentIndex++;
+            } else {
+                currentIndex = 0; // Loop back to the start
+            }
+            updateCarousel();
+        }
     
-    //     function prevSlide() {
-    //         if (currentIndex > 0) {
-    //             currentIndex--;
-    //         } else {
-    //             currentIndex = totalCards - visibleCards; // Loop to the last set of visible cards
-    //         }
-    //         updateCarousel();
-    //     }
+        function prevSlide() {
+            if (currentIndex > 0) {
+                currentIndex--;
+            } else {
+                currentIndex = totalCards - visibleCards; // Loop to the last set of visible cards
+            }
+            updateCarousel();
+        }
     
-    //     // Auto-slide function
-    //     function startAutoSlide() {
-    //         autoSlideInterval = setInterval(nextSlide, 3700); // Change slide every 3.7 seconds
-    //     }
+        // // Auto-slide function
+        // function startAutoSlide() {
+        //     autoSlideInterval = setInterval(nextSlide, 3700); // Change slide every 3.7 seconds
+        // }
     
-    //     // Stop auto-slide on hover
-    //     function stopAutoSlide() {
-    //         clearInterval(autoSlideInterval);
-    //     }
+        // // Stop auto-slide on hover
+        // function stopAutoSlide() {
+        //     clearInterval(autoSlideInterval);
+        // }
     
-    //     // Event Listeners for Next/Prev Buttons
-    //     nextBtn.addEventListener("click", () => {
-    //         nextSlide();
-    //         stopAutoSlide(); // Reset auto-slide timer when manually navigating
-    //         startAutoSlide();
-    //     });
+        // Event Listeners for Next/Prev Buttons
+        nextBtn.addEventListener("click", () => {
+            nextSlide();
+            // stopAutoSlide(); // Reset auto-slide timer when manually navigating
+            // startAutoSlide();
+        });
     
-    //     prevBtn.addEventListener("click", () => {
-    //         prevSlide();
-    //         stopAutoSlide();
-    //         startAutoSlide();
-    //     });
+        prevBtn.addEventListener("click", () => {
+            prevSlide();
+            // stopAutoSlide();
+            // startAutoSlide();
+        });
     
-    //     // Pause auto-slide when hovering over the carousel
-    //     carouselInner.addEventListener("mouseenter", stopAutoSlide);
-    //     carouselInner.addEventListener("mouseleave", startAutoSlide);
+        // Pause auto-slide when hovering over the carousel
+        // carouselInner.addEventListener("mouseenter", stopAutoSlide);
+        // carouselInner.addEventListener("mouseleave", startAutoSlide);
     
-    //     // Initialize carousel position & start auto-sliding
-    //     updateCarousel();
-    //     startAutoSlide();
-    // });
+        // Initialize carousel position & start auto-sliding
+        updateCarousel();
+        // startAutoSlide();
+    });
    
     /*dummy bsuiness carousel script**/
 //     document.addEventListener("DOMContentLoaded", () => {
@@ -631,63 +631,63 @@ document.addEventListener("DOMContentLoaded", function () {
 //         updateCarousel();
 //         startAutoSlide();
 //     });
-    
-document.addEventListener("DOMContentLoaded", function () {
-    const carouselInner = document.querySelector(".business-model-section-carousel-container-carousel-inner");
-    const prevBtn = document.querySelector(".prev-btn");
-    const nextBtn = document.querySelector(".next-btn");
+    /*business model  carousel**/
+// document.addEventListener("DOMContentLoaded", function () {
+//     const carouselInner = document.querySelector(".business-model-section-carousel-container-carousel-inner");
+//     const prevBtn = document.querySelector(".prev-btn");
+//     const nextBtn = document.querySelector(".next-btn");
   
-    function getCardWidth() {
-      return document.querySelector(".card").offsetWidth + 30; // Include left/right margins
-    }
+//     function getCardWidth() {
+//       return document.querySelector(".card").offsetWidth + 30; // Include left/right margins
+//     }
   
-    let scrollAmount = 0;
-    let autoPlayInterval;
+//     let scrollAmount = 0;
+//     let autoPlayInterval;
   
-    function moveNext() {
-      let cardWidth = getCardWidth();
-      if (scrollAmount < carouselInner.scrollWidth - carouselInner.clientWidth) {
-        scrollAmount += cardWidth;
-      } else {
-        scrollAmount = 0; // Loop back to start
-      }
-      carouselInner.style.transform = `translateX(-${scrollAmount}px)`;
-    }
+//     function moveNext() {
+//       let cardWidth = getCardWidth();
+//       if (scrollAmount < carouselInner.scrollWidth - carouselInner.clientWidth) {
+//         scrollAmount += cardWidth;
+//       } else {
+//         scrollAmount = 0; // Loop back to start
+//       }
+//       carouselInner.style.transform = `translateX(-${scrollAmount}px)`;
+//     }
   
-    function movePrev() {
-      let cardWidth = getCardWidth();
-      if (scrollAmount > 0) {
-        scrollAmount -= cardWidth;
-      } else {
-        scrollAmount = carouselInner.scrollWidth - carouselInner.clientWidth;
-      }
-      carouselInner.style.transform = `translateX(-${scrollAmount}px)`;
-    }
+//     function movePrev() {
+//       let cardWidth = getCardWidth();
+//       if (scrollAmount > 0) {
+//         scrollAmount -= cardWidth;
+//       } else {
+//         scrollAmount = carouselInner.scrollWidth - carouselInner.clientWidth;
+//       }
+//       carouselInner.style.transform = `translateX(-${scrollAmount}px)`;
+//     }
   
-    function startAutoPlay() {
-      autoPlayInterval = setInterval(moveNext, 3000);
-    }
+//     function startAutoPlay() {
+//       autoPlayInterval = setInterval(moveNext, 3000);
+//     }
   
-    function stopAutoPlay() {
-      clearInterval(autoPlayInterval);
-    }
+//     function stopAutoPlay() {
+//       clearInterval(autoPlayInterval);
+//     }
   
-    prevBtn.addEventListener("click", function () {
-      stopAutoPlay();
-      movePrev();
-      startAutoPlay();
-    });
+//     prevBtn.addEventListener("click", function () {
+//       stopAutoPlay();
+//       movePrev();
+//       startAutoPlay();
+//     });
   
-    nextBtn.addEventListener("click", function () {
-      stopAutoPlay();
-      moveNext();
-      startAutoPlay();
-    });
+//     nextBtn.addEventListener("click", function () {
+//       stopAutoPlay();
+//       moveNext();
+//       startAutoPlay();
+//     });
   
-    window.addEventListener("resize", () => { scrollAmount = 0; });
+//     window.addEventListener("resize", () => { scrollAmount = 0; });
   
-    startAutoPlay();
-  });
+//     startAutoPlay();
+//   });
   
   
 
@@ -753,5 +753,76 @@ fadeSections.forEach(section => {
 });
 
 
+/*reverse engineering carousel*/
 
+// document.addEventListener("DOMContentLoaded", function () {
+//   // Select all carousel containers
+//   const carousels = document.querySelectorAll(".business-model-section-carousel-container");
+
+//   // Loop through each carousel separately
+//   carousels.forEach((carousel) => {
+//       const carouselInner = carousel.querySelector(".business-model-section-carousel-container-carousel-inner");
+//       const prevBtn = carousel.querySelector(".prev-btn");
+//       const nextBtn = carousel.querySelector(".next-btn");
+
+//       let scrollAmount = 0;
+//       let autoPlayInterval;
+
+//       function getCardWidth() {
+//           return carouselInner.querySelector(".card").offsetWidth + 30; // Include left/right margins
+//       }
+
+//       function moveNext() {
+//           let cardWidth = getCardWidth();
+//           if (scrollAmount < carouselInner.scrollWidth - carouselInner.clientWidth) {
+//               scrollAmount += cardWidth;
+//           } else {
+//               scrollAmount = 0; // Reset to the beginning
+//           }
+//           carouselInner.style.transform = `translateX(-${scrollAmount}px)`;
+//       }
+
+//       function movePrev() {
+//           let cardWidth = getCardWidth();
+//           if (scrollAmount > 0) {
+//               scrollAmount -= cardWidth;
+//           } else {
+//               scrollAmount = carouselInner.scrollWidth - carouselInner.clientWidth;
+//           }
+//           carouselInner.style.transform = `translateX(-${scrollAmount}px)`;
+//       }
+
+//       function startAutoPlay() {
+//           autoPlayInterval = setInterval(() => {
+//               moveNext();
+//           }, 3000); // Move every 3 seconds
+//       }
+
+//       function stopAutoPlay() {
+//           clearInterval(autoPlayInterval);
+//       }
+
+//       // Event listeners for buttons
+//       prevBtn.addEventListener("click", function () {
+//           stopAutoPlay();
+//           movePrev();
+//           startAutoPlay();
+//       });
+
+//       nextBtn.addEventListener("click", function () {
+//           stopAutoPlay();
+//           moveNext();
+//           startAutoPlay();
+//       });
+
+//       // Reset position on resize
+//       window.addEventListener("resize", () => {
+//           scrollAmount = 0;
+//           carouselInner.style.transform = `translateX(0px)`;
+//       });
+
+//       // Start autoplay for each carousel separately
+//       startAutoPlay();
+//   });
+// });
 

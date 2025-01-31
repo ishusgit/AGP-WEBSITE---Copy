@@ -1,0 +1,211 @@
+@use "../abstract/variable" as var;
+@use "../abstract/functions" as func;
+
+/* Section Styling */
+.reverse-engineering-carousel-section {
+    padding: 50px 0;
+    text-align: center;
+    align-items:center;
+    justify-content:center;
+    display:flex;
+    flex-flow:column nowrap;
+}
+
+/* Title */
+.reverse-engineering-carousel-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    font-family: var.$font-open;
+    margin-bottom: 70px;
+    text-align:start;
+}
+
+/* Carousel Wrapper */
+.reverse-engineering-carousel {
+    position: relative;
+    max-width: 850px!important;
+    height:500px!important;
+    margin: 0px auto!important;
+    background: linear-gradient(135deg, #faf0f0 20%, #ff7474 100%)!important;
+    display: flex!important;
+        align-items: center!important;
+        justify-content: center!important;
+}
+/* Align carousel-item content (image and text) both horizontally and vertically center */
+.reverse-engineering-carousel .carousel-item {
+    display: flex!important;
+    align-items: center!important;  /* Vertically center the content */
+    justify-content: center!important;  /* Horizontally center the content */
+}
+
+#reverseEngineeringCarousel {
+    display: flex!important;
+    align-items: center!important;
+    justify-content: center!important;
+}
+
+
+
+/* Slide Content */
+.reverse-engineering-before-content {
+    display: flex!important;
+    align-items: center!important;
+    justify-content: center!important;
+    // border:1px solid red;
+    gap: 30px;
+    text-align: left;
+    // padding: 30px;
+}
+.reverse-engineering-after-content {
+    display: flex!important;
+    align-items: center!important;
+    justify-content: center !important;
+    gap: 30px;
+    text-align: left;
+    // padding: 30px;
+}
+
+/* Image Styling */
+.reverse-engineering-before-image, .reverse-engineering-after-image {
+    flex: 1;
+    max-width: 40%;
+    // border:1px solid red;
+    img {
+        width: 100%;
+        height: 400px;
+        border-radius: 10px;
+        // box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        filter: none!important;
+        object-fit:contain;
+    }
+}
+
+/* Text Content */
+.reverse-engineering-before-text {
+    flex: 1;
+    max-width: 50%;
+    h3 {
+        font-size: 0.9rem;
+        font-weight: 600!important;
+        font-family:var.$font-open;
+        text-transform:uppercase;
+        letter-spacing:0.5px;
+        color: func.theme-colors('secondary');
+    }
+    p {
+        font-size: 0.87rem;
+        font-weight: 600!important;
+        font-family:var.$font-open;
+        line-height:1.8;
+        color: func.theme-colors('white');
+        margin-top:15px;
+    }
+    h6{
+        font-size: 0.93rem;
+        font-weight: 600!important;
+        font-family:var.$font-open;
+        line-height:1.8;
+        text-transform:uppercase;
+        letter-spacing:0.1px;
+        color: func.theme-colors('green');
+    }
+}
+.reverse-engineering-after-text {
+    flex: 1;
+    max-width: 50%;
+    h3 {
+        font-size: 0.9rem!important;
+        font-weight: 600!important;
+        font-family:var.$font-open;
+        text-transform:uppercase;
+        letter-spacing:0.5px;
+        color: func.theme-colors('secondary');
+    }
+    p {
+        font-size: 0.86rem!important;
+        font-weight: 600!important;
+        font-family:var.$font-open;
+        line-height:1.8;
+        color: func.theme-colors('light-bg');
+        margin-top:15px;
+    }
+    h6{
+        font-size: 0.93rem!important;
+        font-weight: 600!important;
+        font-family:var.$font-open;
+        line-height:1.8;
+        text-transform:uppercase;
+        letter-spacing:0.1px;
+        color: func.theme-colors('green');
+    }
+}
+
+/* Carousel Navigation Buttons */
+.reverse-engineering-prev,
+.reverse-engineering-next {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #d72638 10%, #1e1e24 90%)!important;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    opacity:1!important;
+}
+.reverse-engineering-next .carousel-control-next-icon{
+    color:white!important;
+    width:10px!important;
+    height:10px!important;
+}
+.reverse-engineering-prev .carousel-control-prev-icon{
+    color:white!important;
+    width:10px!important;
+    height:10px!important;
+}
+.reverse-engineering-prev {
+    left: -20px;
+}
+
+.reverse-engineering-next {
+    right: -20px;
+}
+
+/* Button Icons */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: white;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+/* Responsive Styling */
+@media screen and (max-width: 767.98px) {
+    .reverse-engineering-before-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .reverse-engineering-before-image,
+    .reverse-engineering-before-text {
+        max-width: 80%;
+    }
+    .reverse-engineering-after-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .reverse-engineering-after-image,
+    .reverse-engineering-after-text {
+        max-width: 80%;
+    }
+    .reverse-engineering-prev {
+        left: 10px;
+    }
+    .reverse-engineering-next {
+        right: 10px;
+    }
+}
+
+
