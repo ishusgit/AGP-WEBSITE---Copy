@@ -154,7 +154,7 @@
     overflow: hidden;
     border-radius: 12px;
     transition: all 0.4s ease-in-out;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5)!important;
     min-height:100%;
 }
 .services-process-card-card-1:hover{
@@ -243,7 +243,7 @@
 }
 
 .content-box {
-    padding: 20px 20px;
+    padding: 0px 15px 12px;
     text-align: center;
     transition: all 0.4s ease-in-out;
     // border-radius:50px 0 0 0;
@@ -269,6 +269,7 @@
     text-transform:uppercase;
     letter-spacing:0.5px;
     color:func.theme-colors('orange');
+    margin-top:18px;
 }
 
 .content-box-2 h3{
@@ -301,27 +302,27 @@ color:#3d0068;
 }
 .keyfeatures {
     display: none;
-    text-align: center;
-    // padding:30px 0;
+   text-align:center;
 }
 
  .keyfeatures h2 {
     font-weight: 600!important;
-    font-size:0.98rem!important;
+    font-size:0.96rem!important;
     font-family:var.$font-open!important;
     text-transform:uppercase;
     letter-spacing:0.5px;
     color:func.theme-colors('white')!important;
+    text-align: center!important;
 }
 .keyfeatures ul {
-    padding-left: 20px;
+    padding-left: 0px;
 }
 .keyfeatures ul li{
     font-weight: 500;
-    font-size:0.9rem!important;
+    font-size:0.82rem!important;
     font-family:var.$font-open;
     color:func.theme-colors('white');
-    padding-bottom:8px;
+    text-align:start!important;
 }
 /* Hover Effects */
 .services-process-card:hover .image-container {
@@ -347,7 +348,7 @@ color:#3d0068;
     font-family:var.$font-open!important;
     text-transform:uppercase;
     letter-spacing:0.5px;
-    margin-bottom:20px;
+    margin-bottom:10px;
     color:func.theme-colors('accent')!important;
     display:block!important;
 }
@@ -386,6 +387,9 @@ color:#3d0068;
     }
     .services-card__description{
         text-align:center!important;
+    }
+    .keyfeatures ul li{
+        font-size:0.8rem!important;
     }
 }
 

@@ -1998,7 +1998,7 @@ p {
   overflow: hidden;
   border-radius: 12px;
   transition: all 0.4s ease-in-out;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5) !important;
   min-height: 100%;
 }
 
@@ -2079,7 +2079,7 @@ p {
 }
 
 .content-box {
-  padding: 20px 20px;
+  padding: 0px 15px 12px;
   text-align: center;
   transition: all 0.4s ease-in-out;
 }
@@ -2107,6 +2107,7 @@ p {
   text-transform: uppercase;
   letter-spacing: 0.5px;
   color: rgb(255, 60, 0);
+  margin-top: 18px;
 }
 
 .content-box-2 h3 {
@@ -2150,23 +2151,24 @@ p {
 
 .keyfeatures h2 {
   font-weight: 600 !important;
-  font-size: 0.98rem !important;
+  font-size: 0.96rem !important;
   font-family: "Open Sans", serif !important;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   color: white !important;
+  text-align: center !important;
 }
 
 .keyfeatures ul {
-  padding-left: 20px;
+  padding-left: 0px;
 }
 
 .keyfeatures ul li {
   font-weight: 500;
-  font-size: 0.9rem !important;
+  font-size: 0.82rem !important;
   font-family: "Open Sans", serif;
   color: white;
-  padding-bottom: 8px;
+  text-align: start !important;
 }
 
 /* Hover Effects */
@@ -2195,7 +2197,7 @@ p {
   font-family: "Open Sans", serif !important;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   color: #ffd400 !important;
   display: block !important;
 }
@@ -2233,6 +2235,9 @@ p {
   }
   .services-card__description {
     text-align: center !important;
+  }
+  .keyfeatures ul li {
+    font-size: 0.8rem !important;
   }
 }
 /*sm devices*/
@@ -3971,7 +3976,8 @@ p {
   display: none;
   width: 60%;
   background: rgba(0, 0, 0, 0.1);
-  padding: 20px;
+  padding: 20px 20px !important;
+  border: 1px solid red !important;
 }
 .services-process-card__image {
   width: 100%;
@@ -3983,7 +3989,7 @@ p {
   display: block;
 }
 .services-process-card__content {
-  padding: 20px 20px;
+  padding: 20px 10px;
   transition: opacity 0.3s ease-in-out;
   background: linear-gradient(to bottom, #ffa806, #d79a01); /* Fenugreek */
 }
@@ -4009,6 +4015,7 @@ p {
   line-height: 1.7;
   font-family: "Open Sans", serif;
   color: white !important;
+  text-align: center !important;
 }
 
 /* Card Transforms to Horizontal on Hover */
@@ -4019,6 +4026,7 @@ p {
 /* Show Key Features on Hover */
 .services-process-card-container:hover .services-process-card__keyfeatures {
   display: block;
+  padding: 20px auto !important;
 }
 
 /* Hide Content on Hover */
@@ -4043,6 +4051,9 @@ p {
     margin-top: 0px !important;
     padding-top: 0px !important;
   }
+  .services-process-card .content-box p {
+    text-align: center !important;
+  }
 }
 @media screen and (min-width: 576px) and (max-width: 767.98px) {
   .services-process__heading {
@@ -4051,6 +4062,9 @@ p {
     font-weight: 600 !important;
     margin-bottom: 40px !important;
   }
+  .services-process-card .content-box p {
+    text-align: center !important;
+  }
 }
 @media screen and (min-widthy: 768px) and (max-width: 991.98px) {
   .services-process__heading {
@@ -4058,6 +4072,9 @@ p {
     line-height: 1.7 !important;
     font-weight: 600 !important;
     margin-bottom: 40px !important;
+  }
+  .services-process-card .content-box p {
+    text-align: center !important;
   }
 }
 /* Capabilities Section */
@@ -4575,12 +4592,12 @@ p {
   .reverse-engineering-before-text {
     max-width: 85%;
     text-align: center !important;
-    border: 1px solid red;
     padding-bottom: 0 !important;
     align-items: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin-top: 20px !important;
   }
   .reverse-engineering-after-content {
     flex-direction: column;
@@ -4591,12 +4608,12 @@ p {
   .reverse-engineering-after-text {
     max-width: 85%;
     text-align: center !important;
-    border: 1px solid red;
     padding-bottom: 0 !important;
     align-items: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin-top: 20px !important;
   }
   .reverse-engineering-prev {
     left: -30px;
