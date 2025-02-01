@@ -1471,14 +1471,14 @@ li {
     height: 28px;
   }
   .table .table-custom thead tr {
-    font-size: 0.8rem !important;
+    font-size: 0.7rem !important;
   }
   .table-custom td {
-    font-size: 0.6rem !important;
+    font-size: 0.65rem !important;
     padding: 12px 0px 12px !important;
   }
   .table-custom th {
-    font-size: 0.7rem !important;
+    font-size: 0.8rem !important;
     padding: 10px 5px 10px !important;
   }
   .modal-body {
@@ -1669,6 +1669,10 @@ li {
   border: none;
   background: rgb(255, 171, 141) !important;
   height: auto;
+}
+
+.popover {
+  margin-bottom: 50px !important; /* Adjust as needed */
 }
 
 .popover-header-content {

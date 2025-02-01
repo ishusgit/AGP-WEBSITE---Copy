@@ -211,6 +211,26 @@ function closePopover() {
     });
 }
 
+/*popover placement space */
+document.addEventListener("shown.bs.popover", function (event) {
+    let popover = event.target.nextElementSibling; // Get the popover element
+    let placement = popover.getAttribute("data-popper-placement"); // Get actual applied placement
+  
+    // Reset margin first
+    popover.style.margin = "0";
+  
+    if (placement === "top") {
+      popover.style.marginBottom = "50px";
+    } else if (placement === "bottom") {
+      popover.style.marginTop = "50px";
+    } else if (placement === "left") {
+      popover.style.marginRight = "50px";
+    } else if (placement === "right") {
+      popover.style.marginLeft = "50px";
+    }
+  });
+  
+  
   
 
 
