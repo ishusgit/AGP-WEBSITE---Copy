@@ -187,6 +187,30 @@ observer.observe(section);
 });
 
 
+document.addEventListener("DOMContentLoaded", function () {
+    let sections = document.querySelectorAll(".fade-section");
+  
+    let observer = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target); // Stop observing once visible
+          }
+        });
+      },
+      {
+        root: null, // Observe in viewport
+        threshold: 0.2, // Trigger when 20% of section is visible
+      }
+    );
+  
+    sections.forEach((section) => {
+      observer.observe(section);
+    });
+  });
+  
+
 /*reverse engineering - autoplay carousel */
 document.addEventListener("DOMContentLoaded", function() {
     let carousel = document.querySelector("#reverseEngineeringCarousel");
@@ -230,7 +254,18 @@ document.addEventListener("shown.bs.popover", function (event) {
     }
   });
   
-  
+  /*scrolling issues*/
+  let ticking = false;
+window.addEventListener("scroll", function () {
+  if (!ticking) {
+    window.requestAnimationFrame(function () {
+      // Animation or scroll-related code
+      ticking = false;
+    });
+    ticking = true;
+  }
+});
+
   
 
 
