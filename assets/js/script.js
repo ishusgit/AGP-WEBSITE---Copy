@@ -284,5 +284,20 @@ document.addEventListener('DOMContentLoaded', function(){
   });
 });
 
-   
+ /*explor-more-tooling-solutions*/
+ // Optional JavaScript for scroll animations (if required)
+document.addEventListener("DOMContentLoaded", function() {
+  const cards = document.querySelectorAll('.explore-card');
+
+  cards.forEach(card => {
+    card.addEventListener('mouseover', () => {
+      card.querySelector('.explore-content').style.transition = 'background 0.3s ease, box-shadow 0.3s ease';
+    });
+
+    card.addEventListener('mouseout', () => {
+      card.querySelector('.explore-content').style.transition = 'background 0.3s ease, box-shadow 0.3s ease';
+    });
+  });
+});
+  
       
