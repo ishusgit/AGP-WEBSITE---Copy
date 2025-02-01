@@ -16,7 +16,7 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    font-size:0.85rem!important;
+    font-size:0.88rem!important;
     font-family:var.$font-open!important;
     color:func.theme-colors('primary')!important;
     background:none!important;
@@ -41,13 +41,13 @@
 
 .popover h6 {
     font-weight:550!important;
-    font-size:0.63rem!important;
+    font-size:0.67rem!important;
     font-family:var.$font-open!important;
     color:func.theme-colors('blue')!important;
 }
 
 .popover-description p {
-    font-size:0.65rem;
+    font-size:0.78rem;
     font-weight:600;
     line-height:1.7!important;
     font-family:var.$font-open!important;
@@ -69,11 +69,11 @@
         margin:0px auto!important;
     }
     .popover-img {
-        width:60%!important;
+        width:75%!important;
         margin-bottom:8px;
     }
     .popover p {
-        font-size:0.63rem!important;
+        font-size:0.75rem!important;
         line-height:1.6;
         text-align:center!important
     }
@@ -85,7 +85,7 @@
         align-items:center;
     }
     .popover {
-        max-width: 430px; /* Adjust width */
+        max-width: 450px; /* Adjust width */
         margin:0px -10px!important;
     }
     .popover h6{
@@ -99,12 +99,12 @@
     //     margin-bottom: 8px; /* Space between image-text and description */
     // }
     .popover-img {
-        width:80%!important;
+        width:90%!important;
         margin-bottom:8px;
         height:auto!important;
     }
     .popover-description p {
-        font-size:0.65rem!important;
+        font-size:0.72rem!important;
         line-height:1.7;
         text-align:start!important
     }
@@ -116,20 +116,20 @@
         align-items:center;
     }
     .popover {
-        max-width: 450px; /* Adjust width */
+        max-width: 465px; /* Adjust width */
         margin:0px -10px!important;
     }
     .popover-img {
-        width:85%!important;
+        width:90%!important;
         // margin-bottom:8px;
     }
     .popover-description p {
-        font-size:0.66rem!important;
+        font-size:0.7rem!important;
         line-height:1.7;
         // margin-top:10px!important;
         text-align:start!important
     }
     .popover h6{
-        font-size: 0.63rem!important;
+        font-size: 0.65rem!important;
     }
 }
