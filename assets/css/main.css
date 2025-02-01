@@ -1697,20 +1697,20 @@ li {
 }
 
 .popover-img {
-  width: 85%;
+  width: 90%;
   border-radius: 8px;
   margin-bottom: 10px !important;
 }
 
 .popover h6 {
   font-weight: 550 !important;
-  font-size: 0.67rem !important;
+  font-size: 0.65rem !important;
   font-family: "Open Sans", serif !important;
   color: rgb(0, 0, 109) !important;
 }
 
 .popover-description p {
-  font-size: 0.78rem;
+  font-size: 0.8rem;
   font-weight: 600;
   line-height: 1.7 !important;
   font-family: "Open Sans", serif !important;
