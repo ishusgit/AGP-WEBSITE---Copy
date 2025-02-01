@@ -164,51 +164,52 @@ window.scrollTo({
 });
 }
 
-/*fade section- whole website animation */
+/*old fade section- whole website animation */
 // Initialize the Intersection Observer
-const observer = new IntersectionObserver((entries, observer) => {
-entries.forEach(entry => {
-    if (entry.isIntersecting) {
-        // Add the 'visible' class when the section enters the viewport
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);  // Stop observing once it's visible
-    }
-});
-}, {
-threshold: 0.2  // Trigger when 20% of the section is in view
-});
+// const observer = new IntersectionObserver((entries, observer) => {
+// entries.forEach(entry => {
+//     if (entry.isIntersecting) {
+//         // Add the 'visible' class when the section enters the viewport
+//         entry.target.classList.add('visible');
+//         observer.unobserve(entry.target);  // Stop observing once it's visible
+//     }
+// });
+// }, {
+// threshold: 0.2  // Trigger when 20% of the section is in view
+// });
 
-// Target all elements with the 'fade-section' class
-const fadeSections = document.querySelectorAll('.fade-section');
+// // Target all elements with the 'fade-section' class
+// const fadeSections = document.querySelectorAll('.fade-section');
 
-// Observe each section
-fadeSections.forEach(section => {
-observer.observe(section);
-});
+// // Observe each section
+// fadeSections.forEach(section => {
+// observer.observe(section);
+// });
 
 
-document.addEventListener("DOMContentLoaded", function () {
-    let sections = document.querySelectorAll(".fade-section");
+/*new scroll js
+// document.addEventListener("DOMContentLoaded", function () {
+//     let sections = document.querySelectorAll(".fade-section");
   
-    let observer = new IntersectionObserver(
-      (entries, observer) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-            observer.unobserve(entry.target); // Stop observing once visible
-          }
-        });
-      },
-      {
-        root: null, // Observe in viewport
-        threshold: 0.2, // Trigger when 20% of section is visible
-      }
-    );
+//     let observer = new IntersectionObserver(
+//       (entries, observer) => {
+//         entries.forEach((entry) => {
+//           if (entry.isIntersecting) {
+//             entry.target.classList.add("visible");
+//             observer.unobserve(entry.target); // Stop observing once visible
+//           }
+//         });
+//       },
+//       {
+//         root: null, // Observe in viewport
+//         threshold: 0.2, // Trigger when 20% of section is visible
+//       }
+//     );
   
-    sections.forEach((section) => {
-      observer.observe(section);
-    });
-  });
+//     sections.forEach((section) => {
+//       observer.observe(section);
+//     });
+//   });
   
 
 /*reverse engineering - autoplay carousel */
@@ -266,8 +267,22 @@ window.addEventListener("scroll", function () {
   }
 });
 
-  
-
+/*new fade-section scrolling*/  
+document.addEventListener('DOMContentLoaded', function(){
+  const sections = document.querySelectorAll('.fade-section');
+  const Observer = new IntersectionObserver(entries =>{
+    entries.forEach(entry =>{
+      if(entry.isIntersecting){
+        entry.target.classList.add('visible');
+      }else {
+        entry.target.classList.remove('visible');
+      }
+    });
+  }, {threshold:0.2});
+  sections.forEach(section=>{
+    observer.observe(section);
+  });
+});
 
    
       
