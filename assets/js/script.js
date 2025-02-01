@@ -270,7 +270,7 @@ window.addEventListener("scroll", function () {
 /*new fade-section scrolling*/  
 document.addEventListener('DOMContentLoaded', function(){
   const sections = document.querySelectorAll('.fade-section');
-  const Observer = new IntersectionObserver(entries =>{
+  const observer = new IntersectionObserver(entries =>{
     entries.forEach(entry =>{
       if(entry.isIntersecting){
         entry.target.classList.add('visible');
