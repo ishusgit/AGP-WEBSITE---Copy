@@ -524,18 +524,28 @@ body {
   z-index: 1030;
 }
 
+.navbar.fixed-top {
+  padding-top: env(safe-area-inset-top) !important; /* Adjust for iOS Safe Area */
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1030; /* Bootstrap default */
+}
+
 /* General class for sections you want to animate */
 .fade-section {
-  opacity: 0; /* Initially hidden */
-  transform: translateY(30px); /* Start slightly down */
+  opacity: 0 !important; /* Initially hidden */
+  transform: translateY(50px) !important; /* Start slightly down */
   transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Smooth animation */
   will-change: opacity, transform !important;
+  backface-visibility: hidden;
 }
 
 /* Class to make the section visible */
 .fade-section.visible {
-  opacity: 1; /* Fully visible */
-  transform: translateY(0); /* Move to its original position */
+  opacity: 1 !important; /* Fully visible */
+  transform: translateY(0) !important; /* Move to its original position */
 }
 
 @media screen and (max-width: 1199px) {
