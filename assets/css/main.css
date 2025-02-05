@@ -3231,15 +3231,17 @@ p {
 }
 .business-model-section-carousel-container .prev-btn {
   left: -5px; /* Ensures button is visible outside */
+  color: #1e1e24 !important;
 }
 .business-model-section-carousel-container .next-btn {
   right: -5px; /* Ensures button is visible outside */
+  color: #1e1e24 !important;
 }
 .business-model-section-carousel-container .business-model-section-carousel-nav:hover {
-  background: rgb(255, 61, 93);
+  background: rgb(255, 61, 93) !important;
 }
 .business-model-section-carousel-container .prev-btn:hover, .business-model-section-carousel-container .next-btn:hover {
-  color: white;
+  color: white !important;
 }
 
 /* Bubble Styling */
@@ -3316,8 +3318,8 @@ p {
     z-index: 10; /* Ensure it's above other elements */
   }
   .business-model-section-carousel-nav {
-    width: 28px !important;
-    height: 28px !important;
+    width: 29px !important;
+    height: 29px !important;
     font-size: 16px !important;
     border-radius: 50%;
   }
@@ -3327,10 +3329,10 @@ p {
     text-align: center !important;
   }
   .prev-btn {
-    left: 6px !important;
+    left: 5px !important;
   }
   .next-btn {
-    right: 6px !important;
+    right: 5px !important;
   }
   body {
     overflow-x: hidden !important; /* Ensure no horizontal scrolling */
@@ -3352,10 +3354,10 @@ p {
     padding: 0 10px !important;
   }
   .prev-btn {
-    left: 10 !important;
+    left: 8px !important;
   }
   .next-btn {
-    right: 10px !important;
+    right: 8px !important;
   }
   .business-carousel-container {
     transform: translateY(-50%); /* Adjust position for smaller screens */

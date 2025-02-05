@@ -212,17 +212,19 @@
     
             .prev-btn {
                 left: -5px; /* Ensures button is visible outside */
+                color:func.theme-colors('secondary')!important;
             }
     
             .next-btn {
                 right: -5px; /* Ensures button is visible outside */
+                color:func.theme-colors('secondary')!important;
             }
     
             .business-model-section-carousel-nav:hover{
-                background:rgb(255, 61, 93);
+                background:rgb(255, 61, 93)!important;
              }
              .prev-btn:hover ,.next-btn:hover{
-                color:white;
+                color:white!important;
              }
     
     }
@@ -306,8 +308,8 @@
   }
 
   .business-model-section-carousel-nav {
-      width: 28px!important;
-      height: 28px!important;
+      width: 29px!important;
+      height: 29px!important;
       font-size: 16px!important;
       border-radius: 50%;
   }
@@ -318,11 +320,11 @@
    }
 
   .prev-btn {
-      left: 6px!important;
+      left: 5px!important;
   }
 
   .next-btn {
-      right: 6px!important;
+      right: 5px!important;
   }
   body {
       overflow-x: hidden!important; /* Ensure no horizontal scrolling */
@@ -346,8 +348,8 @@
             text-align:center!important;
             padding:0 10px!important;
           }
-          .prev-btn { left: 10!important; }
-          .next-btn { right: 10px!important; }
+          .prev-btn { left: 8px!important; }
+          .next-btn { right: 8px!important; }
 
           .business-carousel-container {
               transform: translateY(-50%); /* Adjust position for smaller screens */
