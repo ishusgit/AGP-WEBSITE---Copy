@@ -301,3 +301,95 @@ document.addEventListener("DOMContentLoaded", function() {
 });
   
       
+
+/*business carousel-new*/
+// document.addEventListener("DOMContentLoaded", function () {
+//     const prevBtn = document.querySelector(".prev-btn");
+//     const nextBtn = document.querySelector(".next-btn");
+//     const carouselWrapper = document.querySelector(".business-model-section-carousel-wrapper");
+//     const cardWidth = document.querySelector(".business-card").offsetWidth + 30;
+
+//     let scrollPosition = 0;
+
+//     function updateButtonVisibility() {
+//         prevBtn.style.display = "flex";
+//         nextBtn.style.display = "flex";
+//     }
+
+//     nextBtn.addEventListener("click", function () {
+//         scrollPosition += cardWidth;
+//         carouselWrapper.style.transform = `translateX(-${scrollPosition}px)`;
+//         updateButtonVisibility();
+//     });
+
+//     prevBtn.addEventListener("click", function () {
+//         scrollPosition -= cardWidth;
+//         carouselWrapper.style.transform = `translateX(-${scrollPosition}px)`;
+//         updateButtonVisibility();
+//     });
+
+//     updateButtonVisibility();
+// }); 
+
+document.addEventListener("DOMContentLoaded", function () {
+  const prevBtn = document.querySelector(".prev-btn");
+  const nextBtn = document.querySelector(".next-btn");
+  const carouselWrapper = document.querySelector(".business-model-section-carousel-wrapper");
+  const cardWidth = document.querySelector(".business-card").offsetWidth + 30;
+
+  let scrollPosition = 0;
+  let startX = 0;
+  let currentTranslate = 0;
+  let isDragging = false;
+
+  function updateButtonVisibility() {
+      prevBtn.style.display = "flex";
+      nextBtn.style.display = "flex";
+  }
+
+  nextBtn.addEventListener("click", function () {
+      scrollPosition += cardWidth;
+      carouselWrapper.style.transform = `translateX(-${scrollPosition}px)`;
+      updateButtonVisibility();
+  });
+
+  prevBtn.addEventListener("click", function () {
+      scrollPosition -= cardWidth;
+      carouselWrapper.style.transform = `translateX(-${scrollPosition}px)`;
+      updateButtonVisibility();
+  });
+
+  // Touch events for mobile swipe
+  carouselWrapper.addEventListener("touchstart", function (e) {
+      startX = e.touches[0].clientX;
+      currentTranslate = scrollPosition;
+      isDragging = true;
+  });
+
+  carouselWrapper.addEventListener("touchmove", function (e) {
+      if (!isDragging) return;
+      const moveX = e.touches[0].clientX;
+      const diff = startX - moveX;
+      carouselWrapper.style.transform = `translateX(-${currentTranslate + diff}px)`;
+  });
+
+  carouselWrapper.addEventListener("touchend", function (e) {
+      if (!isDragging) return;
+      isDragging = false;
+      const moveX = e.changedTouches[0].clientX;
+      const diff = startX - moveX;
+
+      // Move to next or previous card based on swipe distance
+      if (diff > 50) {
+          scrollPosition += cardWidth;
+      } else if (diff < -50) {
+          scrollPosition -= cardWidth;
+      }
+
+      // Apply final transform
+      carouselWrapper.style.transform = `translateX(-${scrollPosition}px)`;
+      updateButtonVisibility();
+  });
+
+  updateButtonVisibility();
+});

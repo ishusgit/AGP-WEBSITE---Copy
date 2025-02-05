@@ -15,68 +15,35 @@
      <link rel="stylesheet" href="./assets/css/main.css">
      <style>
         /* Section Styling */
-        .business-model {
+        /* .business-model-section {
             text-align: center;
             padding: 100px 20px;
             background: linear-gradient(135deg, red, rgb(18, 18, 18));
             z-index:1;
             position:relative;
-        }
-
-       /* Centering Wrapper */
-       /* .carousel-wrapper {
-            display: flex;
-            justify-content: center;
-            width: 100%; */
-            /* position: relative; */
-            /* clip-path: inset(-50px 0px -50px 0px)!important/* Keeps cards fully visible */
-        /* } */
-
-        /* Center-Aligned Carousel */
-        /* .carousel-container {
-            position: relative;
-            width: 90%;
-            max-width: 1000px;
-            margin: 0px auto 0px;
-            overflow: hidden;
-            padding-top: 150px;
-            transform: translateY(-50%); 
-            z-index:5;
-        }
-
-    
-        .carousel-wrapper-container {
-            width: 100%;
-            overflow:visible; 
-        }
-
-        .carousel-wrapper {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
         } */
-
-        .carousel-container {
-            padding-top: 50px;
-            transform: translateY(-50%); 
-            z-index:5;
+.business-carousel-container {
+     padding-top: 50px;
+    transform: translateY(-50%); 
+    z-index:5;
     position: relative;
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px 0; /* Padding for space between the container and buttons */
-    box-sizing: border-box; /* Ensure padding doesn't affect width */
-    overflow: visible; /* Make sure overflow is visible to display buttons */
+    padding: 20px 0;
+    box-sizing: border-box; 
+    overflow: visible; 
 }
 
-.carousel-wrapper-container {
+.business-carousel-wrapper-container {
     width: 100%;
-    overflow: hidden; /* Hide overflow within the wrapper to prevent card overflow */
+    overflow: hidden;
 }
 
-.carousel-wrapper {
+.business-carousel-wrapper {
     display: flex;
     transition: transform 0.5s ease-in-out;
-    width: calc(100% + 20px); /* Add extra space to prevent the overflow of the last card */
+    width: calc(100% + 20px); 
 }
 
         /* Individual Card Styling */
@@ -181,16 +148,16 @@
         }
 
        /* Navigation Buttons */
-       .carousel-nav {
+       .business-carousel-nav {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
             background: yellow;
             border: none;
-            width: 50px;
-            height: 50px;
+            width: 45px;
+            height: 45px;
             border-radius: 50%;
-            font-size: 24px;
+            font-size: 22px;
             font-weight: bold;
             cursor: pointer;
             display: flex;
@@ -201,91 +168,110 @@
         }
 
         .prev-btn {
-            left: -30px; /* Ensures button is visible outside */
+            left: -5px; /* Ensures button is visible outside */
         }
 
         .next-btn {
-            right: -30px; /* Ensures button is visible outside */
+            right: -5px; /* Ensures button is visible outside */
         }
 
-        @media screen and (max-width: 575.98px) {
-    /* Adjust Carousel Width for Small Devices */
-    .carousel-container {
-        width: 100%;
-        /* max-width:1000px; */
-         padding: 0 auto; /*Ensures spacing on both sides */
-        transform: translateY(-50%); /* Keeps carousel half inside & half outside */
+         .business-carousel-nav:hover{
+            background:rgb(255, 61, 93);
+         }
+         .prev-btn:hover ,.next-btn:hover{
+            color:white;
+         }
+
+@media (max-width: 575.98px) {
+    .container {
+        max-width: 100%;
+        padding-left: 15px; /* Add left spacing */
+        padding-right: 15px; /* Add right spacing */
+        overflow-x: hidden; /* Prevent horizontal scrolling */
     }
 
-    .carousel-wrapper-container {
-        overflow: visible; /* Ensures the entire carousel is visible */
+    .row {
+        margin-left: 0;
+        margin-right: 0;
     }
 
-    .carousel-wrapper {
-        display: flex;
-        transition: transform 0.5s ease-in-out;
+    .card {
+        width: 90%!important; /* Ensure full width within the container */
+        margin: 0 auto!important; /* Center the card */
+    }
+    .carousel-control-prev,
+    .carousel-control-next {
+        /* width: 10%!important;/* Adjust width for better visibility */
+        opacity: 1; /* Ensure visibility */
+        z-index: 10; /* Ensure it's above other elements */
     }
 
-    .business-card {
-        width: 100%!important;  /* Make each card take full width on smaller screens */
-        height: 320px; /* Adjust height for smaller screens */
-        margin: 0 12.5px;
-        flex-shrink: 0;
-        cursor: pointer;
-    }
-
-    /* Ensure the navigation buttons are visible on smaller screens */
-    .carousel-nav {
-        width: 35px;
-        height: 35px;
-        font-size: 18px;
+    .business-carousel-nav {
+        width: 28px;
+        height: 28px;
+        font-size: 16px;
         border-radius: 50%;
     }
 
     .prev-btn {
-        left: -15px;
+        left: 10px;
     }
 
     .next-btn {
-        right: -15px;
+        right: 10px;
+    }
+    body {
+        overflow-x: hidden!important; /* Ensure no horizontal scrolling */
     }
 }
 
-        @media screen and  (min-width: 576px) and (max-width:767.98px) {
+
+        @media screen and  (min-width: 576px) and (max-width:991.98px) {
             .business-card {
                 width: 240px;
                 height: 360px;
-                margin: 0 10px;
+                margin: 0 15px;
             }
 
-            .carousel-nav {
-                width: 40px;
-                height: 40px;
+            .business-carousel-nav {
+                width: 36px;
+                height: 36px;
                 font-size: 20px;
             }
 
-            .prev-btn { left: -20px; }
-            .next-btn { right: -20px; }
+            .prev-btn { left: -6px; }
+            .next-btn { right: -6px; }
 
-            .carousel-container {
-                transform: translateY(-40%); /* Adjust position for smaller screens */
+            .business-carousel-container {
+                transform: translateY(-50%); /* Adjust position for smaller screens */
             }
+        }
+
+        @media screen and (min-width:992px) and (max-width:1199.98px){
+            .business-carousel-nav {
+                width: 36px;
+                height: 36px;
+                font-size: 20px;
+            }
+
+            .prev-btn { left: -6px; }
+            .next-btn { right: -6px; }
         }
     </style>
 </head>
 <body>
     <!-- Business Model Section -->
-    <section class="business-model">
+    <section class="business-model-section">
         <h2>Our Business Model</h2>
         <h5>How do we work?</h5>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
     </section>
 
     <!-- Carousel Section -->
-    <div class="carousel-container">
-        <button class="carousel-nav prev-btn">&lt;</button>
-        <div class="carousel-wrapper-container">
-        <div class="carousel-wrapper">
+    <div class="business-carousel-container">
+        <button class="business-carousel-nav prev-btn">&lt;</button>
+        <div class="business-carousel-wrapper-container">
+        <div class="business-carousel-wrapper">
             <!-- 9 Cards -->
             <div class="business-card">
                 <div class="card-inner">
@@ -415,51 +401,17 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Duplicate this block 7 more times to make 9 cards -->
         </div>
         </div>
-        <button class="carousel-nav next-btn">&gt;</button>
+        <button class="business-carousel-nav next-btn">&gt;</button>
     </div>
 
-    <!-- <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const prevBtn = document.querySelector(".prev-btn");
-            const nextBtn = document.querySelector(".next-btn");
-            const carouselWrapper = document.querySelector(".carousel-wrapper");
-            const cardWidth = document.querySelector(".business-card").offsetWidth + 30; // 260px + margin
-
-            let scrollPosition = 0;
-
-            function updateButtonVisibility() {
-                prevBtn.style.display = scrollPosition > 0 ? "flex" : "flex";
-                nextBtn.style.display = scrollPosition < (carouselWrapper.scrollWidth - cardWidth * 3) ? "flex" : "flex";
-            }
-
-            nextBtn.addEventListener("click", function () {
-                if (scrollPosition < (carouselWrapper.scrollWidth - cardWidth * 3)) {
-                    scrollPosition += cardWidth;
-                    carouselWrapper.style.transform = `translateX(-${scrollPosition}px)`;
-                }
-                updateButtonVisibility();
-            });
-
-            prevBtn.addEventListener("click", function () {
-                if (scrollPosition > 0) {
-                    scrollPosition -= cardWidth;
-                    carouselWrapper.style.transform = `translateX(-${scrollPosition}px)`;
-                }
-                updateButtonVisibility();
-            });
-
-            updateButtonVisibility();
-        });
-    </script> --> 
+    
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const prevBtn = document.querySelector(".prev-btn");
             const nextBtn = document.querySelector(".next-btn");
-            const carouselWrapper = document.querySelector(".carousel-wrapper");
+            const carouselWrapper = document.querySelector(".business-carousel-wrapper");
             const cardWidth = document.querySelector(".business-card").offsetWidth + 30;
 
             let scrollPosition = 0;
@@ -484,29 +436,5 @@
             updateButtonVisibility();
         }); 
         </script>
-        <!-- <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            var prevButton = document.querySelector(".prev-btn");
-            var nextButton = document.querySelector(".next-btn");
-            var carouselWrapper = document.querySelector(".carousel-wrapper");
-            var cardCount = document.querySelectorAll(".business-card").length;
-            var cardWidth = document.querySelector(".business-card").offsetWidth;
-            var currentIndex = 0;
-
-            prevButton.addEventListener("click", function() {
-                if (currentIndex > 0) {
-                    currentIndex--;
-                    carouselWrapper.style.transform = `translateX(-${cardWidth * currentIndex}px)`;
-                }
-            });
-
-            nextButton.addEventListener("click", function() {
-                if (currentIndex < cardCount - 1) {
-                    currentIndex++;
-                    carouselWrapper.style.transform = `translateX(-${cardWidth * currentIndex}px)`;
-                }
-            });
-        });
-       </script> -->
 </body>
 </html>

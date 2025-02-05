@@ -5,10 +5,11 @@
     position: relative;
     width: 100%;
     height:400px;
-    min-height:350px;
-    background: linear-gradient(135deg, #d72638 10%, #1e1e24 90%);
+    min-height:400px;
+    background: linear-gradient(135deg, #d72638 10%, #1e1e24 90%)!important;
     display: flex;
     flex-direction: column;
+    align-items:center!important;
     justify-content: center!important;
     padding:0rem auto!important;
     margin-top:100px!important;
@@ -17,12 +18,11 @@
         position: relative;
         z-index: 1;
         max-width:600px;
-        margin:0px auto;
+        margin:200px auto 0px;
         display:flex;
         flex-direction:column;
-        transform:translateY(-60px);
         justify-content:center!important;
-    
+       
         &-title {
             font-size: 1.8rem;
             font-weight: 700;
@@ -51,107 +51,112 @@
             font-family:var.$font-open;
           }
       }   
-      
-      &-carousel-container {
-        position: absolute;
-        bottom: -128px; /* Half above and half below the section */
-        left: 50%;
-        transform: translateX(-50%);
+    &-carousel-container{
+      position:relative;
+      z-index:5;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px 0;
+      box-sizing: border-box; 
+      overflow: visible; 
+      display: flex;
+      align-items: center;
+      .business-model-section-carousel-wrapper-container {
         width: 100%;
-        max-width: 1090px;
+        overflow: hidden;
+    }
+    
+    .business-model-section-carousel-wrapper {
         display: flex;
-        align-items: center;
-        margin-top:100px!important;
-        width: 100%;
-  overflow: hidden!important; 
-
-        &-carousel {
-          overflow: hidden;
-          flex: 1;
-          display: flex;
-          justify-content: center;
-          position: relative;
-          &-inner {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
-            width: calc(220px * 9); /* Total number of cards */
-            // padding:0px 500px!important;
-            flex-wrap: nowrap;
-  justify-content: flex-start!important; /* Ensure cards start from the left */
-  padding: 0px; /* Remove extra padding */
-  width: auto; /* Adjust width dynamically */
-  margin-left:0px!important;
-  min-width: 100%;
-  // overflow-x:hidden!important;
-  // scroll-snap-type: x mandatory!important;
-            
-            .card {
-              // scroll-snap-align: start!important; /* Align each card properly */
-              flex: 0 0 220px; /* Fixed width for each card */
-              text-align: center;
-              background: white;
-              color: #333;
-              border-radius: 10px;
-              box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-              padding: 10px 10px;
-              perspective: 1000px; /* Enables 3D effect */
-              width: 220px;
-              height: 230px;
-              display:flex;
-              flex-direction: column;
-              align-items:center;
-              position: relative;
-              margin:15px;
-
-              &-image {
-                width: 100%;
-                height: 100px;
-                object-fit: contain;
-                border-radius: 10px 10px 0 0; /* Rounded top corners for the image */
-                background:func.theme-colors('accent')!important;
-              }
-              
-              & h3 {
-                font-size: 0.9rem;
-                font-family:var.$font-open;
-                text-transform:uppercase;
-                font-weight:600;
-                margin-bottom: 5px;
-                color:pink;
-                line-height:1.6;
-              }
-              &-inner {
+        transition: transform 0.5s ease-in-out;
+        width: calc(100% + 20px); 
+    }
+    
+            /* Individual Card Styling */
+            .business-card {
+                width: 260px;
+                height: 300px;
+                perspective: 1000px;
+                margin: 0 15px;
+                flex-shrink: 0;
+                padding:15px;
+                cursor: pointer;
+                box-shadow:0 4px 8px rgba(0,0,0,0.3);
+                background:rgb(255, 255, 255);
+                border-radius:10px;
+            }
+    
+            .card-inner {
                 width: 100%;
                 height: 100%;
-                position: relative;
+                border-radius: 10px;
+                border-radius: 10px 10px 0 0;
+                background: white;
+                /* padding: 20px; */
                 transform-style: preserve-3d;
-                transition: transform 0.6s ease-in-out;
-              }
-              
-              &:hover .card-inner {
-                transform: rotateY(180deg); /* Flips the card on hover */
-              }
-              .card-front, .card-back {
-                backface-visibility: hidden;
-                position: absolute;
-                top: 100px; /* Position below the image */
-                left: 0;
+                transition: transform 0.6s;
+                position: relative;
+                /* border:1px solid red; */
+            }
+    
+            /* Flip Effect */
+            .business-card:hover .card-inner,
+            .business-card:focus-within .card-inner {
+                transform: rotateY(180deg);
+            }
+    
+            /* Front & Back Sides */
+            .card-front, .card-back {
                 width: 100%;
-                height: calc(100% - 100px); /* Adjust height to exclude the image */
-                border-radius: 0 0 10px 10px; /* Rounded bottom corners */
-                display: flex!important;
-                flex-direction: column!important;
-                justify-content: center!important;
-                align-items: center!important;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-              }
-              /* Front Side Visible by Default */
-              .card-front {
-                background: linear-gradient(to right, #ff3e3e, #333333);
-                z-index: 2;
-                padding: 5px 7px!important;
-
-                &>span {
+                height: 100%;
+                position: absolute;
+                backface-visibility: hidden;
+                box-shadow:0 4px 8px rgba(0,0,0,0.3)!important;
+                border-radius: 2px 2px 0 0;
+                /* border-radius: 10px; */
+            }
+    
+            .card-front {
+                background: white;
+                /* padding: 20px; */
+            }
+    
+            .image-part {
+                width: 100%!important;
+                height: 140px!important;
+                object-fit: contain!important;
+                border-radius: 2px 2px 0 0;
+                background:func.theme-colors('accent')!important;
+                img{
+                    width:100%;
+                    height:100%;
+                    object-fit:contain!important;
+                }
+            }
+    
+            .content-part {
+                height: 50%;
+                background: linear-gradient(135deg, red, rgb(35, 35, 35))!important;
+                color: white;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                /* border-radius: 10px; */
+                padding: 10px;
+            }
+    
+            .content-part h4 {
+              font-size: 0.9rem;
+              font-family:var.$font-open;
+              text-transform:uppercase;
+              font-weight:600;
+              // margin-bottom: 5px;
+              color:pink;
+              line-height:1.6;
+              .tagline {
                 font-size: 0.8rem;
                 font-weight:500;
                 text-transform:capitalize;
@@ -160,53 +165,69 @@
                 font-family:var.$font-open!important;
                 color:func.theme-colors('light-bg');
                 }
-              }
-              
-              /* Back Side Visible on Hover */
-              .card-back{
-                background:func.theme-colors('light-bg');
-                transform: rotateY(180deg); /* Initially flipped */
-                z-index: 1;
-                border: 1px solid #ddd;
-                padding:20px;
-
-                &>p{
-                font-size: 0.8rem;
-                font-weight:600;
-                line-height: 1.8;
-                font-family:var.$font-open!important;
-                font-style: italic;
-                color:func.theme-colors('secondary')!important;
-                padding-top:15px!important;
-                }
-              }
             }
-            .card:nth-child(9){
-              margin-right:50px!important;
+            .card-back p {
+              font-size: 0.82rem;
+              font-weight:600;
+              line-height: 1.8;
+              font-family:var.$font-open!important;
+              font-style: italic;
+              color:func.theme-colors('secondary')!important;
+              padding-top:15px!important;
+               line-height:1.8;
+               text-align:center!important;
+               padding-left:10px;
+               padding-right:10px;
             }
-          }
-        }
-        .carousel-btn {
-          background: func.theme-colors('accent');
-          color: func.theme-colors('light-bg');
-          border: none;
-          padding: 5px 15px;
-          cursor: pointer;
-          border-radius: 50%;
-          font-size: 1.3rem;
-          margin: 0 15px;
-          transition: background 0.3s ease;
-        }
-        
-        .carousel-btn:hover {
-          background: #ff6e6e;
-        }  
-      }
+    
+            .card-back {
+                background: white;
+                transform: rotateY(180deg);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                border-radius: 10px;
+            }
+    
+           /* Navigation Buttons */
+           .business-model-section-carousel-nav{
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                background: yellow;
+                border: none;
+                width: 45px;
+                height: 45px;
+                border-radius: 50%;
+                font-size: 22px;
+                font-weight: bold;
+                cursor: pointer;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+                z-index: 10;
+            }
+    
+            .prev-btn {
+                left: -5px; /* Ensures button is visible outside */
+            }
+    
+            .next-btn {
+                right: -5px; /* Ensures button is visible outside */
+            }
+    
+            .business-model-section-carousel-nav:hover{
+                background:rgb(255, 61, 93);
+             }
+             .prev-btn:hover ,.next-btn:hover{
+                color:white;
+             }
+    
+    }
+  }
 
-  }
-  .business-model-section-carousel-container-carousel-inner .card:first-child {
-    margin-left: 0 !important; /* Ensure no left space */
-  }
   /* Bubble Styling */
   .bubble {
     position: absolute;
@@ -260,111 +281,93 @@
 
   
 /* Responsive Carousel */
-// @media (max-width: 576px) { /* xs */
-//   .business-model-section-carousel-container-carousel-inner {
-//       width: calc(220px * 9);
-//       display: flex;
-//   }
-//   .card {
-//       flex: 0 0 100%;
-//   }
-// }
-
-// @media (min-width: 577px) and (max-width: 768px) { /* sm */
-//   .card {
-//       flex: 0 0 100%;
-//   }
-// }
-
-// @media (min-width: 769px) and (max-width: 992px) { /* md */
-//   .card {
-//       flex: 0 0 50%;
-//   }
-// }
-
-// @media (min-width: 993px) and (max-width: 1200px) { /* lg */
-//   .card {
-//       flex: 0 0 50%;
-//   }
-// }
-
-// @media (min-width: 1201px) { /* xl */
-//   .card {
-//       flex: 0 0 33.33%;
-//   }
-// }
-
-@media (max-width: 576px) { /* xs */
-  
-  .business-model-section-carousel-container{
-    bottom:-115px!important;
+@media (max-width: 575.98px) {
+  .container {
+      max-width: 100%;
+      padding-left: 15px; /* Add left spacing */
+      padding-right: 15px; /* Add right spacing */
+      overflow-x: hidden; /* Prevent horizontal scrolling */
   }
-  .business-model-section-carousel-container-carousel-inner {
-    padding-left: 0 !important; /* Remove left padding */
-    margin-left: 0 !important;
-    // width: 100%!important;
-    // flex-wrap: nowrap!important; 
+
+  .row {
+      margin-left: 0;
+      margin-right: 0;
   }
+
   .card {
-    flex: 0 0 98%!important;
-    margin: 0 !important;
-    margin-right:5px!important;
+      width: 90%!important; /* Ensure full width within the container */
+      margin: 0 auto!important; /* Center the card */
   }
-  .carousel-btn {
-    padding:3px 13px!important;
-    margin:0 5px!important;
-    font-size:1.3rem!important;
-    align-items:center!important;
+  .carousel-control-prev,
+  .carousel-control-next {
+      /* width: 10%!important;/* Adjust width for better visibility */
+      opacity: 1; /* Ensure visibility */
+      z-index: 10; /* Ensure it's above other elements */
   }
-}
 
-@media (min-width: 577px) and (max-width: 768px) { /* sm */
-  .business-model-section-carousel-container{
-    bottom:-115px!important;
+  .business-model-section-carousel-nav {
+      width: 28px!important;
+      height: 28px!important;
+      font-size: 16px!important;
+      border-radius: 50%;
   }
-  .business-model-section-carousel-container-carousel-inner {
-    padding-left: 0 !important;
-    margin-left: 0px !important;
-    // width: 100%!important;
-    // flex-wrap: nowrap!important; 
-  }
-  .card {
-    flex: 0 0 98%;
-    margin: 0 !important;
-    margin-right:10px!important;
-  }
-}
+   .card-back p{
+    padding-left:10px;
+    padding-right:10px;
+    text-align:center!important;
+   }
 
-@media (min-width: 769px) and (max-width: 992px) { /* md */
-  .business-model-section-carousel-container-carousel-inner {
-    padding-left: 0 !important;
-    margin: 0 !important;
-    margin-right:10px!important;
+  .prev-btn {
+      left: 6px!important;
   }
-  .card {
-    flex: 0 0 35%!important;
-  }
-}
 
-@media (min-width: 993px) and (max-width: 1200px) { /* lg */
-  .business-model-section-carousel-container-carousel-inner {
-    padding-left: 0 !important;
+  .next-btn {
+      right: 6px!important;
   }
-  .card {
-    flex: 0 0 50%;
-  }
-}
-
-@media (min-width: 1201px) { /* xl */
-  .business-model-section-carousel-container-carousel-inner {
-    padding-left: 0 !important;
-  }
-  .card {
-    flex: 0 0 33.33%;
+  body {
+      overflow-x: hidden!important; /* Ensure no horizontal scrolling */
   }
 }
 
 
+      @media screen and  (min-width: 576px) and (max-width:991.98px) {
+          .business-card {
+              width: 240px;
+              height: 360px;
+              margin: 0 15px;
+          }
+
+          .business-model-section-carousel-nav {
+              width: 30px!important;
+              height: 30px!important;
+              font-size: 18px;
+          }
+          .card-back p{
+            text-align:center!important;
+            padding:0 10px!important;
+          }
+          .prev-btn { left: 10!important; }
+          .next-btn { right: 10px!important; }
+
+          .business-carousel-container {
+              transform: translateY(-50%); /* Adjust position for smaller screens */
+          }
+      }
+
+      @media screen and (min-width:992px) and (max-width:1199.98px){
+          .business-model-section-carousel-nav {
+              width: 36px!important;
+              height: 36px!important;
+              font-size: 20px;
+          }
+          .card-back p{
+            text-align:center!important;
+            padding:0 10px!important;
+            font-size:0.86rem!important;
+          }
+          .prev-btn { left: 7px!important; }
+          .next-btn { right: 7px!important; }
+      }
 /* Responsive Text */
 
 @media screen and (min-width:576px) and (max-width: 767.98px) {
@@ -403,187 +406,3 @@
 
 
 
-// // @media (max-width: 576px) { /* xs */
-  
-// //   .business-model-section-carousel-container{
-// //     bottom:-115px!important;
-// //   }
-// //   .business-model-section-carousel-container-carousel-inner {
-// //     padding-left: 0 !important; /* Remove left padding */
-// //     margin-left: 0 !important;
-// //     // width: 100%!important;
-// //     // flex-wrap: nowrap!important; 
-// //   }
-// //   .card {
-// //     flex: 0 0 98%!important;
-// //     margin: 0 !important;
-// //     margin-right:5px!important;
-// //   }
-// //   .carousel-btn {
-// //     padding:3px 13px!important;
-// //     margin:0 5px!important;
-// //     font-size:1.3rem!important;
-// //     align-items:center!important;
-// //   }
-// // }
-
-// // @media (min-width: 577px) and (max-width: 768px) { /* sm */
-// //   .business-model-section-carousel-container{
-// //     bottom:-115px!important;
-// //   }
-// //   .business-model-section-carousel-container-carousel-inner {
-// //     padding-left: 0 !important;
-// //     margin-left: 0px !important;
-// //     // width: 100%!important;
-// //     // flex-wrap: nowrap!important; 
-// //   }
-// //   .card {
-// //     flex: 0 0 98%;
-// //     margin: 0 !important;
-// //     margin-right:10px!important;
-// //   }
-// // }
-
-// // @media (min-width: 769px) and (max-width: 992px) { /* md */
-// //   .business-model-section-carousel-container-carousel-inner {
-// //     padding-left: 0 !important;
-// //     margin: 0 !important;
-// //     margin-right:10px!important;
-// //   }
-// //   .card {
-// //     flex: 0 0 35%!important;
-// //   }
-// // }
-
-// // @media (min-width: 993px) and (max-width: 1200px) { /* lg */
-// //   .business-model-section-carousel-container-carousel-inner {
-// //     padding-left: 0 !important;
-// //   }
-// //   .card {
-// //     flex: 0 0 50%;
-// //   }
-// // }
-
-// // @media (min-width: 1201px) { /* xl */
-// //   .business-model-section-carousel-container-carousel-inner {
-// //     padding-left: 0 !important;
-// //   }
-// //   .card {
-// //     flex: 0 0 33.33%;
-// //   }
-// // }
-
-
-// // /* Responsive Text */
-
-// // @media screen and (min-width:576px) and (max-width: 767.98px) {
-// //   .business-model-section-content-title {
-// //       font-size: 1.8rem;
-// //   }
-// //   .business-model-section-content-subtitle {
-// //       font-size: 1.2rem;
-// //   }
-// //   .business-model-section-content-description {
-// //       font-size: 0.9rem;
-// //   }
-// // }
-
-// // @media (max-width: 575.98px) {
-// //   .business-model-section-content-title {
-// //       font-size: 1.5rem;
-// //   }
-// //   .business-model-section-content-subtitle {
-// //       font-size: 1rem;
-// //   }
-// //   .business-model-section-content-description {
-// //       font-size: 0.815rem;
-// //   }
-// // }
-  
-// // // @media screen and (max-width:575px){
-// // //   .business-model-section-carousel-container-carousel-inner{
-// // //     padding:0 300px!important;
-// // //   }
-// // // }
-
-
-
-/*new code*/
-/* Business Model Carousel Styling */
-// .business-model-section-carousel-container {
-//   position: relative;
-//   max-width: 1090px;
-//   margin: auto!important;
-//   overflow: hidden;
-// }
-
-// .business-model-section-carousel-container-carousel {
-//   display: flex;
-//   overflow: hidden;
-//   scroll-behavior: smooth;
-// }
-
-// .business-model-section-carousel-container-carousel-inner {
-//   display: flex;
-//   transition: transform 0.5s ease-in-out;
-// }
-
-// .card {
-//   flex: 0 0 auto;
-//   width: calc(100% - 30px)!important;
-//   max-width: 300px!important;
-//   margin:0px 15px;
-//   background: rgb(247, 48, 48);
-//   border-radius: 10px;
-//   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-// }
-
-// .card-inner {
-//   text-align: center;
-//   padding: 15px;
-// }
-// .card-inner img{
-//   width: 100%;
-//   height: 100px;
-//   object-fit: contain;
-//   border-radius: 10px 10px 0 0; /* Rounded top corners for the image */
-//   background:func.theme-colors('accent')!important;
-// }
-// .carousel-btn {
-//   position: absolute;
-//   top: 50%;
-//   transform: translateY(-50%);
-//   background: yellow;
-//   color: white;
-//   border: none;
-//   padding: 10px 15px;
-//   cursor: pointer;
-//   font-size: 18px;
-//   font-weight: bold;
-//   border-radius: 5px;
-//   transition: background 0.3s;
-// }
-
-// .carousel-btn:hover {
-//   background: orange;
-// }
-
-// .prev-btn { left: 0; }
-// .next-btn { right: 0; }
-
-// /* Responsive Styling */
-// @media (max-width: 576px) { /* xs */
-//   .card { max-width: 85%!important; }
-// }
-
-// @media (min-width: 577px) and (max-width: 768px) { /* sm */
-//   .card { max-width: 65%; }
-// }
-
-// @media (min-width: 769px) and (max-width: 992px) { /* md */
-//   .card { max-width: 28%; }
-// }
-
-// @media (min-width: 993px) { /* lg and above */
-//   .card { max-width: 23%; }
-// }
