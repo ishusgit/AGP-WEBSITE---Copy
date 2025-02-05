@@ -270,16 +270,18 @@ window.addEventListener("scroll", function () {
 /*new fade-section scrolling*/  
 document.addEventListener('DOMContentLoaded', function(){
   const sections = document.querySelectorAll('.fade-section');
-  const observer = new IntersectionObserver(entries =>{
-    entries.forEach(entry =>{
-      if(entry.isIntersecting){
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
         entry.target.classList.add('visible');
-      }else {
+      } else {
         entry.target.classList.remove('visible');
       }
     });
-  }, {threshold:0.2});
-  sections.forEach(section=>{
+  }, { rootMargin: '0px', threshold: 0.2 });  // Add rootMargin
+
+  sections.forEach(section => {
     observer.observe(section);
   });
 });
@@ -302,7 +304,7 @@ document.addEventListener("DOMContentLoaded", function() {
   
       
 
-/*business carousel-new*/
+/*business carousel-new-only click prev and next btn*/
 // document.addEventListener("DOMContentLoaded", function () {
 //     const prevBtn = document.querySelector(".prev-btn");
 //     const nextBtn = document.querySelector(".next-btn");
@@ -331,6 +333,8 @@ document.addEventListener("DOMContentLoaded", function() {
 //     updateButtonVisibility();
 // }); 
 
+
+/*business carousel-new-both clicking prev and next-btn and by finger moving too*/
 document.addEventListener("DOMContentLoaded", function () {
   const prevBtn = document.querySelector(".prev-btn");
   const nextBtn = document.querySelector(".next-btn");
