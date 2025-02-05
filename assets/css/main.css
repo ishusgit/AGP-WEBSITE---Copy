@@ -179,6 +179,12 @@
     height: 30px;
   }
 }
+footer {
+  width: 100vw !important;
+  max-width: 100vw !important;
+  outline: 2px solid rgb(162, 255, 0) !important;
+}
+
 .footer__row .footer__heading {
   font-size: 1.1rem !important;
   font-weight: 600 !important;
@@ -487,7 +493,7 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: border-box !important;
 }
 
 .container-fluid {
@@ -495,7 +501,18 @@
   max-width: 100vw !important;
   padding-left: 0 !important;
   padding-right: 0 !important;
-  overflow: hidden !important;
+  overflow-x: hidden !important;
+  position: relative !important;
+}
+
+.container-fluid > * {
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+}
+
+.row {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
 }
 
 body, html {
@@ -504,24 +521,13 @@ body, html {
   max-width: 100vw !important;
   width: 100vw !important;
   scroll-behavior: auto !important;
-  scroll-padding-top: 100px !important;
+  scroll-padding-top: 120px !important;
   padding: 10px 0px 0px !important;
-}
-
-html, body {
-  touch-action: auto !important;
-  -webkit-overflow-scrolling: touch !important;
 }
 
 body {
   padding-top: env(safe-area-inset-top) !important;
   overflow-y: auto !important;
-}
-
-.navbar {
-  position: sticky !important;
-  top: 0;
-  z-index: 1030;
 }
 
 .navbar.fixed-top {
@@ -546,6 +552,7 @@ body {
 .fade-section.visible {
   opacity: 1 !important; /* Fully visible */
   transform: translateY(0) !important; /* Move to its original position */
+  transform: translateX(0%) !important;
 }
 
 @media screen and (max-width: 1199px) {
@@ -4959,7 +4966,6 @@ p {
 /* Content Box Styling with Glassmorphism */
 .explore-content {
   background: rgba(255, 255, 255, 0.1);
-  padding: 30px 15px;
   backdrop-filter: blur(10px);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   position: relative !important;
@@ -4969,6 +4975,7 @@ p {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100% !important;
 }
 
 /* Border Animation on Content Box */
@@ -4977,12 +4984,13 @@ p {
 .explore-content:before {
   content: "";
   position: absolute;
-  top: 2px; /* Adjust position to be inside the content box */
-  left: 2px;
-  right: 2px;
-  bottom: 2px;
-  border: 6px solid #fff !important;
+  top: 2px !important; /* Adjust position to be inside the content box */
+  left: 2px !important;
+  right: 2px !important;
+  bottom: 2px !important;
+  border: 5px solid #fff !important;
   border-radius: 0px;
+  overflow: hidden !important;
   animation: border-animation 3s linear infinite;
   pointer-events: none; /* Ensure the animation does not block interactions */
 }

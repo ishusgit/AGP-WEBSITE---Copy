@@ -40,7 +40,7 @@
 /* Content Box Styling with Glassmorphism */
 .explore-content {
     background: rgba(255, 255, 255, 0.1);
-    padding: 30px 15px;
+    // padding: 30px 15px;
     backdrop-filter: blur(10px);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     position: relative !important;
@@ -50,6 +50,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width:100%!important;
 }
 
 /* Border Animation on Content Box */
@@ -124,12 +125,15 @@
 .explore-content:before {
     content: '';
     position: absolute;
-    top: 2px;  /* Adjust position to be inside the content box */
-    left: 2px;
-    right: 2px;
-    bottom: 2px;
-    border: 6px solid #fff!important;
+    top: 2px!important;  /* Adjust position to be inside the content box */
+    left: 2px!important;
+    right: 2px!important;
+    bottom: 2px!important;
+    border: 5px solid #fff!important;
+    // width:100%!important;
+    // height:100%!important;
     border-radius: 0px;
+    overflow:hidden!important;
     animation: border-animation 3s linear infinite;
     pointer-events: none;  /* Ensure the animation does not block interactions */
 }
