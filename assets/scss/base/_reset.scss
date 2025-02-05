@@ -16,10 +16,10 @@
   position:relative!important;
 }
 
-.container-fluid > * {
-  max-width: 100% !important;
-  overflow-x: hidden !important;
-}
+// .container-fluid > * {
+//   max-width: 100% !important;
+//   overflow-x: hidden !important;
+// }
 
 
 .row {
@@ -45,7 +45,7 @@ body,html{
     max-width:100vw!important;
     width:100vw!important;
     scroll-behavior:auto!important;
-    scroll-padding-top: 120px!important;
+    scroll-padding-top: 110px!important;
     padding:10px 0px 0px!important;
     }
   //   html, body {
