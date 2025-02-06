@@ -544,13 +544,14 @@ body {
   will-change: opacity, transform !important;
   backface-visibility: hidden;
   position: relative;
+  overflow: hidden; /* Prevents content from overflowing during animation */
 }
 
 /* Class to make the section visible */
 .fade-section.visible {
   opacity: 1 !important; /* Fully visible */
   transform: translateY(0) !important; /* Move to its original position */
-  transform: translateX(0%) !important;
+  /* You can keep translateX(0%) only if needed for horizontal movement, otherwise remove it */
 }
 
 @media screen and (max-width: 1199px) {

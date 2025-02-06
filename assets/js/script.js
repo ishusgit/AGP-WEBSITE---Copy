@@ -268,26 +268,27 @@ window.addEventListener("scroll", function () {
 });
 
 /*new fade-section scrolling*/  
-document.addEventListener('DOMContentLoaded', function(){
+document.addEventListener('DOMContentLoaded', function() {
   const sections = document.querySelectorAll('.fade-section');
 
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('visible'); // Add visible class when section is in view
+        entry.target.classList.add('visible');
       } else {
-        entry.target.classList.remove('visible'); // Remove visible class when section goes out of view
+        entry.target.classList.remove('visible');
       }
     });
-  }, { 
-    rootMargin: '0px', // Ensures sections fade in when they are at the edge
-    threshold: 0.2 // Section is considered visible when 20% is visible
+  }, {
+    rootMargin: '0px',  // Adjust when sections should fade in
+    threshold: 0.2      // Trigger visibility when 20% of the section is visible
   });
 
   sections.forEach(section => {
     observer.observe(section);
   });
 });
+
 
 
  /*explor-more-tooling-solutions*/
