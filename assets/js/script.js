@@ -274,17 +274,21 @@ document.addEventListener('DOMContentLoaded', function(){
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
+        entry.target.classList.add('visible'); // Add visible class when section is in view
       } else {
-        entry.target.classList.remove('visible');
+        entry.target.classList.remove('visible'); // Remove visible class when section goes out of view
       }
     });
-  }, { rootMargin: '0px', threshold: 0.2 });  // Add rootMargin
+  }, { 
+    rootMargin: '0px', // Ensures sections fade in when they are at the edge
+    threshold: 0.2 // Section is considered visible when 20% is visible
+  });
 
   sections.forEach(section => {
     observer.observe(section);
   });
 });
+
 
  /*explor-more-tooling-solutions*/
  // Optional JavaScript for scroll animations (if required)
