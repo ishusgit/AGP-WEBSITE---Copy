@@ -13,11 +13,12 @@
     display: flex;
     flex-direction: column;
     height: 100%; /* Ensure all cards take full height */
-    margin: 1rem 0;
+    // margin: 1rem 0;
     border: none !important;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     flex: 1 1 auto; /* Allow cards to grow equally */
     border-radius: none;
+    position:relative;
 }
 
 /* Unique background colors for each content card */

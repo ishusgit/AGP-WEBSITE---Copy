@@ -27,7 +27,9 @@
   margin-right: 0 !important;
 }
 
-
+#who-we-are{
+  overflow-y:hidden!important;
+}
 body,html{
     // padding:10px 0px 0px!important;
     // max-width:100vw!important;
@@ -87,7 +89,7 @@ body,html{
       will-change: opacity, transform !important;
       backface-visibility: hidden;
       position: relative;
-      overflow: hidden; /* Prevents content from overflowing during animation */
+      // overflow: hidden; /* Prevents content from overflowing during animation */
     }
     
     /* Class to make the section visible */
@@ -139,10 +141,11 @@ li{
     border: none; /* Remove border on hover to match the background */
   }
 
+
   /* Styling the circular back to top button */
 #backToTopBtn {
   position: fixed;
-  bottom: 75px;
+  bottom: 20px;
   right: 20px;
   width: 45px;
   height: 45px;
@@ -159,8 +162,7 @@ li{
   transition: opacity 0.3s ease-in-out;
   opacity: 0;
   visibility: hidden;
-  font-size: 1rem;
-  transform: translateZ(0)!important;
+  font-size: 1.3rem;
 }
 
 /* Font Awesome icon style */
@@ -170,7 +172,7 @@ li{
 
 /* Hover effect for better visibility */
 #backToTopBtn:hover {
-  background:func.theme-colors('primary')!important;
+  background-color: #333;
 }
 
 /* Show button when scrolled down */

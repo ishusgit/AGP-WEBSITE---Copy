@@ -140,29 +140,12 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-  // Show the button when scrolling down-top to button
-window.onscroll = function () {
-var btn = document.getElementById("backToTopBtn");
-if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-  btn.classList.add("show");
-} else {
-  btn.classList.remove("show");
-}
-};
 
 //horizontal flip-services process
 function toggleCard(card) {
 card.classList.toggle("horizontal");
 }
 
-
-// Smooth scroll to top
-function scrollToTop() {
-window.scrollTo({
-  top: 0,
-  behavior: "smooth"
-});
-}
 
 /*old fade section- whole website animation */
 // Initialize the Intersection Observer
@@ -402,3 +385,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
   updateButtonVisibility();
 });
+
+/*back-to-top-button*/
+window.onscroll = function () {
+  var btn = document.getElementById("backToTopBtn");
+  if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+      btn.classList.add("show");
+  } else {
+      btn.classList.remove("show");
+  }
+};
+// Smooth scroll to top
+function scrollToTop() {
+  window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+  });
+}
+
