@@ -5,7 +5,7 @@
 /* styles.css */
 .services-hero {
     position: relative;
-    height: 70vh;
+    height: 72vh;
     background: url('/assets/images/service-main-image.png') no-repeat center center / cover;
     display: flex;
     align-items: center;
@@ -37,7 +37,7 @@
 }
 
 .services-hero__title {
-    font-size: 2.3rem;
+    font-size: 2.2rem;
     font-weight: 600;
     font-family:var.$font-open;
     color:func.theme-colors('light-bg');
@@ -48,7 +48,7 @@
     position: relative;
     top:50%;
     transform: translateY(-10%);
-    padding: 50px 0;
+    padding: 50px 0px;
     background:func.theme-colors('light-bg');
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -366,8 +366,9 @@ color:#3d0068;
         font-size:1.5rem!important;
     }
     .services-content{
-        transform: translateY(-5%)!important;
-        padding: 35px 15px!important;
+        transform: translateY(-3%)!important;
+        padding: 0px 15px!important;
+        overflow:hidden!important;
     }
     .services-content__heading{
         font-size: 0.8rem!important;
@@ -452,8 +453,8 @@ color:#3d0068;
         font-size:1.38rem!important;
     }
     .services-content{
-        // transform: translateY(-5%)!important;
-        padding: 30px 30px!important;
+        transform: translateY(-7%)!important;
+        padding: 0px 30px!important;
     }
     .services-content__heading{
         font-size: 0.8rem!important;

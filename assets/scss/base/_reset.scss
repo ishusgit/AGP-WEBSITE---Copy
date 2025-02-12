@@ -144,9 +144,9 @@ li{
 
   /* Styling the circular back to top button */
 #backToTopBtn {
-  position: fixed;
+  position: fixed!important;
   bottom: 20px;
-  right: 20px;
+  right: 100px;
   width: 45px;
   height: 45px;
   // background: linear-gradient(135deg, #a50010 10%, #1e1e24 90%);

@@ -1,6 +1,9 @@
 @use "../abstract/variable" as var;
 @use "../abstract/functions" as func;
 
+.who-we-are{
+  overflow:hidden!important;
+}
 .who-we-are__small-heading {
     font-family:var.$font-open;
     font-size:0.88rem;
@@ -58,7 +61,7 @@ p{
   .custom-image-container img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    // object-fit: cover;
     border-radius: 2px 35px 30px 35px; /* Top-left 1px, others 30px */
   }
 
@@ -68,7 +71,7 @@ p{
     position: absolute;
     width: 120px;
     height: 120px;
-    background-color:func.theme-colors('secondary'); /* Light overlay */
+    background-color:func.theme-colors('primary'); /* Light overlay */
     z-index: -1; /* Behind the image */
   }
 
@@ -81,7 +84,7 @@ p{
     position: absolute;
     width: 120px;
     height: 120px;
-    background-color:func.theme-colors('primary'); /* Light overlay */
+    background-color:func.theme-colors('secondary'); /* Light overlay */
     z-index: -1; /* Behind the image */
   }
 
@@ -117,8 +120,8 @@ p{
     font-size:0.89rem!important;
   }
   .custom-image-container {
-      width: 250px;
-      height: 400px;
+      width: 300px;
+      height: 420px;
   }
 }
 
@@ -159,7 +162,7 @@ p{
   }
 }
 
-@media (max-width:575.98px){
+@media screen and (max-width:575.98px){
   p{
     font-size:0.84rem;
     text-align:start!important;
@@ -170,16 +173,16 @@ p{
 }
 .custom-image-container::before{
   width:70px!important;
-  height:80px!important;
+  height:70px!important;
 }
 .custom-image-container::after {
   width:70px!important;
-  height:80px!important;
+  height:70px!important;
 }
 .custom-image-container{
   width:290px;
   max-width:350px;
-  height:450px;
+  height:425px;
 }
 }  
   

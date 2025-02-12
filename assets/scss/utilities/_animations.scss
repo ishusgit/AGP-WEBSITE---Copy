@@ -123,7 +123,7 @@
 
 /*sevices page content and paragraph animate from left and right to its oringinal position*/
 /* Initial state */
-.services-content__column-texts, .services-content__paragraph {
+.services-content__column-texts, .services-content__paragraph, services-pro-cards {
   opacity: 0;  /* Elements are hidden initially */
   transform: translateX(0); /* Position is reset */
 }
@@ -160,14 +160,21 @@
 .services-content__paragraph {
   animation: imageSlideIn 1s ease-out forwards;  /* Slide from right */
 }
+.services-pro-cards{
+  animation: textSlideIn 1s ease-out forwards; 
+}
 
 /* Optional: Add delay for a staggered effect */
 .services-content__column-texts {
-  animation-delay: 0.2s;
+  animation-delay: 0.35s;
 }
 
 .services-content__paragraph {
-  animation-delay: 0.2s;
+  animation-delay: 0.35s;
+}
+
+.services-pro-cards{
+  animation-delay:0.6s;
 }
 
 

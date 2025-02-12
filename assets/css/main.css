@@ -5,7 +5,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
 /* styles.css */
 .carousel-item {
-  height: 625px;
+  height: 650px;
   position: relative;
 }
 
@@ -603,9 +603,9 @@ li {
 
 /* Styling the circular back to top button */
 #backToTopBtn {
-  position: fixed;
+  position: fixed !important;
   bottom: 20px;
-  right: 20px;
+  right: 100px;
   width: 45px;
   height: 45px;
   background: #1e1e24;
@@ -697,7 +697,7 @@ li {
 /*product-development cards animation*/
 /*sevices page content and paragraph animate from left and right to its oringinal position*/
 /* Initial state */
-.services-content__column-texts, .services-content__paragraph {
+.services-content__column-texts, .services-content__paragraph, services-pro-cards {
   opacity: 0; /* Elements are hidden initially */
   transform: translateX(0); /* Position is reset */
 }
@@ -733,13 +733,21 @@ li {
   animation: imageSlideIn 1s ease-out forwards; /* Slide from right */
 }
 
+.services-pro-cards {
+  animation: textSlideIn 1s ease-out forwards;
+}
+
 /* Optional: Add delay for a staggered effect */
 .services-content__column-texts {
-  animation-delay: 0.2s;
+  animation-delay: 0.35s;
 }
 
 .services-content__paragraph {
-  animation-delay: 0.2s;
+  animation-delay: 0.35s;
+}
+
+.services-pro-cards {
+  animation-delay: 0.6s;
 }
 
 /*product development page content and image animate from left and right to its oringinal position*/
@@ -789,7 +797,7 @@ li {
   animation-delay: 0.2s;
 }
 
-.btn, .btn-danger, .btn-secondary, .btn-primary {
+.btn, .btn-danger, .btn-purple, .btn-secondary, .btn-primary {
   font-size: 14px;
   font-weight: 600px;
   padding: 8px 15px !important;
@@ -800,28 +808,37 @@ li {
   background: #ffd400;
   color: #1e1e24 !important;
 }
-.btn:hover, .btn-danger:hover, .btn-secondary:hover, .btn-primary:hover {
+.btn:hover, .btn-danger:hover, .btn-purple:hover, .btn-secondary:hover, .btn-primary:hover {
   background: rgb(255, 73, 103) !important;
   color: #f4f4f4 !important;
 }
 
-.btn-primary, .btn-danger, .btn-secondary {
+.btn-primary, .btn-danger, .btn-purple, .btn-secondary {
   font-size: 15px;
   font-weight: 400px;
   text-transform: capitalize;
   background: #d72638;
   color: white !important;
 }
-.btn-primary:hover, .btn-danger:hover, .btn-secondary:hover {
+.btn-primary:hover, .btn-danger:hover, .btn-purple:hover, .btn-secondary:hover {
   background: rgb(255, 60, 0) !important;
 }
 
 .btn-secondary {
-  background: #ffd400;
+  background: #ffd400 !important;
   color: black !important;
 }
 .btn-secondary:hover {
   background: #d72638 !important;
+}
+
+.btn-purple {
+  background: #ffd400 !important;
+  color: #1e1e24 !important;
+}
+.btn-purple:hover {
+  background: #d72638 !important;
+  color: #f4f4f4 !important;
 }
 
 .btn-danger {
@@ -849,7 +866,8 @@ li {
   transition: all 0.6s ease-out;
 }
 
-@media screen and (min-width: 768px) and (max-width: 991px) {
+/*medium devuce*/
+@media screen and (min-width: 768px) and (max-width: 991.98px) {
   .overlay-button {
     font-size: 0.78rem !important;
     padding: 7px 8px !important;
@@ -858,27 +876,73 @@ li {
     font-size: 0.6rem !important;
     letter-spacing: 0.35px !important;
   }
-}
-@media screen and (min-width: 992px) and (max-width: 1199px) {
   /* Button Positions */
   .button-1 {
     top: 15%;
-    right: -35%;
+    right: -35% !important;
     background-color: #fd5e5e;
   }
   .button-2 {
     bottom: 15%;
-    left: -25% !important;
+    left: -35% !important;
     background-color: #6bc4ff;
   }
   .button-3 {
     top: 35%;
-    right: -30%;
+    right: -45% !important;
     background-color: #f9a826;
   }
   .button-4 {
     bottom: 35%;
-    left: -20% !important;
+    left: -45% !important;
+    background-color: #8bc34a;
+  }
+}
+/*small device*/
+@media screen and (min-width: 576px) and (max-width: 767.98px) {
+  /* Button Positions */
+  .button-1 {
+    top: 15%;
+    right: -45% !important;
+    background-color: #fd5e5e;
+  }
+  .button-2 {
+    bottom: 15%;
+    left: -35% !important;
+    background-color: #6bc4ff;
+  }
+  .button-3 {
+    top: 35%;
+    right: -40% !important;
+    background-color: #f9a826;
+  }
+  .button-4 {
+    bottom: 35%;
+    left: -45% !important;
+    background-color: #8bc34a;
+  }
+}
+/*large device*/
+@media screen and (min-width: 992px) and (max-width: 1199.98px) {
+  /* Button Positions */
+  .button-1 {
+    top: 15%;
+    right: -40% !important;
+    background-color: #fd5e5e;
+  }
+  .button-2 {
+    bottom: 15%;
+    left: -30% !important;
+    background-color: #6bc4ff;
+  }
+  .button-3 {
+    top: 35%;
+    right: -35% !important;
+    background-color: #f9a826;
+  }
+  .button-4 {
+    bottom: 35%;
+    left: -28% !important;
     background-color: #8bc34a;
   }
 }
@@ -909,25 +973,25 @@ li {
 /* Button Positions */
 .button-1 {
   top: 15%;
-  right: -35%;
+  right: -32%;
   background-color: #fd5e5e;
 }
 
 .button-2 {
   bottom: 15%;
-  left: -38%;
+  left: -32%;
   background-color: #6bc4ff;
 }
 
 .button-3 {
   top: 35%;
-  right: -30%;
+  right: -39%;
   background-color: #f9a826;
 }
 
 .button-4 {
   bottom: 35%;
-  left: -30%;
+  left: -40%;
   background-color: #8bc34a;
 }
 
@@ -995,7 +1059,7 @@ li {
 }
 
 /* product development -Buttons */
-.product-development__buttons .btn, .product-development__buttons .btn-primary, .product-development__buttons .btn-secondary, .product-development__buttons .btn-danger {
+.product-development__buttons .btn, .product-development__buttons .btn-primary, .product-development__buttons .btn-secondary, .product-development__buttons .btn-purple, .product-development__buttons .btn-danger {
   padding: 10px 15px;
   font-size: 0.83rem;
   font-weight: 550 !important;
@@ -1842,6 +1906,10 @@ li {
     font-size: 0.65rem !important;
   }
 }
+.who-we-are {
+  overflow: hidden !important;
+}
+
 .who-we-are__small-heading {
   font-family: "Open Sans", serif;
   font-size: 0.88rem;
@@ -1902,7 +1970,6 @@ p {
 .custom-image-container img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
   border-radius: 2px 35px 30px 35px; /* Top-left 1px, others 30px */
 }
 
@@ -1912,7 +1979,7 @@ p {
   position: absolute;
   width: 120px;
   height: 120px;
-  background-color: #1e1e24; /* Light overlay */
+  background-color: #d72638; /* Light overlay */
   z-index: -1; /* Behind the image */
 }
 
@@ -1925,7 +1992,7 @@ p {
   position: absolute;
   width: 120px;
   height: 120px;
-  background-color: #d72638; /* Light overlay */
+  background-color: #1e1e24; /* Light overlay */
   z-index: -1; /* Behind the image */
 }
 
@@ -1961,8 +2028,8 @@ p {
     font-size: 0.89rem !important;
   }
   .custom-image-container {
-    width: 250px;
-    height: 400px;
+    width: 300px;
+    height: 420px;
   }
 }
 @media screen and (max-width: 991.98px) {
@@ -1999,7 +2066,7 @@ p {
     height: 420px;
   }
 }
-@media (max-width: 575.98px) {
+@media screen and (max-width: 575.98px) {
   p {
     font-size: 0.84rem;
     text-align: start !important;
@@ -2009,16 +2076,16 @@ p {
   }
   .custom-image-container::before {
     width: 70px !important;
-    height: 80px !important;
+    height: 70px !important;
   }
   .custom-image-container::after {
     width: 70px !important;
-    height: 80px !important;
+    height: 70px !important;
   }
   .custom-image-container {
     width: 290px;
     max-width: 350px;
-    height: 450px;
+    height: 425px;
   }
 }
 .custom-image-container::before,
@@ -2035,7 +2102,7 @@ p {
 /* styles.css */
 .services-hero {
   position: relative;
-  height: 70vh;
+  height: 72vh;
   background: url("/assets/images/service-main-image.png") no-repeat center center/cover;
   display: flex;
   align-items: center;
@@ -2069,7 +2136,7 @@ p {
 }
 
 .services-hero__title {
-  font-size: 2.3rem;
+  font-size: 2.2rem;
   font-weight: 600;
   font-family: "Open Sans", serif;
   color: #f4f4f4;
@@ -2080,7 +2147,7 @@ p {
   position: relative;
   top: 50%;
   transform: translateY(-10%);
-  padding: 50px 0;
+  padding: 50px 0px;
   background: #f4f4f4;
   border-radius: 5px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -2407,8 +2474,9 @@ p {
     font-size: 1.5rem !important;
   }
   .services-content {
-    transform: translateY(-5%) !important;
-    padding: 35px 15px !important;
+    transform: translateY(-3%) !important;
+    padding: 0px 15px !important;
+    overflow: hidden !important;
   }
   .services-content__heading {
     font-size: 0.8rem !important;
@@ -2489,7 +2557,8 @@ p {
     font-size: 1.38rem !important;
   }
   .services-content {
-    padding: 30px 30px !important;
+    transform: translateY(-7%) !important;
+    padding: 0px 30px !important;
   }
   .services-content__heading {
     font-size: 0.8rem !important;

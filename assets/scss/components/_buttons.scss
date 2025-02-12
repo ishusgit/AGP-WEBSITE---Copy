@@ -31,10 +31,20 @@
 .btn-secondary{
     @extend .btn;
     @extend .btn-primary;
-    background:func.theme-colors('accent');
+    background:func.theme-colors('accent')!important;
     color:func.theme-colors('dark')!important;
     &:hover{
         background:func.theme-colors('primary')!important;
+    }
+}
+.btn-purple{
+    @extend .btn;
+    @extend .btn-primary;
+    background:func.theme-colors('accent')!important;
+    color:func.theme-colors('secondary')!important;
+    &:hover{
+        background:func.theme-colors('primary')!important;
+        color:func.theme-colors('light-bg')!important;
     }
 }
 .btn-danger{
@@ -64,7 +74,10 @@
     transition: all 0.6s ease-out;
 }
 
-@media screen and (min-width:768px) and (max-width:991px){
+
+
+/*medium devuce*/
+@media screen and (min-width:768px) and (max-width:991.98px){
     .overlay-button {
         font-size: 0.78rem!important;
         padding: 7px 8px!important;
@@ -73,14 +86,36 @@
         font-size: 0.6rem!important;
         letter-spacing:0.35px!important;
     }
-}
-@media screen and (min-width:992px) and (max-width:1199px){
     /* Button Positions */
-.button-1 { top: 15%; right: -35%; background-color: #fd5e5e; }
-.button-2 { bottom: 15%; left: -25%!important; background-color: #6bc4ff; }
-.button-3 { top: 35%; right: -30%; background-color: #f9a826; }
-.button-4 { bottom: 35%; left: -20%!important; background-color: #8bc34a; }
+.button-1 { top: 15%; right: -35%!important; background-color: #fd5e5e; }
+.button-2 { bottom: 15%; left: -35%!important; background-color: #6bc4ff; }
+.button-3 { top: 35%; right: -45%!important; background-color: #f9a826; }
+.button-4 { bottom: 35%; left: -45%!important; background-color: #8bc34a; }
 }
+
+
+
+/*small device*/
+@media screen and (min-width:576px) and (max-width:767.98px){
+    /* Button Positions */
+.button-1 { top: 15%; right: -45%!important; background-color: #fd5e5e; }
+.button-2 { bottom: 15%; left: -35%!important; background-color: #6bc4ff; }
+.button-3 { top: 35%; right: -40%!important; background-color: #f9a826; }
+.button-4 { bottom: 35%; left: -45%!important; background-color: #8bc34a; }
+}
+
+
+
+/*large device*/
+@media screen and (min-width:992px) and (max-width:1199.98px){
+    /* Button Positions */
+.button-1 { top: 15%; right: -40%!important; background-color: #fd5e5e; }
+.button-2 { bottom: 15%; left: -30%!important; background-color: #6bc4ff; }
+.button-3 { top: 35%; right: -35%!important; background-color: #f9a826; }
+.button-4 { bottom: 35%; left: -28%!important; background-color: #8bc34a; }
+}
+
+
 /* Button Descriptions */
 .button-desc {
     display: block;
@@ -106,10 +141,10 @@
 }
 
 /* Button Positions */
-.button-1 { top: 15%; right: -35%; background-color: #fd5e5e; }
-.button-2 { bottom: 15%; left: -38%; background-color: #6bc4ff; }
-.button-3 { top: 35%; right: -30%; background-color: #f9a826; }
-.button-4 { bottom: 35%; left: -30%; background-color: #8bc34a; }
+.button-1 { top: 15%; right: -32%; background-color: #fd5e5e; }
+.button-2 { bottom: 15%; left: -32%; background-color: #6bc4ff; }
+.button-3 { top: 35%; right: -39%; background-color: #f9a826; }
+.button-4 { bottom: 35%; left: -40%; background-color: #8bc34a; }
 
 /* Small Triangle Below Each Button */
 // .overlay-button::before,
