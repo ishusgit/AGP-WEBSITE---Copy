@@ -563,6 +563,11 @@ body {
     padding: 0 !important;
   }
 }
+@media screen and (max-width: 575.98px) {
+  body, html {
+    scroll-padding-top: 100px !important;
+  }
+}
 a {
   text-decoration: none;
   color: #f4f4f4;
@@ -2105,7 +2110,7 @@ p {
 .services-hero {
   position: relative;
   height: 72vh;
-  background: url("assets/images/service-main-image.png") no-repeat center center/cover;
+  background: url("/assets/images/service-main-image.png") no-repeat center center/cover;
   display: flex;
   align-items: center;
   color: #fff;
