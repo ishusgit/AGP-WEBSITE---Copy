@@ -527,7 +527,7 @@ body, html {
 
 body {
   padding-top: env(safe-area-inset-top) !important;
-  overflow-y: auto !important;
+  overflow-y: scroll !important;
   min-height: 100vh !important;
   height: 100%;
 }
@@ -2105,7 +2105,7 @@ p {
 .services-hero {
   position: relative;
   height: 72vh;
-  background: url("https://https://ishusgit.github.io/AGP-WEBSITE---Copy/service-main-image.png") no-repeat center center/cover;
+  background: url("assets/images/service-main-image.png") no-repeat center center/cover;
   display: flex;
   align-items: center;
   color: #fff;
