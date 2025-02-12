@@ -123,13 +123,13 @@
   }
   
   .image-column {
-    width:50%;
+    width:100%;
     display: flex;
     border-radius:10px!important;
-    box-shadow:0 4px 10px rgba(0,0,0,0.6);
+    box-shadow:8px 8px 15px rgb(0,0,0,0.6);
     // justify-content: center;
     // align-items: center;
-    height: 380px; /* Increase height */
+    height: 425px; /* Increase height */
   }
   
   .strategy-img {
@@ -140,8 +140,8 @@
   
   .translate-img {
     transform: translateY(-50px);
-    width:50%;
-    height:380px;
+    width:100%;
+    height:425px;
     border-radius:10px!important;
   }
   
@@ -149,12 +149,12 @@
   @media screen and (min-width:576px) and (max-width:767.98px){
     .image-column {
       width:100%;
-      height:300px;
+      height:320px;
     }
     .translate-img {
       transform: translateY(-50px);
       width:100%;
-      height:300px;
+      height:320px;
       border-radius:10px!important;
     }
   }
