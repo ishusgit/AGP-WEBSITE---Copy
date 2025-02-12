@@ -529,6 +529,7 @@ body {
   padding-top: env(safe-area-inset-top) !important;
   overflow-y: auto !important;
   min-height: 100vh !important;
+  height: 100%;
 }
 
 .navbar.fixed-top {

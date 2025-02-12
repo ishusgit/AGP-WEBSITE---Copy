@@ -52,13 +52,14 @@ body,html{
     scroll-behavior:smooth!important;
     scroll-padding-top: 140px!important;
     padding:10px 0px 0px!important;
-    // height:100%!important;
+    // height:100vh!important;
     }
     body {
         padding-top: env(safe-area-inset-top)!important;
         overflow-y: auto !important;
         // overflow-y: scroll !important;
         min-height: 100vh!important;
+        height:100%;
 
     }
   //   .navbar {
