@@ -387,14 +387,14 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 /*back-to-top-button*/
-window.onscroll = function () {
-  var btn = document.getElementById("backToTopBtn");
-  if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-      btn.classList.add("show");
-  } else {
-      btn.classList.remove("show");
-  }
-};
+// window.onscroll = function () {
+//   var btn = document.getElementById("backToTopBtn");
+//   if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+//       btn.classList.add("show");
+//   } else {
+//       btn.classList.remove("show");
+//   }
+// };
 // Smooth scroll to top
 function scrollToTop() {
   window.scrollTo({
@@ -402,4 +402,13 @@ function scrollToTop() {
       behavior: "smooth"
   });
 }
+
+window.onscroll = function () {
+  var btn = document.getElementById("backToTopBtn");
+  if (window.scrollY > 170) {  // Use window.scrollY instead of body.scrollTop
+      btn.classList.add("show");
+  } else {
+      btn.classList.remove("show");
+  }
+};
 
