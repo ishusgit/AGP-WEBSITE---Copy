@@ -2110,7 +2110,7 @@ p {
 .services-hero {
   position: relative;
   height: 72vh;
-  background: url("/assets/images/our-strategy-image-1.jpg") no-repeat center center/cover;
+  background: url("https://raw.githubusercontent.com/ishusgit/AGP-WEBSITE---Copy/main/assets/images/service-main-image-1.png") no-repeat center center/cover;
   display: flex;
   align-items: center;
   color: #fff;
@@ -3632,6 +3632,7 @@ p {
 }
 
 .our-strategy-image-container {
+  position: relative;
   display: flex;
   gap: 30px; /* 20px gap between columns */
 }
@@ -3640,8 +3641,7 @@ p {
   width: 100%;
   display: flex;
   border-radius: 10px !important;
-  box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.6);
-  height: 425px; /* Increase height */
+  height: 410px; /* Increase height */
 }
 
 .strategy-img {
@@ -3653,10 +3653,49 @@ p {
 .translate-img {
   transform: translateY(-50px);
   width: 100%;
-  height: 425px;
+  height: 410px;
   border-radius: 10px !important;
 }
 
+/* Blurred shadow circles */
+.our-strategy-image-container::before,
+.our-strategy-image-container::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(255, 0, 0, 0.3), rgba(50, 50, 50, 0.3));
+  filter: blur(50px);
+  animation: scaleAnimation 5s infinite ease-in-out alternate;
+  z-index: -1;
+}
+
+/* Large shadow circle */
+.our-strategy-image-container::before {
+  width: 260px;
+  height: 260px;
+  bottom: 5%;
+  right: -30%;
+}
+
+/* Small shadow circle */
+.our-strategy-image-container::after {
+  width: 180px;
+  height: 180px;
+  top: -10%;
+  left: -10%;
+}
+
+/* Scaling animation */
+@keyframes scaleAnimation {
+  0% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1.3);
+    opacity: 0.8;
+  }
+}
 @media screen and (min-width: 576px) and (max-width: 767.98px) {
   .image-column {
     width: 100%;
