@@ -222,7 +222,7 @@ footer {
   border-radius: 2px; /* Rounded corners */
   padding: 2.5rem !important;
   transform: translateY(50px) !important;
-  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3); /* Soft, blurred shadow */
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4); /* Soft, blurred shadow */
 }
 .footer__row .footer__form .footer__head {
   font-size: 1.1rem;
@@ -255,6 +255,17 @@ footer {
 .footer__row .footer__form input:focus,
 .footer__row .footer__form textarea:focus {
   border-color: rgb(255, 60, 0) !important;
+  background: white !important;
+}
+.footer__row input:-webkit-autofill,
+.footer__row textarea:-webkit-autofill {
+  background-color: transparent !important; /* Removes blue background */
+  transition: background-color 5000s ease-in-out 0s; /* Prevents autofill styling */
+  color: #000 !important; /* Ensures text remains visible */
+}
+.footer__row input:-webkit-autofill:focus,
+.footer__row textarea:-webkit-autofill:focus {
+  background-color: transparent !important;
 }
 .footer__row .footer__form button {
   background: linear-gradient(135deg, #d72638 10%, #1e1e24 90%);
@@ -2697,7 +2708,7 @@ p {
 
 .product-development__feature--two {
   top: 140px;
-  left: 380px;
+  left: 420px;
   background: #ffd400;
 }
 
@@ -2924,6 +2935,25 @@ p {
 
 /*media queries*/
 @media screen and (min-width: 992px) and (max-width: 1199.98px) {
+  .product-development__image-container {
+    text-align: start !important;
+    position: relative !important;
+  }
+  .product-development__image--background {
+    width: 230px !important;
+    height: 340px !important;
+    position: absolute !important;
+    transform: translateX(-65%) !important;
+  }
+  .product-development__feature--two {
+    top: 140px;
+    left: 380px;
+    background: #ffd400;
+  }
+  .product-development__image {
+    width: 230px !important;
+    height: 330px !important;
+  }
   .product-development__heading {
     font-size: 1.515rem !important;
     line-height: 1.6 !important;
@@ -3000,18 +3030,18 @@ p {
     font-weight: 500 !important;
   }
   .product-development__image-container {
-    text-align: center !important;
+    text-align: start !important;
     position: relative !important;
   }
   .product-development__image--background {
     width: 230px !important;
     height: 340px !important;
     position: absolute !important;
-    transform: translateX(-50%) !important;
+    transform: translateX(-35%) !important;
   }
   .product-development__image {
-    width: 240px !important;
-    height: 350px !important;
+    width: 230px !important;
+    height: 330px !important;
   }
   .product-development__subheading {
     font-size: 1.25rem !important;
@@ -5166,44 +5196,41 @@ p {
   justify-content: center;
   align-items: center;
   width: 100% !important;
+  border: 2px solid transparent;
+  padding: 20px 20px;
 }
 
-/* Border Animation on Content Box */
-/* Border Animation Around Content Box */
-/* Border Animation Around Content (just around content area) */
-.explore-content:before {
+/* Animated Border Around Content Box */
+.explore-content::before {
   content: "";
   position: absolute;
-  top: 2px !important; /* Adjust position to be inside the content box */
-  left: 2px !important;
-  right: 2px !important;
-  bottom: 2px !important;
-  border: 5px solid #fff !important;
-  border-radius: 0px;
-  overflow: hidden !important;
-  animation: border-animation 3s linear infinite;
-  pointer-events: none; /* Ensure the animation does not block interactions */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #ffffff;
+  box-sizing: border-box; /* Ensures it stays within the box */
+  animation: border-move 3s linear infinite;
 }
 
-/* Border animation to move around the content (just the content border) */
-@keyframes border-animation {
+/* Border moves smoothly along all four sides */
+@keyframes border-move {
   0% {
-    transform: translateX(-100%) translateY(-100%);
+    clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
   }
   25% {
-    transform: translateX(100%) translateY(-100%);
+    clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
   }
   50% {
-    transform: translateX(100%) translateY(100%);
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 100% 100%);
   }
   75% {
-    transform: translateX(-100%) translateY(100%);
+    clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
   }
   100% {
-    transform: translateX(-100%) translateY(-100%);
+    clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
   }
 }
-/* Styling for Image inside Card */
 .explore-img {
   width: 100%;
   height: 100%; /* Make image take full height */

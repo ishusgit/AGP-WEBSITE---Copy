@@ -412,3 +412,33 @@ window.onscroll = function () {
   }
 };
 
+
+//start emailjs- for email form submiting
+  (function() {
+    emailjs.init("Mpc_eO2EIGFqAH02z"); // Replace with your EmailJS Public Key
+  })();
+
+  function sendEmail(event) {
+    event.preventDefault(); // Prevent form from refreshing the page
+
+    // Collect form data
+    const formData = {
+      name: document.querySelector("input[name='name']").value,
+      email: document.querySelector("input[name='email']").value,
+      message: document.querySelector("textarea[name='message']").value,
+    };
+
+    // Send email using EmailJS
+    emailjs.send("service_g2n2gje", "template_tytw1rq", formData)
+      .then(function(response) {
+        alert("Message sent successfully!");
+        document.querySelector("form").reset(); // Reset form after sending
+      }, function(error) {
+        alert("Failed to send message. Please try again!");
+      });
+  }
+
+  // Attach function to form submit event
+  document.querySelector("form").addEventListener("submit", sendEmail);
+
+//end emailjs- for email form submiting

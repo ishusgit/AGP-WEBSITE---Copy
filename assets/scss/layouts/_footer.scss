@@ -49,7 +49,7 @@ footer {
         border-radius: 2px; /* Rounded corners */
         padding:2.5rem!important;
         transform: translateY(50px)!important;
-        box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3); /* Soft, blurred shadow */
+        box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4); /* Soft, blurred shadow */
         // backdrop-filter: blur(10px); /* Glassmorphism blur effect */
         .footer__head{
             font-size:1.1rem;
@@ -85,7 +85,21 @@ footer {
    .footer__form input:focus,
    .footer__form textarea:focus{
     border-color: func.theme-colors('orange')!important;
+    background:white!important;
    }
+
+   input:-webkit-autofill, 
+textarea:-webkit-autofill {
+    background-color: transparent !important; /* Removes blue background */
+    transition: background-color 5000s ease-in-out 0s; /* Prevents autofill styling */
+    color: #000 !important; /* Ensures text remains visible */
+}
+
+input:-webkit-autofill:focus, 
+textarea:-webkit-autofill:focus {
+    background-color: transparent !important;
+}
+
 
     .footer__form button {
         background: linear-gradient(135deg, #d72638 10%, #1e1e24 90%);
