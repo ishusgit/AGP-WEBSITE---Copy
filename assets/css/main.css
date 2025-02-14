@@ -538,9 +538,13 @@ body, html {
 
 body {
   padding-top: env(safe-area-inset-top) !important;
-  overflow-y: scroll !important;
   min-height: 100vh !important;
-  height: 100%;
+}
+
+/* Optional: If needed for better scrolling */
+.main-wrapper {
+  overflow-y: auto; /* Allows content to scroll properly */
+  -webkit-overflow-scrolling: touch; /* Improves touch scrolling */
 }
 
 .navbar.fixed-top {
@@ -2618,6 +2622,8 @@ p {
 /* Main Section */
 .product-development {
   background: linear-gradient(to bottom, white, rgb(255, 199, 199));
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
   padding: 100px 0;
   display: flex;
   flex-flow: column nowrap;
@@ -2653,7 +2659,7 @@ p {
 }
 
 .product-development__image {
-  width: 290px;
+  width: 270px;
   height: 350px;
   border-radius: 10px;
   position: relative;
@@ -2692,7 +2698,7 @@ p {
 
 .product-development__feature--one {
   top: 50px;
-  left: -40px;
+  left: -100px;
   background: rgb(255, 73, 103);
   position: absolute;
 }
@@ -2723,7 +2729,7 @@ p {
 
 .product-development__feature--three {
   top: 250px;
-  left: -30px;
+  left: -70px;
   background: rgb(255, 60, 0);
 }
 
