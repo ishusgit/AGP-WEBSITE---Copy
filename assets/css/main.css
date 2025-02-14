@@ -538,6 +538,7 @@ body, html {
 
 body {
   padding-top: env(safe-area-inset-top) !important;
+  overflow-y: scroll !important;
   min-height: 100vh !important;
 }
 
@@ -3178,6 +3179,12 @@ p {
   .development-image {
     width: 98% !important;
     object-fit: cover !important;
+  }
+}
+@media screen and (max-width: 1199.98px) {
+  .product-development {
+    border-bottom-left-radius: 0%;
+    border-bottom-right-radius: 0%;
   }
 }
 .who-we-are {
