@@ -61,10 +61,10 @@ body,html{
         min-height: 100vh!important;
     }
     /* Optional: If needed for better scrolling */
-  .main-wrapper {
-    overflow-y: auto;  /* Allows content to scroll properly */
-    -webkit-overflow-scrolling: touch; /* Improves touch scrolling */
-   }
+  // .main-wrapper {
+  //   overflow-y: auto;  /* Allows content to scroll properly */
+  //   -webkit-overflow-scrolling: touch; /* Improves touch scrolling */
+  //  }
   //   .navbar {
   //     position: sticky !important;
   //     top: 0;
