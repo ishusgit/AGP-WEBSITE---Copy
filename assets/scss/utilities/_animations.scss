@@ -124,19 +124,19 @@
 /*sevices page content and paragraph animate from left and right to its oringinal position*/
 /* Initial state */
 .services-content__column-texts, .services-content__paragraph, services-pro-cards {
-  opacity: 0;  /* Elements are hidden initially */
-  transform: translateX(0); /* Position is reset */
+  opacity: 0;  
+  transform: translateX(0); 
 }
 
 /* Animation for text (left to right) */
 @keyframes textSlideIn {
   0% {
       opacity: 0;
-      transform: translateX(-100%);  /* Start off-screen from the left */
+      transform: translateX(-100%);  
   }
   100% {
       opacity: 1;
-      transform: translateX(0);  /* Move to its original position */
+      transform: translateX(0);  
   }
 }
 
@@ -144,21 +144,21 @@
 @keyframes imageSlideIn {
   0% {
       opacity: 0;
-      transform: translateX(100%);  /* Start off-screen from the right */
+      transform: translateX(100%); 
   }
   100% {
       opacity: 1;
-      transform: translateX(0);  /* Move to its original position */
+      transform: translateX(0);  
   }
 }
 
 /* Apply animation to elements */
 .services-content__column-texts {
-  animation: textSlideIn 1s ease-out forwards;  /* Slide from left */
+  animation: textSlideIn 1s ease-out forwards;  
 }
 
 .services-content__paragraph {
-  animation: imageSlideIn 1s ease-out forwards;  /* Slide from right */
+  animation: imageSlideIn 1s ease-out forwards;  
 }
 .services-pro-cards{
   animation: textSlideIn 1s ease-out forwards; 
@@ -182,19 +182,19 @@
 /*product development page content and image animate from left and right to its oringinal position*/
 /* Initial state */
 .product-development__text, .product-development__image-container {
-  opacity: 0;  /* Elements are hidden initially */
-  transform: translateX(0); /* Position is reset */
+  opacity: 0;  
+  transform: translateX(0); 
 }
 
 /* Animation for text (left to right) */
 @keyframes textSlideIn {
   0% {
       opacity: 0;
-      transform: translateX(-100%);  /* Start off-screen from the left */
+      transform: translateX(-100%); 
   }
   100% {
       opacity: 1;
-      transform: translateX(0);  /* Move to its original position */
+      transform: translateX(0);  
   }
 }
 
@@ -202,21 +202,21 @@
 @keyframes imageSlideIn {
   0% {
       opacity: 0;
-      transform: translateX(100%);  /* Start off-screen from the right */
+      transform: translateX(100%);  
   }
   100% {
       opacity: 1;
-      transform: translateX(0);  /* Move to its original position */
+      transform: translateX(0); 
   }
 }
 
 /* Apply animation to elements */
 .product-development__text {
-  animation: textSlideIn 1s ease-out forwards;  /* Slide from left */
+  animation: textSlideIn 1s ease-out forwards;  
 }
 
 .product-development__image-container {
-  animation: imageSlideIn 1s ease-out forwards;  /* Slide from right */
+  animation: imageSlideIn 1s ease-out forwards;  
 }
 
 /* Optional: Add delay for a staggered effect */
