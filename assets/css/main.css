@@ -554,9 +554,9 @@ body {
 
 /* General class for sections you want to animate */
 .fade-section {
-  opacity: 0 !important; /* Initially hidden */
-  transform: translateY(50px) !important; /* Start slightly down */
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Smooth animation */
+  opacity: 0 !important;
+  transform: translateY(50px) !important;
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
   will-change: opacity, transform !important;
   backface-visibility: hidden;
   position: relative;
@@ -564,8 +564,8 @@ body {
 
 /* Class to make the section visible */
 .fade-section.visible {
-  opacity: 1 !important; /* Fully visible */
-  transform: translateY(0) !important; /* Move to its original position */
+  opacity: 1 !important;
+  transform: translateY(0) !important;
   /* You can keep translateX(0%) only if needed for horizontal movement, otherwise remove it */
 }
 
