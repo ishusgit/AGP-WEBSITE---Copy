@@ -123,110 +123,110 @@
 
 /*sevices page content and paragraph animate from left and right to its oringinal position*/
 /* Initial state */
-.services-content__column-texts, .services-content__paragraph, services-pro-cards {
-  opacity: 0;  
-  transform: translateX(0); 
-}
+// .services-content__column-texts, .services-content__paragraph, services-pro-cards {
+//   opacity: 0;  
+//   transform: translateX(0); 
+// }
 
 /* Animation for text (left to right) */
-@keyframes textSlideIn {
-  0% {
-      opacity: 0;
-      transform: translateX(-100%);  
-  }
-  100% {
-      opacity: 1;
-      transform: translateX(0);  
-  }
-}
+// @keyframes textSlideIn {
+//   0% {
+//       opacity: 0;
+//       transform: translateX(-100%);  
+//   }
+//   100% {
+//       opacity: 1;
+//       transform: translateX(0);  
+//   }
+// }
 
 /* Animation for image (right to left) */
-@keyframes imageSlideIn {
-  0% {
-      opacity: 0;
-      transform: translateX(100%); 
-  }
-  100% {
-      opacity: 1;
-      transform: translateX(0);  
-  }
-}
+// @keyframes imageSlideIn {
+//   0% {
+//       opacity: 0;
+//       transform: translateX(100%); 
+//   }
+//   100% {
+//       opacity: 1;
+//       transform: translateX(0);  
+//   }
+// }
 
 /* Apply animation to elements */
-.services-content__column-texts {
-  animation: textSlideIn 1s ease-out forwards;  
-}
+// .services-content__column-texts {
+//   animation: textSlideIn 1s ease-out forwards;  
+// }
 
-.services-content__paragraph {
-  animation: imageSlideIn 1s ease-out forwards;  
-}
-.services-pro-cards{
-  animation: textSlideIn 1s ease-out forwards; 
-}
+// .services-content__paragraph {
+//   animation: imageSlideIn 1s ease-out forwards;  
+// }
+// .services-pro-cards{
+//   animation: textSlideIn 1s ease-out forwards; 
+// }
 
 /* Optional: Add delay for a staggered effect */
-.services-content__column-texts {
-  animation-delay: 0.35s;
-}
+// .services-content__column-texts {
+//   animation-delay: 0.35s;
+// }
 
-.services-content__paragraph {
-  animation-delay: 0.35s;
-}
+// .services-content__paragraph {
+//   animation-delay: 0.35s;
+// }
 
-.services-pro-cards{
-  animation-delay:0.6s;
-}
+// .services-pro-cards{
+//   animation-delay:0.6s;
+// }
 
 
 
 /*product development page content and image animate from left and right to its oringinal position*/
 /* Initial state */
-.product-development__text, .product-development__image-container {
-  opacity: 0;  
-  transform: translateX(0); 
-}
+// .product-development__text, .product-development__image-container {
+//   opacity: 0;  
+//   transform: translateX(0); 
+// }
 
 /* Animation for text (left to right) */
-@keyframes textSlideIn {
-  0% {
-      opacity: 0;
-      transform: translateX(-100%); 
-  }
-  100% {
-      opacity: 1;
-      transform: translateX(0);  
-  }
-}
+// @keyframes textSlideIn {
+//   0% {
+//       opacity: 0;
+//       transform: translateX(-100%); 
+//   }
+//   100% {
+//       opacity: 1;
+//       transform: translateX(0);  
+//   }
+// }
 
 /* Animation for image (right to left) */
-@keyframes imageSlideIn {
-  0% {
-      opacity: 0;
-      transform: translateX(100%);  
-  }
-  100% {
-      opacity: 1;
-      transform: translateX(0); 
-  }
-}
+// @keyframes imageSlideIn {
+//   0% {
+//       opacity: 0;
+//       transform: translateX(100%);  
+//   }
+//   100% {
+//       opacity: 1;
+//       transform: translateX(0); 
+//   }
+// }
 
 /* Apply animation to elements */
-.product-development__text {
-  animation: textSlideIn 1s ease-out forwards;  
-}
+// .product-development__text {
+//   animation: textSlideIn 1s ease-out forwards;  
+// }
 
-.product-development__image-container {
-  animation: imageSlideIn 1s ease-out forwards;  
-}
+// .product-development__image-container {
+//   animation: imageSlideIn 1s ease-out forwards;  
+// }
 
 /* Optional: Add delay for a staggered effect */
-.product-development__text {
-  animation-delay: 0.2s;
-}
+// .product-development__text {
+//   animation-delay: 0.2s;
+// }
 
-.product-development__image-container {
-  animation-delay: 0.2s;
-}
+// .product-development__image-container {
+//   animation-delay: 0.2s;
+// }
 
 
 
